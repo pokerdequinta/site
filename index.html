@@ -61,6 +61,61 @@ body {
   z-index: 1;
 }
 
+/* CONTADOR DE VISITAS */
+.visit-counter {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #d4a121 0%, #f4c141 100%);
+  color: #000;
+  padding: 15px 25px;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 5px 20px rgba(212, 161, 33, 0.5);
+  z-index: 1000;
+  display: none; /* OCULTO */
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95em;
+}
+
+.visit-counter .icon {
+  font-size: 1.3em;
+}
+
+.visit-counter .count {
+  font-family: 'Anton';
+  font-size: 1.2em;
+  letter-spacing: 1px;
+}
+
+/* BOTÃO ADMIN */
+.admin-btn {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  background: #c72c48;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 5px 20px rgba(199, 44, 72, 0.5);
+  z-index: 1000;
+  cursor: pointer;
+  text-decoration: none;
+  display: none; /* OCULTO */
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s;
+  font-size: 0.9em;
+}
+
+.admin-btn:hover {
+  background: #e63950;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(199, 44, 72, 0.7);
+}
+
 /* CONTAINER */
 .container {
   max-width: 1200px;
@@ -245,6 +300,20 @@ body {
   .menu-icon {
     font-size: 3em;
   }
+  
+  .visit-counter {
+    bottom: 10px;
+    right: 10px;
+    padding: 10px 15px;
+    font-size: 0.85em;
+  }
+  
+  .admin-btn {
+    bottom: 70px;
+    right: 10px;
+    padding: 10px 15px;
+    font-size: 0.85em;
+  }
 }
 </style>
 </head>
@@ -348,6 +417,61 @@ body {
   <div class="footer-icons">♠ ♥ ♦ ♣</div>
   <p class="footer-text" style="opacity: 0.6; font-size: 0.9em;">Desenvolvido pelo Presida.</p>
 </div>
+
+<!-- CONTADOR DE VISITAS -->
+<div class="visit-counter">
+  <span class="icon">👁️</span>
+  <span>Visitas:</span>
+  <span class="count" id="visitCount">...</span>
+</div>
+
+<!-- BOTÃO ADMIN -->
+<a href="admin.html" class="admin-btn">
+  <span>🔐</span>
+  <span>Admin</span>
+</a>
+
+<script>
+// Função para incrementar visitas
+async function trackVisit() {
+  try {
+    // Buscar contador atual
+    let visits = 0;
+    try {
+      const result = await window.storage.get('poker-total-visits', true);
+      visits = result ? parseInt(result.value) : 0;
+    } catch (error) {
+      // Primeira visita
+      visits = 0;
+    }
+    
+    // Incrementar
+    visits++;
+    
+    // Salvar novo valor
+    await window.storage.set('poker-total-visits', visits.toString(), true);
+    
+    // Registrar visita individual com timestamp
+    const timestamp = new Date().toISOString();
+    const visitId = `visit:${Date.now()}`;
+    await window.storage.set(visitId, JSON.stringify({
+      timestamp: timestamp,
+      userAgent: navigator.userAgent,
+      page: 'home'
+    }), true);
+    
+    // Atualizar display
+    document.getElementById('visitCount').textContent = visits.toLocaleString('pt-BR');
+    
+  } catch (error) {
+    console.error('Erro ao rastrear visita:', error);
+    document.getElementById('visitCount').textContent = '---';
+  }
+}
+
+// Executar ao carregar a página
+trackVisit();
+</script>
 
 </body>
 </html>
