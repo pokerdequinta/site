@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poker de Quinta - Menu Principal</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@300;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #0d1b0d;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* LOGO SECTION */
+.logo-section {
+  text-align: center;
+  padding: 40px 20px 30px;
+  background: linear-gradient(180deg, #102810 0%, #0d1b0d 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-section::before {
+  content: '♠ ♥ ♦ ♣';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12em;
+  color: rgba(212, 161, 33, 0.03);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.logo-img {
+  max-width: 250px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 30px rgba(212, 161, 33, 0.4));
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.logo-title {
+  font-family: 'Anton';
+  font-size: 3em;
+  color: #d4a121;
+  letter-spacing: 5px;
+  text-shadow: 0 0 30px rgba(212, 161, 33, 0.5);
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.logo-subtitle {
+  font-size: 1.3em;
+  color: #d4a121;
+  opacity: 0.9;
+  position: relative;
+  z-index: 1;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* SECTION TITLE */
+.section-title {
+  font-family: 'Anton';
+  font-size: 2.5em;
+  color: #d4a121;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-bottom: 50px;
+  text-shadow: 0 0 20px rgba(212, 161, 33, 0.5);
+}
+
+/* MENU GRID */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+/* MENU CARD */
+.menu-card {
+  background: linear-gradient(135deg, #102810 0%, #1a3d1a 100%);
+  border: 2px solid #d4a121;
+  border-radius: 15px;
+  padding: 35px 25px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+}
+
+.menu-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212, 161, 33, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.menu-card:hover::before {
+  left: 100%;
+}
+
+.menu-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 60px rgba(212, 161, 33, 0.6);
+  border-color: #f4c141;
+}
+
+.menu-icon {
+  font-size: 4em;
+  margin-bottom: 20px;
+  display: block;
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.menu-card:hover .menu-icon {
+  animation: none;
+  transform: scale(1.1);
+}
+
+.menu-title {
+  font-family: 'Anton';
+  font-size: 1.6em;
+  color: #d4a121;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.menu-description {
+  font-size: 1em;
+  line-height: 1.6;
+  opacity: 0.9;
+  color: #fff;
+}
+
+/* DESTAQUE ESPECIAL */
+.menu-card.destaque {
+  background: linear-gradient(135deg, #d4a121 0%, #f4c141 100%);
+  border-color: #fff;
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 10px 50px rgba(212, 161, 33, 0.4);
+  }
+  50% {
+    box-shadow: 0 15px 70px rgba(212, 161, 33, 0.8);
+  }
+}
+
+.menu-card.destaque .menu-title {
+  color: #000;
+}
+
+.menu-card.destaque .menu-description {
+  color: #000;
+  opacity: 0.8;
+}
+
+.menu-card.destaque .badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #c72c48;
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.75em;
+  font-weight: bold;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 60px;
+  border-top: 2px solid #d4a121;
+  background: #102810;
+}
+
+.footer-text {
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
+
+.footer-icons {
+  font-size: 2em;
+  color: #d4a121;
+  margin: 20px 0;
+  letter-spacing: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .logo-title {
+    font-size: 2em;
+  }
+  
+  .section-title {
+    font-size: 1.8em;
+  }
+  
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .menu-icon {
+    font-size: 3em;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGO SECTION -->
+<div class="logo-section">
+  <img src="logo pdq.png" class="logo-img" onerror="this.style.display='none'" alt="Logo Poker de Quinta">
+  <h1 class="logo-title">POKER DE QUINTA</h1>
+  <p class="logo-subtitle">Bem-vindo ao Site Oficial do Poker de Quinta.</p>
+</div>
+
+<!-- CONTAINER -->
+<div class="container">
+  
+  <h2 class="section-title">MENU</h2>
+  
+  <!-- MENU GRID -->
+  <div class="menu-grid">
+    
+    <!-- CONFIRMAÇÃO DE PRESENÇA - DESTAQUE -->
+    <a href="https://pokerdequinta.github.io/confirma/" class="menu-card destaque">
+      <span class="badge">🔥 NOVO</span>
+      <span class="menu-icon">✅</span>
+      <h3 class="menu-title">CONFIRMAÇÃO DE PRESENÇA</h3>
+      <p class="menu-description">Faça Aqui sua Inscrição para a próxima etapa!</p>
+    </a>
+    
+    <!-- REGULAMENTO -->
+    <a href="https://pokerdequinta.github.io/regulamento/" class="menu-card">
+      <span class="menu-icon">📋</span>
+      <h3 class="menu-title">REGULAMENTO</h3>
+      <p class="menu-description">Confira todas as regras oficiais do Poker de Quinta</p>
+    </a>
+    
+    <!-- NOVIDADES 2026 -->
+    <a href="https://pokerdequinta.github.io/novidades/" class="menu-card">
+      <span class="menu-icon">🎉</span>
+      <h3 class="menu-title">NOVIDADES TEMPORADA 2026</h3>
+      <p class="menu-description">Veja o que mudou na nova temporada de 2026</p>
+    </a>
+    
+    <!-- DEALER PID -->
+    <a href="https://pokerdequinta.github.io/dealer/" class="menu-card">
+      <span class="menu-icon">🎲</span>
+      <h3 class="menu-title">DEALER - PID</h3>
+      <p class="menu-description">Área do Dealer</p>
+    </a>
+    
+    <!-- CADASTRO PIX E FOTO -->
+    <a href="https://forms.gle/yG2MAeQvSco46DK49" class="menu-card">
+      <span class="menu-icon">📸</span>
+      <h3 class="menu-title">CADASTRO DE PIX E FOTO</h3>
+      <p class="menu-description">Atualize seus dados para pagamentos e premiações</p>
+    </a>
+    
+    <!-- RANKING -->
+    <a href="#ranking" class="menu-card">
+      <span class="menu-icon">🏆</span>
+      <h3 class="menu-title">RANKING</h3>
+      <p class="menu-description">Acompanhe a classificação geral dos jogadores</p>
+    </a>
+    
+    <!-- ENQUETES -->
+    <a href="https://pokerdequinta.github.io/enquete/" class="menu-card">
+      <span class="menu-icon">📊</span>
+      <h3 class="menu-title">ENQUETES</h3>
+      <p class="menu-description">Participe das votações da janta e das mãos da etapa</p>
+    </a>
+    
+    <!-- LOJA -->
+    <a href="https://pokerdequinta.github.io/loja/" class="menu-card">
+      <span class="menu-icon">🛒</span>
+      <h3 class="menu-title">LOJA</h3>
+      <p class="menu-description">Adquira aqui sua camiseta do Poker de Quinta</p>
+    </a>
+    
+  </div>
+  
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p class="footer-text">© 2026 Poker de Quinta - Todos os direitos reservados</p>
+  <div class="footer-icons">♠ ♥ ♦ ♣</div>
+  <p class="footer-text" style="opacity: 0.6; font-size: 0.9em;">Desenvolvido pelo Presida. Matheus, Mame minha rola</p>
+</div>
+
+</body>
+</html>
