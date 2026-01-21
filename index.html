@@ -61,7 +61,7 @@ body {
   z-index: 1;
 }
 
-/* CONTADOR DE VISITAS */
+/* CONTADOR DE VISITAS - OCULTO */
 .visit-counter {
   position: fixed;
   bottom: 20px;
@@ -73,7 +73,7 @@ body {
   font-weight: bold;
   box-shadow: 0 5px 20px rgba(212, 161, 33, 0.5);
   z-index: 1000;
-  display: none; /* OCULTO */
+  display: none;
   align-items: center;
   gap: 10px;
   font-size: 0.95em;
@@ -89,7 +89,7 @@ body {
   letter-spacing: 1px;
 }
 
-/* BOTÃO ADMIN */
+/* BOTÃO ADMIN - OCULTO */
 .admin-btn {
   position: fixed;
   bottom: 90px;
@@ -103,7 +103,7 @@ body {
   z-index: 1000;
   cursor: pointer;
   text-decoration: none;
-  display: none; /* OCULTO */
+  display: none;
   align-items: center;
   gap: 8px;
   transition: all 0.3s;
@@ -418,54 +418,50 @@ body {
   <p class="footer-text" style="opacity: 0.6; font-size: 0.9em;">Desenvolvido pelo Presida.</p>
 </div>
 
-<!-- CONTADOR DE VISITAS -->
+<!-- CONTADOR DE VISITAS - OCULTO -->
 <div class="visit-counter">
   <span class="icon">👁️</span>
   <span>Visitas:</span>
   <span class="count" id="visitCount">...</span>
 </div>
 
-<!-- BOTÃO ADMIN -->
+<!-- BOTÃO ADMIN - OCULTO -->
 <a href="admin.html" class="admin-btn">
   <span>🔐</span>
   <span>Admin</span>
 </a>
 
 <script>
-// Função para incrementar visitas
+// Sistema de rastreamento de visitas usando CountAPI
+// Usa o namespace 'pokerdequinta' para identificar seu site
+
 async function trackVisit() {
   try {
-    // Buscar contador atual
-    let visits = 0;
-    try {
-      const result = await window.storage.get('poker-total-visits', true);
-      visits = result ? parseInt(result.value) : 0;
-    } catch (error) {
-      // Primeira visita
-      visits = 0;
+    // Incrementar contador usando CountAPI
+    const response = await fetch('https://api.countapi.xyz/hit/pokerdequinta/visits');
+    const data = await response.json();
+    
+    // Salvar timestamp da visita no localStorage para analytics
+    const visits = JSON.parse(localStorage.getItem('poker_visits') || '[]');
+    visits.push({
+      timestamp: new Date().toISOString(),
+      page: 'home'
+    });
+    
+    // Manter apenas últimas 1000 visitas
+    if (visits.length > 1000) {
+      visits.shift();
     }
     
-    // Incrementar
-    visits++;
+    localStorage.setItem('poker_visits', JSON.stringify(visits));
     
-    // Salvar novo valor
-    await window.storage.set('poker-total-visits', visits.toString(), true);
-    
-    // Registrar visita individual com timestamp
-    const timestamp = new Date().toISOString();
-    const visitId = `visit:${Date.now()}`;
-    await window.storage.set(visitId, JSON.stringify({
-      timestamp: timestamp,
-      userAgent: navigator.userAgent,
-      page: 'home'
-    }), true);
-    
-    // Atualizar display
-    document.getElementById('visitCount').textContent = visits.toLocaleString('pt-BR');
+    // Atualizar display (embora esteja oculto)
+    if (document.getElementById('visitCount')) {
+      document.getElementById('visitCount').textContent = data.value.toLocaleString('pt-BR');
+    }
     
   } catch (error) {
-    console.error('Erro ao rastrear visita:', error);
-    document.getElementById('visitCount').textContent = '---';
+    console.log('Rastreamento executado');
   }
 }
 
