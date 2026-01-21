@@ -21,30 +21,6 @@ body {
   min-height: 100vh;
 }
 
-/* LOGO SECTION */
-.logo-section {
-  text-align: center;
-  padding: 40px 20px 30px;
-  background: linear-gradient(180deg, #102810 0%, #0d1b0d 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-.logo-section::before {
-  content: '♠ ♥ ♦ ♣';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 12em;
-  color: rgba(212, 161, 33, 0.03);
-  animation: rotate 20s linear infinite;
-}
-
-@keyframes rotate {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
-}
 
 .logo-img {
   max-width: 250px;
