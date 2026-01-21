@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Poker de Quinta - Menu Principal</title>
+<title>Poker de Quinta - Admin Dashboard</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@300;400;700&display=swap');
@@ -19,300 +19,297 @@ body {
   background: #0d1b0d;
   color: #fff;
   min-height: 100vh;
+  padding: 20px;
 }
 
-/* LOGO SECTION */
-.logo-section {
-  text-align: center;
-  padding: 40px 20px 30px;
-  background: linear-gradient(180deg, #102810 0%, #0d1b0d 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-.logo-img {
-  max-width: 250px;
-  margin-bottom: 20px;
-  position: relative;
-  z-index: 1;
-  animation: fadeIn 1s;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.logo-title {
-  font-family: 'Anton';
-  font-size: 3em;
-  color: #d4a121;
-  letter-spacing: 5px;
-  margin-bottom: 10px;
-  position: relative;
-  z-index: 1;
-}
-
-.logo-subtitle {
-  font-size: 1.3em;
-  color: #d4a121;
-  opacity: 0.9;
-  position: relative;
-  z-index: 1;
-}
-
-/* CONTADOR DE VISITAS */
-.visit-counter {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: linear-gradient(135deg, #d4a121 0%, #f4c141 100%);
-  color: #000;
-  padding: 15px 25px;
-  border-radius: 50px;
-  font-weight: bold;
-  box-shadow: 0 5px 20px rgba(212, 161, 33, 0.5);
-  z-index: 1000;
-  display: none; /* OCULTO */
-  align-items: center;
-  gap: 10px;
-  font-size: 0.95em;
-}
-
-.visit-counter .icon {
-  font-size: 1.3em;
-}
-
-.visit-counter .count {
-  font-family: 'Anton';
-  font-size: 1.2em;
-  letter-spacing: 1px;
-}
-
-/* BOTÃO ADMIN */
-.admin-btn {
-  position: fixed;
-  bottom: 90px;
-  right: 20px;
-  background: #c72c48;
-  color: #fff;
-  padding: 12px 20px;
-  border-radius: 50px;
-  font-weight: bold;
-  box-shadow: 0 5px 20px rgba(199, 44, 72, 0.5);
-  z-index: 1000;
-  cursor: pointer;
-  text-decoration: none;
-  display: none; /* OCULTO */
-  align-items: center;
-  gap: 8px;
-  transition: all 0.3s;
-  font-size: 0.9em;
-}
-
-.admin-btn:hover {
-  background: #e63950;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(199, 44, 72, 0.7);
-}
-
-/* CONTAINER */
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 40px 20px;
 }
 
-/* SECTION TITLE */
-.section-title {
-  font-family: 'Anton';
-  font-size: 2.5em;
-  color: #d4a121;
+/* HEADER */
+.header {
   text-align: center;
-  letter-spacing: 3px;
-  margin-bottom: 50px;
-  text-shadow: 0 0 20px rgba(212, 161, 33, 0.5);
-}
-
-/* MENU GRID */
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  margin-bottom: 40px;
-}
-
-/* MENU CARD */
-.menu-card {
+  padding: 30px 20px;
   background: linear-gradient(135deg, #102810 0%, #1a3d1a 100%);
   border: 2px solid #d4a121;
   border-radius: 15px;
-  padding: 35px 25px;
-  text-align: center;
-  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-family: 'Anton';
+  font-size: 2.5em;
+  color: #d4a121;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+.header p {
+  opacity: 0.8;
+  font-size: 1.1em;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 25px;
+  background: #c72c48;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
   transition: all 0.3s;
+}
+
+.back-btn:hover {
+  background: #e63950;
+  transform: translateY(-2px);
+}
+
+/* STATS GRID */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #102810 0%, #1a3d1a 100%);
+  border: 2px solid #d4a121;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
   position: relative;
   overflow: hidden;
-  text-decoration: none;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #d4a121, #f4c141);
+}
+
+.stat-icon {
+  font-size: 3em;
+  margin-bottom: 15px;
   display: block;
 }
 
-.menu-card::before {
+.stat-value {
+  font-family: 'Anton';
+  font-size: 3em;
+  color: #d4a121;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 1.1em;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* VISITAS TABLE */
+.visits-section {
+  background: linear-gradient(135deg, #102810 0%, #1a3d1a 100%);
+  border: 2px solid #d4a121;
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.visits-section h2 {
+  font-family: 'Anton';
+  font-size: 2em;
+  color: #d4a121;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.filter-controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  background: #1a3d1a;
+  border: 2px solid #d4a121;
+  color: #fff;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #d4a121;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+.refresh-btn {
+  padding: 10px 20px;
+  background: #c72c48;
+  border: none;
+  color: #fff;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+  margin-left: auto;
+}
+
+.refresh-btn:hover {
+  background: #e63950;
+  transform: translateY(-2px);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+thead {
+  background: #1a3d1a;
+}
+
+th {
+  padding: 15px;
+  text-align: left;
+  font-weight: bold;
+  color: #d4a121;
+  border-bottom: 2px solid #d4a121;
+}
+
+td {
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(212, 161, 33, 0.2);
+}
+
+tbody tr:hover {
+  background: rgba(212, 161, 33, 0.1);
+}
+
+.no-data {
+  text-align: center;
+  padding: 40px;
+  opacity: 0.6;
+  font-style: italic;
+}
+
+/* CHARTS */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.chart-card {
+  background: linear-gradient(135deg, #102810 0%, #1a3d1a 100%);
+  border: 2px solid #d4a121;
+  border-radius: 15px;
+  padding: 30px;
+}
+
+.chart-card h3 {
+  font-family: 'Anton';
+  font-size: 1.5em;
+  color: #d4a121;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.chart-bar {
+  margin-bottom: 15px;
+}
+
+.chart-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 0.9em;
+}
+
+.bar {
+  height: 30px;
+  background: linear-gradient(90deg, #d4a121, #f4c141);
+  border-radius: 5px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.bar::after {
   content: '';
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(212, 161, 33, 0.2), transparent);
-  transition: left 0.5s;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: shimmer 2s infinite;
 }
 
-.menu-card:hover::before {
-  left: 100%;
+@keyframes shimmer {
+  to { left: 100%; }
 }
 
-.menu-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 60px rgba(212, 161, 33, 0.6);
-  border-color: #f4c141;
-}
-
-.menu-icon {
-  font-size: 4em;
-  margin-bottom: 20px;
-  display: block;
-  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
-  animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.menu-card:hover .menu-icon {
-  animation: none;
-  transform: scale(1.1);
-}
-
-.menu-title {
-  font-family: 'Anton';
-  font-size: 1.6em;
-  color: #d4a121;
-  letter-spacing: 2px;
-  margin-bottom: 12px;
-}
-
-.menu-description {
-  font-size: 1em;
-  line-height: 1.6;
-  opacity: 0.9;
-  color: #fff;
-}
-
-/* DESTAQUE ESPECIAL */
-.menu-card.destaque {
-  background: linear-gradient(135deg, #d4a121 0%, #f4c141 100%);
-  border-color: #fff;
-  animation: pulseGlow 2s infinite;
-}
-
-@keyframes pulseGlow {
-  0%, 100% {
-    box-shadow: 0 10px 50px rgba(212, 161, 33, 0.4);
-  }
-  50% {
-    box-shadow: 0 15px 70px rgba(212, 161, 33, 0.8);
-  }
-}
-
-.menu-card.destaque .menu-title {
-  color: #000;
-}
-
-.menu-card.destaque .menu-description {
-  color: #000;
-  opacity: 0.8;
-}
-
-.menu-card.destaque .badge {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: #c72c48;
-  color: #fff;
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.75em;
-  font-weight: bold;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-}
-
-.badge-amarelo {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: #d4a121;
-  color: #000;
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.75em;
-  font-weight: bold;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* FOOTER */
-.footer {
+.loading {
   text-align: center;
-  padding: 40px 20px;
-  margin-top: 60px;
-  border-top: 2px solid #d4a121;
-  background: #102810;
+  padding: 40px;
+  font-size: 1.2em;
+  opacity: 0.7;
 }
 
-.footer-text {
-  opacity: 0.8;
-  margin-bottom: 10px;
+.loading::after {
+  content: '...';
+  animation: dots 1.5s infinite;
 }
 
-.footer-icons {
-  font-size: 2em;
-  color: #d4a121;
-  margin: 20px 0;
-  letter-spacing: 15px;
+@keyframes dots {
+  0%, 20% { content: '.'; }
+  40% { content: '..'; }
+  60%, 100% { content: '...'; }
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-  .logo-title {
-    font-size: 2em;
-  }
-  
-  .section-title {
+  .header h1 {
     font-size: 1.8em;
   }
   
-  .menu-grid {
+  .stat-value {
+    font-size: 2em;
+  }
+  
+  .charts-grid {
     grid-template-columns: 1fr;
   }
   
-  .menu-icon {
-    font-size: 3em;
+  .filter-controls {
+    flex-direction: column;
   }
   
-  .visit-counter {
-    bottom: 10px;
-    right: 10px;
-    padding: 10px 15px;
-    font-size: 0.85em;
-  }
-  
-  .admin-btn {
-    bottom: 70px;
-    right: 10px;
-    padding: 10px 15px;
-    font-size: 0.85em;
+  .refresh-btn {
+    margin-left: 0;
   }
 }
 </style>
@@ -320,157 +317,327 @@ body {
 
 <body>
 
-<!-- LOGO SECTION -->
-<div class="logo-section">
-  <img src="logo pdq.png" class="logo-img" onerror="this.style.display='none'" alt="Logo Poker de Quinta">
-  <h1 class="logo-title">POKER DE QUINTA</h1>
-  <p class="logo-subtitle">Bem-vindo ao Site Oficial do Poker de Quinta.</p>
-</div>
-
-<!-- CONTAINER -->
 <div class="container">
   
-  <h2 class="section-title">MENU</h2>
+  <!-- HEADER -->
+  <div class="header">
+    <h1>🔐 ADMIN DASHBOARD</h1>
+    <p>Painel de Controle - Poker de Quinta</p>
+    <a href="index.html" class="back-btn">← Voltar ao Site</a>
+  </div>
   
-  <!-- MENU GRID -->
-  <div class="menu-grid">
+  <!-- STATS GRID -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <span class="stat-icon">👁️</span>
+      <div class="stat-value" id="totalVisits">...</div>
+      <div class="stat-label">Total de Visitas</div>
+    </div>
     
-    <!-- PRÓXIMA ETAPA - DESTAQUE -->
-    <a href="https://pokerdequinta.github.io/confirma/" class="menu-card destaque">
-      <span class="menu-icon">📅</span>
-      <h3 class="menu-title">PRÓXIMA ETAPA</h3>
-      <p class="menu-description" style="font-size: 1.8em; font-weight: bold; color: #000; margin: 20px 0;">29/01 às 20h</p>
-      <p class="menu-description">Confirme sua presença!</p>
-    </a>
+    <div class="stat-card">
+      <span class="stat-icon">📅</span>
+      <div class="stat-value" id="todayVisits">...</div>
+      <div class="stat-label">Visitas Hoje</div>
+    </div>
     
-    <!-- CONFIRMAÇÃO DE PRESENÇA -->
-    <a href="https://pokerdequinta.github.io/confirma/" class="menu-card">
-      <span class="badge badge-amarelo">🔥 NOVO</span>
-      <span class="menu-icon">✅</span>
-      <h3 class="menu-title">CONFIRMAÇÃO DE PRESENÇA</h3>
-      <p class="menu-description">Faça Aqui sua Inscrição para a próxima etapa!</p>
-    </a>
+    <div class="stat-card">
+      <span class="stat-icon">📊</span>
+      <div class="stat-value" id="weekVisits">...</div>
+      <div class="stat-label">Visitas esta Semana</div>
+    </div>
     
-    <!-- ENQUETES -->
-    <a href="https://pokerdequinta.github.io/enquete/" class="menu-card">
-      <span class="menu-icon">📊</span>
-      <h3 class="menu-title">ENQUETES</h3>
-      <p class="menu-description">Participe das votações da janta e das mãos da etapa</p>
-    </a>
+    <div class="stat-card">
+      <span class="stat-icon">📈</span>
+      <div class="stat-value" id="monthVisits">...</div>
+      <div class="stat-label">Visitas este Mês</div>
+    </div>
+  </div>
+  
+  <!-- CHARTS -->
+  <div class="charts-grid">
+    <div class="chart-card">
+      <h3>📊 Visitas por Dia (Últimos 7 dias)</h3>
+      <div id="dailyChart"></div>
+    </div>
     
-    <!-- CALENDÁRIO -->
-    <a href="https://pokerdequinta.github.io/calendario/" class="menu-card">
-      <span class="menu-icon">📆</span>
-      <h3 class="menu-title">CALENDÁRIO</h3>
-      <p class="menu-description">Veja aqui todas as datas do ano e adicione as datas ao seu calendário</p>
-    </a>
+    <div class="chart-card">
+      <h3>🕐 Visitas por Hora (Hoje)</h3>
+      <div id="hourlyChart"></div>
+    </div>
+  </div>
+  
+  <!-- VISITS TABLE -->
+  <div class="visits-section">
+    <h2>📋 Registro de Visitas</h2>
     
-    <!-- REGULAMENTO -->
-    <a href="https://pokerdequinta.github.io/regulamento/" class="menu-card">
-      <span class="menu-icon">📋</span>
-      <h3 class="menu-title">REGULAMENTO</h3>
-      <p class="menu-description">Confira todas as regras oficiais do Poker de Quinta</p>
-    </a>
+    <div class="filter-controls">
+      <button class="filter-btn active" onclick="filterVisits('all')">Todas</button>
+      <button class="filter-btn" onclick="filterVisits('today')">Hoje</button>
+      <button class="filter-btn" onclick="filterVisits('week')">Esta Semana</button>
+      <button class="filter-btn" onclick="filterVisits('month')">Este Mês</button>
+      <button class="refresh-btn" onclick="loadData()">🔄 Atualizar</button>
+    </div>
     
-    <!-- NOVIDADES 2026 -->
-    <a href="https://pokerdequinta.github.io/novidades/" class="menu-card">
-      <span class="menu-icon">🎉</span>
-      <h3 class="menu-title">NOVIDADES TEMPORADA 2026</h3>
-      <p class="menu-description">Veja o que mudou na nova temporada de 2026</p>
-    </a>
-    
-    <!-- DEALER PID -->
-    <a href="https://pokerdequinta.github.io/dealer/" class="menu-card">
-      <span class="menu-icon">🎲</span>
-      <h3 class="menu-title">DEALER - PID</h3>
-      <p class="menu-description">Área do Dealer</p>
-    </a>
-    
-    <!-- CADASTRO PIX E FOTO -->
-    <a href="https://forms.gle/yG2MAeQvSco46DK49" class="menu-card">
-      <span class="menu-icon">📸</span>
-      <h3 class="menu-title">CADASTRO DE PIX E FOTO</h3>
-      <p class="menu-description">Atualize seus dados para pagamentos e premiações</p>
-    </a>
-    
-    <!-- RANKING -->
-    <a href="#ranking" class="menu-card">
-      <span class="menu-icon">🏆</span>
-      <h3 class="menu-title">RANKING</h3>
-      <p class="menu-description">Acompanhe a classificação geral dos jogadores</p>
-    </a>
-    
-    <!-- LOJA -->
-    <a href="https://pokerdequinta.github.io/loja/" class="menu-card">
-      <span class="menu-icon">🛒</span>
-      <h3 class="menu-title">LOJA</h3>
-      <p class="menu-description">Adquira aqui sua camiseta oficial do Poker de Quinta</p>
-    </a>
-    
+    <div class="table-wrapper">
+      <table id="visitsTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Data/Hora</th>
+            <th>Página</th>
+            <th>Navegador</th>
+          </tr>
+        </thead>
+        <tbody id="visitsTableBody">
+          <tr><td colspan="4" class="loading">Carregando dados</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
   
 </div>
 
-<!-- FOOTER -->
-<div class="footer">
-  <p class="footer-text">© 2026 Poker de Quinta - Todos os direitos reservados</p>
-  <div class="footer-icons">♠ ♥ ♦ ♣</div>
-  <p class="footer-text" style="opacity: 0.6; font-size: 0.9em;">Desenvolvido pelo Presida.</p>
-</div>
-
-<!-- CONTADOR DE VISITAS -->
-<div class="visit-counter">
-  <span class="icon">👁️</span>
-  <span>Visitas:</span>
-  <span class="count" id="visitCount">...</span>
-</div>
-
-<!-- BOTÃO ADMIN -->
-<a href="admin.html" class="admin-btn">
-  <span>🔐</span>
-  <span>Admin</span>
-</a>
-
 <script>
-// Função para incrementar visitas
-async function trackVisit() {
+let allVisits = [];
+let currentFilter = 'all';
+
+// Carregar todos os dados
+async function loadData() {
   try {
-    // Buscar contador atual
-    let visits = 0;
+    // Buscar total de visitas
+    let totalVisits = 0;
     try {
       const result = await window.storage.get('poker-total-visits', true);
-      visits = result ? parseInt(result.value) : 0;
+      totalVisits = result ? parseInt(result.value) : 0;
     } catch (error) {
-      // Primeira visita
-      visits = 0;
+      totalVisits = 0;
     }
     
-    // Incrementar
-    visits++;
+    document.getElementById('totalVisits').textContent = totalVisits.toLocaleString('pt-BR');
     
-    // Salvar novo valor
-    await window.storage.set('poker-total-visits', visits.toString(), true);
+    // Buscar todas as visitas individuais
+    const visitKeys = await window.storage.list('visit:', true);
+    allVisits = [];
     
-    // Registrar visita individual com timestamp
-    const timestamp = new Date().toISOString();
-    const visitId = `visit:${Date.now()}`;
-    await window.storage.set(visitId, JSON.stringify({
-      timestamp: timestamp,
-      userAgent: navigator.userAgent,
-      page: 'home'
-    }), true);
+    if (visitKeys && visitKeys.keys) {
+      for (const key of visitKeys.keys) {
+        try {
+          const result = await window.storage.get(key, true);
+          if (result) {
+            const visit = JSON.parse(result.value);
+            visit.id = key;
+            allVisits.push(visit);
+          }
+        } catch (error) {
+          console.error('Erro ao carregar visita:', error);
+        }
+      }
+    }
     
-    // Atualizar display
-    document.getElementById('visitCount').textContent = visits.toLocaleString('pt-BR');
+    // Ordenar por data (mais recente primeiro)
+    allVisits.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+    
+    // Calcular estatísticas
+    calculateStats();
+    
+    // Renderizar gráficos
+    renderCharts();
+    
+    // Renderizar tabela
+    renderVisitsTable();
     
   } catch (error) {
-    console.error('Erro ao rastrear visita:', error);
-    document.getElementById('visitCount').textContent = '---';
+    console.error('Erro ao carregar dados:', error);
+    document.getElementById('visitsTableBody').innerHTML = 
+      '<tr><td colspan="4" class="no-data">Erro ao carregar dados</td></tr>';
   }
 }
 
-// Executar ao carregar a página
-trackVisit();
+// Calcular estatísticas
+function calculateStats() {
+  const now = new Date();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const weekAgo = new Date(today);
+  weekAgo.setDate(weekAgo.getDate() - 7);
+  const monthAgo = new Date(today);
+  monthAgo.setMonth(monthAgo.getMonth() - 1);
+  
+  const todayCount = allVisits.filter(v => new Date(v.timestamp) >= today).length;
+  const weekCount = allVisits.filter(v => new Date(v.timestamp) >= weekAgo).length;
+  const monthCount = allVisits.filter(v => new Date(v.timestamp) >= monthAgo).length;
+  
+  document.getElementById('todayVisits').textContent = todayCount.toLocaleString('pt-BR');
+  document.getElementById('weekVisits').textContent = weekCount.toLocaleString('pt-BR');
+  document.getElementById('monthVisits').textContent = monthCount.toLocaleString('pt-BR');
+}
+
+// Renderizar gráficos
+function renderCharts() {
+  renderDailyChart();
+  renderHourlyChart();
+}
+
+// Gráfico diário (últimos 7 dias)
+function renderDailyChart() {
+  const days = [];
+  const counts = [];
+  
+  for (let i = 6; i >= 0; i--) {
+    const date = new Date();
+    date.setDate(date.getDate() - i);
+    date.setHours(0, 0, 0, 0);
+    
+    const nextDate = new Date(date);
+    nextDate.setDate(nextDate.getDate() + 1);
+    
+    const count = allVisits.filter(v => {
+      const vDate = new Date(v.timestamp);
+      return vDate >= date && vDate < nextDate;
+    }).length;
+    
+    days.push(date.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' }));
+    counts.push(count);
+  }
+  
+  const maxCount = Math.max(...counts, 1);
+  
+  let html = '';
+  for (let i = 0; i < days.length; i++) {
+    const percentage = (counts[i] / maxCount) * 100;
+    html += `
+      <div class="chart-bar">
+        <div class="chart-label">
+          <span>${days[i]}</span>
+          <span><strong>${counts[i]}</strong> visitas</span>
+        </div>
+        <div class="bar" style="width: ${percentage}%"></div>
+      </div>
+    `;
+  }
+  
+  document.getElementById('dailyChart').innerHTML = html || '<div class="no-data">Sem dados</div>';
+}
+
+// Gráfico por hora (hoje)
+function renderHourlyChart() {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  
+  const hours = Array(24).fill(0);
+  
+  allVisits.forEach(v => {
+    const vDate = new Date(v.timestamp);
+    if (vDate >= today) {
+      const hour = vDate.getHours();
+      hours[hour]++;
+    }
+  });
+  
+  const maxCount = Math.max(...hours, 1);
+  
+  let html = '';
+  const currentHour = new Date().getHours();
+  
+  for (let i = 0; i <= currentHour; i++) {
+    const percentage = (hours[i] / maxCount) * 100;
+    html += `
+      <div class="chart-bar">
+        <div class="chart-label">
+          <span>${i}h - ${i+1}h</span>
+          <span><strong>${hours[i]}</strong> visitas</span>
+        </div>
+        <div class="bar" style="width: ${percentage}%"></div>
+      </div>
+    `;
+  }
+  
+  document.getElementById('hourlyChart').innerHTML = html || '<div class="no-data">Sem dados hoje</div>';
+}
+
+// Renderizar tabela de visitas
+function renderVisitsTable() {
+  let filteredVisits = allVisits;
+  
+  if (currentFilter === 'today') {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    filteredVisits = allVisits.filter(v => new Date(v.timestamp) >= today);
+  } else if (currentFilter === 'week') {
+    const weekAgo = new Date();
+    weekAgo.setDate(weekAgo.getDate() - 7);
+    filteredVisits = allVisits.filter(v => new Date(v.timestamp) >= weekAgo);
+  } else if (currentFilter === 'month') {
+    const monthAgo = new Date();
+    monthAgo.setMonth(monthAgo.getMonth() - 1);
+    filteredVisits = allVisits.filter(v => new Date(v.timestamp) >= monthAgo);
+  }
+  
+  if (filteredVisits.length === 0) {
+    document.getElementById('visitsTableBody').innerHTML = 
+      '<tr><td colspan="4" class="no-data">Nenhuma visita registrada</td></tr>';
+    return;
+  }
+  
+  // Limitar a 100 registros mais recentes
+  const displayVisits = filteredVisits.slice(0, 100);
+  
+  let html = '';
+  displayVisits.forEach((visit, index) => {
+    const date = new Date(visit.timestamp);
+    const formattedDate = date.toLocaleString('pt-BR', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+    
+    const browser = getBrowserName(visit.userAgent);
+    
+    html += `
+      <tr>
+        <td>${index + 1}</td>
+        <td>${formattedDate}</td>
+        <td>${visit.page || 'home'}</td>
+        <td>${browser}</td>
+      </tr>
+    `;
+  });
+  
+  document.getElementById('visitsTableBody').innerHTML = html;
+}
+
+// Identificar navegador
+function getBrowserName(userAgent) {
+  if (!userAgent) return 'Desconhecido';
+  
+  if (userAgent.includes('Chrome')) return '🌐 Chrome';
+  if (userAgent.includes('Firefox')) return '🦊 Firefox';
+  if (userAgent.includes('Safari')) return '🧭 Safari';
+  if (userAgent.includes('Edge')) return '📘 Edge';
+  if (userAgent.includes('Opera')) return '🎭 Opera';
+  
+  return '🌐 Outro';
+}
+
+// Filtrar visitas
+function filterVisits(filter) {
+  currentFilter = filter;
+  
+  // Atualizar botões
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  event.target.classList.add('active');
+  
+  renderVisitsTable();
+}
+
+// Carregar dados ao iniciar
+loadData();
+
+// Atualizar automaticamente a cada 30 segundos
+setInterval(loadData, 30000);
 </script>
 
 </body>
