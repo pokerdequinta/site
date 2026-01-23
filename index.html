@@ -262,6 +262,94 @@ body {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* ESTILOS PARA O REI DA MESA */
+.king-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0 20px;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.king-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #d4a121;
+  object-fit: cover;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.crown-icon {
+  font-size: 2.5em;
+  color: #ffd700;
+  filter: drop-shadow(0 3px 5px rgba(255, 215, 0, 0.5));
+  animation: crownGlow 2s infinite;
+}
+
+@keyframes crownGlow {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.king-title {
+  font-family: 'Anton';
+  font-size: 1.2em;
+  color: #000;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.king-name {
+  color: #c72c48;
+  font-weight: bold;
+}
+
+/* ESTILOS PARA INFORMAÇÕES DA ETAPA */
+.event-info {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 8px 0;
+  color: #000;
+  font-size: 0.95em;
+}
+
+.info-item .icon {
+  color: #c72c48;
+  font-size: 1.2em;
+  min-width: 25px;
+}
+
+.info-date {
+  color: #102810;
+  font-weight: bold;
+}
+
+.info-time {
+  color: #d4a121;
+  font-weight: bold;
+}
+
+.info-value {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.info-registration {
+  color: #2980b9;
+  font-weight: bold;
+}
+
 /* FOOTER */
 .footer {
   text-align: center;
@@ -301,6 +389,19 @@ body {
     font-size: 3em;
   }
   
+  .king-section {
+    gap: 10px;
+  }
+  
+  .king-photo {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .crown-icon {
+    font-size: 2em;
+  }
+  
   .visit-counter {
     bottom: 10px;
     right: 10px;
@@ -335,12 +436,42 @@ body {
   <!-- MENU GRID -->
   <div class="menu-grid">
     
-    <!-- PRÓXIMA ETAPA - DESTAQUE -->
+    <!-- PRÓXIMA ETAPA - DESTAQUE COM REI DA MESA -->
     <a href="https://pokerdequinta.github.io/confirma/" class="menu-card destaque">
       <span class="menu-icon">📅</span>
       <h3 class="menu-title">PRÓXIMA ETAPA</h3>
-      <p class="menu-description" style="font-size: 1.8em; font-weight: bold; color: #000; margin: 20px 0;">29/01 às 20h</p>
-      <p class="menu-description">Confirme sua presença!</p>
+      
+      <!-- SEÇÃO DO REI DA MESA -->
+      <div class="king-section">
+        <img src="https://github.com/pokerdequinta/fotos/blob/main/Gaspar.png?raw=true" 
+             alt="Rei da Mesa - Gaspar" 
+             class="king-photo"
+             onerror="this.src='https://via.placeholder.com/80/FFD700/000?text=G'">
+        <span class="crown-icon">👑</span>
+      </div>
+      <p class="king-title">REI DA MESA - 1ª ETAPA<br><span class="king-name">GASPAR</span></p>
+      
+      <!-- INFORMAÇÕES DA PRÓXIMA ETAPA -->
+      <div class="event-info">
+        <div class="info-item">
+          <span class="icon">📅</span>
+          <span>Próxima etapa: <span class="info-date">29/01</span></span>
+        </div>
+        <div class="info-item">
+          <span class="icon">⏰</span>
+          <span>Horário: <span class="info-time">20 horas</span></span>
+        </div>
+        <div class="info-item">
+          <span class="icon">💰</span>
+          <span>Valor: <span class="info-value">R$ 100</span></span>
+        </div>
+        <div class="info-item">
+          <span class="icon">🎫</span>
+          <span>Inscrições abrem: <span class="info-registration">26/01 às 7h</span></span>
+        </div>
+      </div>
+      
+      <p class="menu-description" style="margin-top: 15px; font-weight: bold; color: #000;">Confirme sua presença!</p>
     </a>
     
     <!-- CONFIRMAÇÃO DE PRESENÇA -->
@@ -478,5 +609,3 @@ trackVisit();
 
 </body>
 </html>
-
-
