@@ -267,167 +267,100 @@ body {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* BANNER 3D FBI STYLE - NOVO DESIGN PROFISSIONAL */
-.inscricoes-banner {
+/* BADGE DE INSCRIÇÕES ABERTAS PISCANDO */
+.inscricoes-badge {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  background: repeating-linear-gradient(
-    45deg,
-    #ffd700,
-    #ffd700 25px,
-    #000 25px,
-    #000 50px
-  );
-  transform: perspective(500px) rotateX(20deg);
-  transform-origin: bottom;
-  z-index: 5;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(16, 40, 16, 0.95);
+  padding: 12px 25px;
+  border-radius: 25px;
+  box-shadow: 
+    0 5px 15px rgba(0, 0, 0, 0.5),
+    0 0 0 2px #d4a121;
   display: none;
-  overflow: hidden;
-  box-shadow: 
-    0 -10px 30px rgba(0, 0, 0, 0.7),
-    0 10px 20px rgba(0, 0, 0, 0.5) inset;
-  border-top: 3px solid #000;
-  border-bottom: 3px solid #ffd700;
+  z-index: 5;
+  min-width: 250px;
+  text-align: center;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
-/* Efeito 3D de profundidade */
-.inscricoes-banner::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 20px;
-  background: linear-gradient(to bottom, 
-    rgba(255, 215, 0, 0.8) 0%,
-    rgba(255, 215, 0, 0.4) 50%,
-    rgba(255, 215, 0, 0.1) 100%);
-  filter: blur(5px);
-  z-index: 1;
-}
-
-/* Sombra interna para efeito 3D */
-.inscricoes-banner::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 15px;
-  background: linear-gradient(to top, 
-    rgba(0, 0, 0, 0.8) 0%,
-    rgba(0, 0, 0, 0.3) 50%,
-    transparent 100%);
-  z-index: 2;
-}
-
-/* Efeito de luz nas bordas */
-.inscricoes-banner .banner-edges {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border: 2px solid #ffed4e;
-  border-top-color: rgba(255, 237, 78, 0.8);
-  border-bottom-color: rgba(0, 0, 0, 0.8);
-  box-shadow: 
-    0 0 20px rgba(255, 237, 78, 0.3) inset,
-    0 0 30px rgba(255, 237, 78, 0.2);
-  z-index: 3;
-}
-
-/* Conteúdo do banner */
-.inscricoes-banner .banner-content {
-  position: relative;
-  z-index: 4;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Texto do badge piscando suavemente */
+.inscricoes-badge .badge-text {
   font-family: 'Anton', sans-serif;
-  font-size: 1.8em;
-  letter-spacing: 4px;
+  font-size: 1.5em;
+  color: #d4a121;
+  letter-spacing: 2px;
   text-transform: uppercase;
   text-shadow: 
-    3px 3px 0px #000,
-    5px 5px 5px rgba(0, 0, 0, 0.7);
-  color: #ffed4e;
-  background: linear-gradient(
-    to right,
-    transparent 0%,
-    rgba(255, 237, 78, 0.1) 20%,
-    rgba(255, 237, 78, 0.2) 50%,
-    rgba(255, 237, 78, 0.1) 80%,
-    transparent 100%
-  );
-  animation: bannerScan 3s linear infinite;
+    2px 2px 0px #000,
+    3px 3px 5px rgba(0, 0, 0, 0.5);
+  animation: textPulse 2s ease-in-out infinite;
 }
 
-/* Efeito de scanner FBI */
-@keyframes bannerScan {
-  0% {
-    background: linear-gradient(
-      to right,
-      transparent 0%,
-      rgba(255, 237, 78, 0.1) 20%,
-      rgba(255, 237, 78, 0.2) 50%,
-      rgba(255, 237, 78, 0.1) 80%,
-      transparent 100%
-    );
-  }
-  50% {
-    background: linear-gradient(
-      to right,
-      rgba(255, 237, 78, 0.3) 0%,
-      rgba(255, 237, 78, 0.4) 20%,
-      rgba(255, 237, 78, 0.5) 50%,
-      rgba(255, 237, 78, 0.4) 80%,
-      rgba(255, 237, 78, 0.3) 100%
-    );
-  }
-  100% {
-    background: linear-gradient(
-      to right,
-      transparent 0%,
-      rgba(255, 237, 78, 0.1) 20%,
-      rgba(255, 237, 78, 0.2) 50%,
-      rgba(255, 237, 78, 0.1) 80%,
-      transparent 100%
-    );
-  }
-}
-
-/* Efeito de brilho pulsante */
-@keyframes bannerPulse {
+/* Animação de piscar suave */
+@keyframes textPulse {
   0%, 100% {
-    box-shadow: 
-      0 -10px 30px rgba(0, 0, 0, 0.7),
-      0 10px 20px rgba(0, 0, 0, 0.5) inset,
-      0 0 30px rgba(255, 237, 78, 0.3);
+    opacity: 1;
+    text-shadow: 
+      2px 2px 0px #000,
+      3px 3px 5px rgba(0, 0, 0, 0.5),
+      0 0 10px rgba(212, 161, 33, 0.3);
   }
   50% {
-    box-shadow: 
-      0 -15px 40px rgba(0, 0, 0, 0.8),
-      0 15px 25px rgba(0, 0, 0, 0.6) inset,
-      0 0 50px rgba(255, 237, 78, 0.5);
+    opacity: 0.8;
+    text-shadow: 
+      2px 2px 0px #000,
+      3px 3px 5px rgba(0, 0, 0, 0.5),
+      0 0 20px rgba(212, 161, 33, 0.6);
   }
 }
 
-/* Animação de entrada 3D */
-@keyframes banner3dEntrance {
+/* Animação de brilho no badge */
+.inscricoes-badge::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(212, 161, 33, 0.2),
+    transparent
+  );
+  border-radius: 27px;
+  z-index: -1;
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Animação de entrada do badge */
+@keyframes badgeAppear {
   from {
-    transform: perspective(500px) rotateX(60deg) translateY(100%);
+    transform: translateX(-50%) translateY(20px);
     opacity: 0;
   }
   to {
-    transform: perspective(500px) rotateX(20deg) translateY(0);
+    transform: translateX(-50%) translateY(0);
     opacity: 1;
   }
+}
+
+/* Ajuste do card para o badge */
+.menu-card.has-badge {
+  padding-bottom: 65px;
 }
 
 /* ESTILOS PARA O REI DA MESA */
@@ -625,27 +558,35 @@ body {
     font-size: 0.85em;
   }
   
-  .inscricoes-banner {
-    height: 50px;
+  .inscricoes-badge {
+    min-width: 220px;
+    padding: 10px 20px;
+    bottom: 15px;
   }
   
-  .inscricoes-banner .banner-content {
-    font-size: 1.4em;
-    letter-spacing: 3px;
+  .inscricoes-badge .badge-text {
+    font-size: 1.3em;
+  }
+  
+  .menu-card.has-badge {
+    padding-bottom: 60px;
   }
 }
 
 @media (max-width: 480px) {
-  .inscricoes-banner {
-    height: 45px;
+  .inscricoes-badge {
+    min-width: 200px;
+    padding: 8px 15px;
+    bottom: 12px;
   }
   
-  .inscricoes-banner .banner-content {
-    font-size: 1.2em;
-    letter-spacing: 2px;
-    text-shadow: 
-      2px 2px 0px #000,
-      3px 3px 3px rgba(0, 0, 0, 0.7);
+  .inscricoes-badge .badge-text {
+    font-size: 1.1em;
+    letter-spacing: 1.5px;
+  }
+  
+  .menu-card.has-badge {
+    padding-bottom: 55px;
   }
 }
 </style>
@@ -725,10 +666,9 @@ body {
     
     <!-- CONFIRMAÇÃO DE PRESENÇA -->
     <a href="https://pokerdequinta.github.io/confirma/" class="menu-card" id="confirmacao-card">
-      <!-- BANNER 3D FBI STYLE -->
-      <div class="inscricoes-banner" id="inscricoes-banner">
-        <div class="banner-edges"></div>
-        <div class="banner-content">INSCRIÇÕES ABERTAS</div>
+      <!-- BADGE DE INSCRIÇÕES ABERTAS PISCANDO -->
+      <div class="inscricoes-badge" id="inscricoes-badge">
+        <div class="badge-text">INSCRIÇÕES ABERTAS</div>
       </div>
       
       <span class="badge badge-amarelo">🔥 NOVO</span>
@@ -858,101 +798,62 @@ async function trackVisit() {
   }
 }
 
-// Função para verificar se deve mostrar o banner
-function verificarBannerInscricoes() {
-  const banner = document.getElementById('inscricoes-banner');
-  if (!banner) return;
+// Função para verificar se deve mostrar o badge
+function verificarBadgeInscricoes() {
+  const badge = document.getElementById('inscricoes-badge');
+  const card = document.getElementById('confirmacao-card');
+  
+  if (!badge || !card) return;
   
   const agora = new Date();
-  const dataAlvo = new Date('2026-01-24T19:00:00'); // 26 de janeiro às 7h
+  const dataAlvo = new Date('2026-01-24T19:40:00'); // 26 de janeiro às 7h
   
-  // Se já passou do horário alvo, mostrar o banner
+  // Se já passou do horário alvo, mostrar o badge
   if (agora >= dataAlvo) {
-    banner.style.display = 'block';
+    badge.style.display = 'block';
+    card.classList.add('has-badge');
     
-    // Ajustar padding do card para acomodar o banner 3D
-    const card = document.getElementById('confirmacao-card');
-    if (card) {
-      card.style.paddingBottom = '80px'; // Mais espaço para o efeito 3D
-    }
+    // Adicionar animação de entrada
+    badge.style.animation = 'badgeAppear 0.5s ease-out forwards';
     
-    // Adicionar animação 3D de entrada
-    banner.style.animation = 'banner3dEntrance 0.8s ease-out, bannerPulse 3s infinite 0.8s';
-    
-    // Criar keyframes para as animações
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes banner3dEntrance {
-        from {
-          transform: perspective(500px) rotateX(60deg) translateY(100%);
-          opacity: 0;
-        }
-        to {
-          transform: perspective(500px) rotateX(20deg) translateY(0);
-          opacity: 1;
-        }
-      }
-      @keyframes bannerPulse {
-        0%, 100% {
-          box-shadow: 
-            0 -10px 30px rgba(0, 0, 0, 0.7),
-            0 10px 20px rgba(0, 0, 0, 0.5) inset,
-            0 0 30px rgba(255, 237, 78, 0.3);
-        }
-        50% {
-          box-shadow: 
-            0 -15px 40px rgba(0, 0, 0, 0.8),
-            0 15px 25px rgba(0, 0, 0, 0.6) inset,
-            0 0 50px rgba(255, 237, 78, 0.5);
-        }
-      }
-    `;
-    document.head.appendChild(style);
   } else {
-    banner.style.display = 'none';
-    
-    // Remover padding extra quando o banner não estiver visível
-    const card = document.getElementById('confirmacao-card');
-    if (card) {
-      card.style.paddingBottom = '35px'; // Voltar ao padding original
-    }
+    badge.style.display = 'none';
+    card.classList.remove('has-badge');
+    badge.style.animation = 'none';
   }
 }
 
 // Executar ao carregar a página
 trackVisit();
-verificarBannerInscricoes();
+verificarBadgeInscricoes();
 
 // Verificar a cada minuto (caso a página fique aberta)
-setInterval(verificarBannerInscricoes, 60000);
+setInterval(verificarBadgeInscricoes, 60000);
 
-// Adicionar evento para reaplicar animação ao banner quando ele for exibido
+// Adicionar evento para reaplicar animação ao badge quando ele for exibido
 const observer = new MutationObserver(function(mutations) {
   mutations.forEach(function(mutation) {
     if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
-      const banner = document.getElementById('inscricoes-banner');
+      const badge = document.getElementById('inscricoes-badge');
       const card = document.getElementById('confirmacao-card');
       
-      if (banner && banner.style.display === 'block') {
-        banner.style.animation = 'banner3dEntrance 0.8s ease-out, bannerPulse 3s infinite 0.8s';
-        if (card) {
-          card.style.paddingBottom = '80px';
-        }
-      } else if (banner && banner.style.display === 'none' && card) {
-        card.style.paddingBottom = '35px';
+      if (badge && badge.style.display === 'block') {
+        badge.style.animation = 'badgeAppear 0.5s ease-out forwards';
+        card.classList.add('has-badge');
+      } else if (badge && badge.style.display === 'none' && card) {
+        card.classList.remove('has-badge');
+        badge.style.animation = 'none';
       }
     }
   });
 });
 
-// Observar mudanças no estilo do banner
-const bannerElement = document.getElementById('inscricoes-banner');
-if (bannerElement) {
-  observer.observe(bannerElement, { attributes: true });
+// Observar mudanças no estilo do badge
+const badgeElement = document.getElementById('inscricoes-badge');
+if (badgeElement) {
+  observer.observe(badgeElement, { attributes: true });
 }
 </script>
 
 </body>
 </html>
-
-
