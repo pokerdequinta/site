@@ -267,6 +267,169 @@ body {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* BANNER 3D FBI STYLE - NOVO DESIGN PROFISSIONAL */
+.inscricoes-banner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: repeating-linear-gradient(
+    45deg,
+    #ffd700,
+    #ffd700 25px,
+    #000 25px,
+    #000 50px
+  );
+  transform: perspective(500px) rotateX(20deg);
+  transform-origin: bottom;
+  z-index: 5;
+  display: none;
+  overflow: hidden;
+  box-shadow: 
+    0 -10px 30px rgba(0, 0, 0, 0.7),
+    0 10px 20px rgba(0, 0, 0, 0.5) inset;
+  border-top: 3px solid #000;
+  border-bottom: 3px solid #ffd700;
+}
+
+/* Efeito 3D de profundidade */
+.inscricoes-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: linear-gradient(to bottom, 
+    rgba(255, 215, 0, 0.8) 0%,
+    rgba(255, 215, 0, 0.4) 50%,
+    rgba(255, 215, 0, 0.1) 100%);
+  filter: blur(5px);
+  z-index: 1;
+}
+
+/* Sombra interna para efeito 3D */
+.inscricoes-banner::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 15px;
+  background: linear-gradient(to top, 
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    transparent 100%);
+  z-index: 2;
+}
+
+/* Efeito de luz nas bordas */
+.inscricoes-banner .banner-edges {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid #ffed4e;
+  border-top-color: rgba(255, 237, 78, 0.8);
+  border-bottom-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 
+    0 0 20px rgba(255, 237, 78, 0.3) inset,
+    0 0 30px rgba(255, 237, 78, 0.2);
+  z-index: 3;
+}
+
+/* Conteúdo do banner */
+.inscricoes-banner .banner-content {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Anton', sans-serif;
+  font-size: 1.8em;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-shadow: 
+    3px 3px 0px #000,
+    5px 5px 5px rgba(0, 0, 0, 0.7);
+  color: #ffed4e;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 237, 78, 0.1) 20%,
+    rgba(255, 237, 78, 0.2) 50%,
+    rgba(255, 237, 78, 0.1) 80%,
+    transparent 100%
+  );
+  animation: bannerScan 3s linear infinite;
+}
+
+/* Efeito de scanner FBI */
+@keyframes bannerScan {
+  0% {
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(255, 237, 78, 0.1) 20%,
+      rgba(255, 237, 78, 0.2) 50%,
+      rgba(255, 237, 78, 0.1) 80%,
+      transparent 100%
+    );
+  }
+  50% {
+    background: linear-gradient(
+      to right,
+      rgba(255, 237, 78, 0.3) 0%,
+      rgba(255, 237, 78, 0.4) 20%,
+      rgba(255, 237, 78, 0.5) 50%,
+      rgba(255, 237, 78, 0.4) 80%,
+      rgba(255, 237, 78, 0.3) 100%
+    );
+  }
+  100% {
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(255, 237, 78, 0.1) 20%,
+      rgba(255, 237, 78, 0.2) 50%,
+      rgba(255, 237, 78, 0.1) 80%,
+      transparent 100%
+    );
+  }
+}
+
+/* Efeito de brilho pulsante */
+@keyframes bannerPulse {
+  0%, 100% {
+    box-shadow: 
+      0 -10px 30px rgba(0, 0, 0, 0.7),
+      0 10px 20px rgba(0, 0, 0, 0.5) inset,
+      0 0 30px rgba(255, 237, 78, 0.3);
+  }
+  50% {
+    box-shadow: 
+      0 -15px 40px rgba(0, 0, 0, 0.8),
+      0 15px 25px rgba(0, 0, 0, 0.6) inset,
+      0 0 50px rgba(255, 237, 78, 0.5);
+  }
+}
+
+/* Animação de entrada 3D */
+@keyframes banner3dEntrance {
+  from {
+    transform: perspective(500px) rotateX(60deg) translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: perspective(500px) rotateX(20deg) translateY(0);
+    opacity: 1;
+  }
+}
+
 /* ESTILOS PARA O REI DA MESA */
 .king-section {
   display: flex;
@@ -461,6 +624,29 @@ body {
     padding: 10px 15px;
     font-size: 0.85em;
   }
+  
+  .inscricoes-banner {
+    height: 50px;
+  }
+  
+  .inscricoes-banner .banner-content {
+    font-size: 1.4em;
+    letter-spacing: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inscricoes-banner {
+    height: 45px;
+  }
+  
+  .inscricoes-banner .banner-content {
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    text-shadow: 
+      2px 2px 0px #000,
+      3px 3px 3px rgba(0, 0, 0, 0.7);
+  }
 }
 </style>
 </head>
@@ -538,7 +724,13 @@ body {
     </a>
     
     <!-- CONFIRMAÇÃO DE PRESENÇA -->
-    <a href="https://pokerdequinta.github.io/confirma/" class="menu-card">
+    <a href="https://pokerdequinta.github.io/confirma/" class="menu-card" id="confirmacao-card">
+      <!-- BANNER 3D FBI STYLE -->
+      <div class="inscricoes-banner" id="inscricoes-banner">
+        <div class="banner-edges"></div>
+        <div class="banner-content">INSCRIÇÕES ABERTAS</div>
+      </div>
+      
       <span class="badge badge-amarelo">🔥 NOVO</span>
       <span class="menu-icon">✅</span>
       <h3 class="menu-title">CONFIRMAÇÃO DE PRESENÇA</h3>
@@ -666,8 +858,98 @@ async function trackVisit() {
   }
 }
 
+// Função para verificar se deve mostrar o banner
+function verificarBannerInscricoes() {
+  const banner = document.getElementById('inscricoes-banner');
+  if (!banner) return;
+  
+  const agora = new Date();
+  const dataAlvo = new Date('2025-01-26T07:00:00'); // 26 de janeiro às 7h
+  
+  // Se já passou do horário alvo, mostrar o banner
+  if (agora >= dataAlvo) {
+    banner.style.display = 'block';
+    
+    // Ajustar padding do card para acomodar o banner 3D
+    const card = document.getElementById('confirmacao-card');
+    if (card) {
+      card.style.paddingBottom = '80px'; // Mais espaço para o efeito 3D
+    }
+    
+    // Adicionar animação 3D de entrada
+    banner.style.animation = 'banner3dEntrance 0.8s ease-out, bannerPulse 3s infinite 0.8s';
+    
+    // Criar keyframes para as animações
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes banner3dEntrance {
+        from {
+          transform: perspective(500px) rotateX(60deg) translateY(100%);
+          opacity: 0;
+        }
+        to {
+          transform: perspective(500px) rotateX(20deg) translateY(0);
+          opacity: 1;
+        }
+      }
+      @keyframes bannerPulse {
+        0%, 100% {
+          box-shadow: 
+            0 -10px 30px rgba(0, 0, 0, 0.7),
+            0 10px 20px rgba(0, 0, 0, 0.5) inset,
+            0 0 30px rgba(255, 237, 78, 0.3);
+        }
+        50% {
+          box-shadow: 
+            0 -15px 40px rgba(0, 0, 0, 0.8),
+            0 15px 25px rgba(0, 0, 0, 0.6) inset,
+            0 0 50px rgba(255, 237, 78, 0.5);
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  } else {
+    banner.style.display = 'none';
+    
+    // Remover padding extra quando o banner não estiver visível
+    const card = document.getElementById('confirmacao-card');
+    if (card) {
+      card.style.paddingBottom = '35px'; // Voltar ao padding original
+    }
+  }
+}
+
 // Executar ao carregar a página
 trackVisit();
+verificarBannerInscricoes();
+
+// Verificar a cada minuto (caso a página fique aberta)
+setInterval(verificarBannerInscricoes, 60000);
+
+// Adicionar evento para reaplicar animação ao banner quando ele for exibido
+const observer = new MutationObserver(function(mutations) {
+  mutations.forEach(function(mutation) {
+    if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+      const banner = document.getElementById('inscricoes-banner');
+      const card = document.getElementById('confirmacao-card');
+      
+      if (banner && banner.style.display === 'block') {
+        banner.style.animation = 'banner3dEntrance 0.8s ease-out, bannerPulse 3s infinite 0.8s';
+        if (card) {
+          card.style.paddingBottom = '80px';
+        }
+      } else if (banner && banner.style.display === 'none' && card) {
+        card.style.paddingBottom = '35px';
+      }
+    }
+  });
+});
+
+// Observar mudanças no estilo do banner
+const bannerElement = document.getElementById('inscricoes-banner');
+if (bannerElement) {
+  observer.observe(bannerElement, { attributes: true });
+}
 </script>
 
 </body>
