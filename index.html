@@ -19,6 +19,40 @@ body {
   background: #0d1b0d;
   color: #fff;
   min-height: 100vh;
+  padding-bottom: 80px; /* Espaço para o bottom menu */
+}
+
+/* Aumentar os ícones em 20% */
+.bottom-menu-icon {
+  font-size: 2.2em; /* Aumentado de 1.8em para 2.2em (22% maior) */
+  margin-bottom: 5px;
+}
+
+.hamburger-icon {
+  font-size: 1.8em; /* Aumentado de 1.5em para 1.8em (20% maior) */
+  color: #d4a121;
+  min-width: 30px;
+  text-align: center;
+}
+
+.info-item .icon {
+  font-size: 2.2em; /* Aumentado de 1.8em para 2.2em (22% maior) */
+  min-width: 40px;
+  text-align: center;
+  color: #102810;
+}
+
+.highlight-icon {
+  font-size: 2.4em; /* Aumentado de 2.0em para 2.4em (20% maior) */
+  margin-bottom: 5px;
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
+}
+
+.footer-icons {
+  font-size: 2.4em; /* Aumentado de 2.0em para 2.4em (20% maior) */
+  color: #d4a121;
+  margin: 20px 0;
+  letter-spacing: 15px;
 }
 
 /* LOGO SECTION */
@@ -61,66 +95,14 @@ body {
   z-index: 1;
 }
 
-/* CONTADOR DE VISITAS - OCULTO */
-.visit-counter {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: linear-gradient(135deg, #d4a121 0%, #f4c141 100%);
-  color: #000;
-  padding: 15px 25px;
-  border-radius: 50px;
-  font-weight: bold;
-  box-shadow: 0 5px 20px rgba(212, 161, 33, 0.5);
-  z-index: 1000;
-  display: none;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.95em;
-}
-
-.visit-counter .icon {
-  font-size: 1.3em;
-}
-
-.visit-counter .count {
-  font-family: 'Anton';
-  font-size: 1.2em;
-  letter-spacing: 1px;
-}
-
-/* BOTÃO ADMIN - OCULTO */
-.admin-btn {
-  position: fixed;
-  bottom: 90px;
-  right: 20px;
-  background: #c72c48;
-  color: #fff;
-  padding: 12px 20px;
-  border-radius: 50px;
-  font-weight: bold;
-  box-shadow: 0 5px 20px rgba(199, 44, 72, 0.5);
-  z-index: 1000;
-  cursor: pointer;
-  text-decoration: none;
-  display: none;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.3s;
-  font-size: 0.9em;
-}
-
-.admin-btn:hover {
-  background: #e63950;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(199, 44, 72, 0.7);
-}
-
-/* CONTAINER */
-.container {
-  max-width: 1200px;
+/* CONTAINER PRINCIPAL */
+.main-container {
+  max-width: 1300px;
   margin: 0 auto;
   padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 /* SECTION TITLE */
@@ -130,92 +112,19 @@ body {
   color: #d4a121;
   text-align: center;
   letter-spacing: 3px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   text-shadow: 0 0 20px rgba(212, 161, 33, 0.5);
 }
 
-/* MENU GRID */
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  margin-bottom: 40px;
-}
-
-/* MENU CARD */
-.menu-card {
-  background: linear-gradient(135deg, #102810 0%, #1a3d1a 100%);
-  border: 2px solid #d4a121;
-  border-radius: 15px;
-  padding: 35px 25px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.3s;
+/* CARD DA PRÓXIMA ETAPA EM AMARELO */
+.next-stage-card {
+  background: linear-gradient(135deg, #d4a121 0%, #f4c141 100%);
+  border: 2px solid #fff;
+  border-radius: 20px;
+  padding: 35px 30px;
+  animation: pulseGlow 2s infinite;
   position: relative;
   overflow: hidden;
-  text-decoration: none;
-  display: block;
-}
-
-.menu-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(212, 161, 33, 0.2), transparent);
-  transition: left 0.5s;
-}
-
-.menu-card:hover::before {
-  left: 100%;
-}
-
-.menu-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 60px rgba(212, 161, 33, 0.6);
-  border-color: #f4c141;
-}
-
-.menu-icon {
-  font-size: 4em;
-  margin-bottom: 20px;
-  display: block;
-  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
-  animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.menu-card:hover .menu-icon {
-  animation: none;
-  transform: scale(1.1);
-}
-
-.menu-title {
-  font-family: 'Anton';
-  font-size: 1.6em;
-  color: #d4a121;
-  letter-spacing: 2px;
-  margin-bottom: 12px;
-}
-
-.menu-description {
-  font-size: 1em;
-  line-height: 1.6;
-  opacity: 0.9;
-  color: #fff;
-}
-
-/* DESTAQUE ESPECIAL */
-.menu-card.destaque {
-  background: linear-gradient(135deg, #d4a121 0%, #f4c141 100%);
-  border-color: #fff;
-  animation: pulseGlow 2s infinite;
 }
 
 @keyframes pulseGlow {
@@ -227,259 +136,278 @@ body {
   }
 }
 
-.menu-card.destaque .menu-title {
-  color: #000;
-}
-
-.menu-card.destaque .menu-description {
-  color: #000;
-  opacity: 0.8;
-}
-
-/* BADGE DA ETAPA */
-.badge-etapa {
+/* BADGE NO TOPO ESQUERDO */
+.stage-top-badge {
   position: absolute;
   top: 15px;
-  right: 15px;
+  left: 15px;
   background: linear-gradient(135deg, #102810 0%, #1a3d1a 100%);
   color: #d4a121;
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-size: 0.85em;
-  font-weight: bold;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
-  border: 1px solid #d4a121;
-  font-family: 'Anton';
-  letter-spacing: 1px;
-  z-index: 2;
-}
-
-.badge-amarelo {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: #d4a121;
-  color: #000;
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.75em;
-  font-weight: bold;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* BADGE DE INSCRIÇÕES ABERTAS PISCANDO */
-.inscricoes-badge {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(16, 40, 16, 0.95);
-  padding: 12px 25px;
-  border-radius: 25px;
-  box-shadow: 
-    0 5px 15px rgba(0, 0, 0, 0.5),
-    0 0 0 2px #d4a121;
-  display: none;
-  z-index: 5;
-  min-width: 250px;
-  text-align: center;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-}
-
-/* Texto do badge piscando suavemente */
-.inscricoes-badge .badge-text {
-  font-family: 'Anton', sans-serif;
-  font-size: 1.5em;
-  color: #d4a121;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-shadow: 
-    2px 2px 0px #000,
-    3px 3px 5px rgba(0, 0, 0, 0.5);
-  animation: textPulse 2s ease-in-out infinite;
-}
-
-/* Animação de piscar suave */
-@keyframes textPulse {
-  0%, 100% {
-    opacity: 1;
-    text-shadow: 
-      2px 2px 0px #000,
-      3px 3px 5px rgba(0, 0, 0, 0.5),
-      0 0 10px rgba(212, 161, 33, 0.3);
-  }
-  50% {
-    opacity: 0.8;
-    text-shadow: 
-      2px 2px 0px #000,
-      3px 3px 5px rgba(0, 0, 0, 0.5),
-      0 0 20px rgba(212, 161, 33, 0.6);
-  }
-}
-
-/* Animação de brilho no badge */
-.inscricoes-badge::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(
-    45deg,
-    transparent,
-    rgba(212, 161, 33, 0.2),
-    transparent
-  );
-  border-radius: 27px;
-  z-index: -1;
-  animation: borderGlow 3s ease-in-out infinite;
-}
-
-@keyframes borderGlow {
-  0%, 100% {
-    opacity: 0.3;
-  }
-  50% {
-    opacity: 0.7;
-  }
-}
-
-/* Animação de entrada do badge */
-@keyframes badgeAppear {
-  from {
-    transform: translateX(-50%) translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(-50%) translateY(0);
-    opacity: 1;
-  }
-}
-
-/* Ajuste do card para o badge */
-.menu-card.has-badge {
-  padding-bottom: 65px;
-}
-
-/* ESTILOS PARA O REI DA MESA */
-.king-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 15px 0 20px;
-  gap: 10px;
-}
-
-.king-photo-container {
-  position: relative;
-  display: inline-block;
-}
-
-.king-photo {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  border: 3px solid #d4a121;
-  object-fit: cover;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-}
-
-.crown-icon {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  font-size: 2em;
-  color: #ffd700;
-  filter: drop-shadow(0 3px 5px rgba(255, 215, 0, 0.5));
-  animation: crownGlow 2s infinite;
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 50%;
-  padding: 5px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@keyframes crownGlow {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-}
-
-.king-title {
-  font-family: 'Anton';
-  font-size: 1.2em;
-  color: #000;
-  text-align: center;
-  line-height: 1.3;
-}
-
-.king-name {
-  color: #102810; /* Cor alterada para verde escuro */
-  font-weight: bold;
-  font-size: 1.1em;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
-}
-
-/* ESTILOS PARA INFORMAÇÕES DA ETAPA */
-.event-info {
-  background: rgba(26, 61, 26, 0.9); /* Fundo verde escuro */
+  padding: 10px 20px;
   border-radius: 10px;
-  padding: 15px;
-  margin-top: 15px;
-  border: 1px solid #d4a121;
+  font-family: 'Anton';
+  font-size: 1.3em;
+  letter-spacing: 2px;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  border: 2px solid #d4a121;
+  z-index: 2;
+  text-transform: uppercase;
+}
+
+.next-stage-card .menu-title {
+  font-family: 'Anton';
+  color: #000;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+.next-stage-card .menu-description {
+  color: #000;
+  opacity: 0.9;
+  font-size: 1.2em;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* INFORMAÇÕES DA ETAPA - ESTILO MODERNO */
+.stage-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
   text-align: left;
 }
 
 .info-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin: 10px 0;
-  color: #fff; /* Texto branco para contraste */
-  font-size: 0.95em;
-  justify-content: flex-start;
+  gap: 12px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.info-item .icon {
-  color: #d4a121; /* Ícones dourados */
-  font-size: 1.2em;
-  min-width: 25px;
-  text-align: center;
-}
-
-.info-date {
-  color: #f4c141; /* Dourado claro */
-  font-weight: bold;
-}
-
-.info-time {
-  color: #f4c141; /* Dourado claro */
-  font-weight: bold;
-}
-
-.info-value {
-  color: #27ae60; /* Verde mais claro */
-  font-weight: bold;
-}
-
-.info-registration {
-  color: #3498db; /* Azul claro */
-  font-weight: bold;
+.info-content {
+  display: flex;
+  flex-direction: column;
 }
 
 .info-label {
-  flex: 1;
-  text-align: left;
+  font-family: 'Anton', sans-serif;
+  font-size: 0.9em;
+  color: #102810;
+  letter-spacing: 1px;
+  margin-bottom: 3px;
 }
 
-.info-value-container {
+.info-value {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #000;
+}
+
+.info-date {
+  color: #c72c48;
+}
+
+.info-time {
+  color: #27ae60;
+}
+
+.info-buyin {
+  color: #102810;
+}
+
+.info-rebuy {
+  color: #2c3e50;
+}
+
+.info-addon {
+  color: #8e44ad;
+}
+
+/* BOTÃO DE INSCRIÇÃO SIMPLES */
+.inscricao-simples {
+  display: inline-block;
+  background: linear-gradient(135deg, #102810 0%, #1a3d1a 100%);
+  color: #d4a121;
+  padding: 15px 35px;
+  border-radius: 50px;
+  font-family: 'Anton';
+  font-size: 1.4em;
+  letter-spacing: 2px;
+  text-decoration: none;
+  margin-top: 30px;
+  border: 2px solid #d4a121;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.inscricao-simples:hover {
+  background: linear-gradient(135deg, #1a3d1a 0%, #102810 100%);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(212, 161, 33, 0.4);
+  border-color: #f4c141;
+}
+
+/* SEÇÃO DE DESTAQUES DA 1ª ETAPA ABAIXO DO CARD AMARELO */
+.highlights-section {
+  margin-top: 60px;
+}
+
+.highlights-title {
+  font-family: 'Anton';
+  font-size: 2.2em;
+  color: #d4a121;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  text-align: center;
+  text-shadow: 0 0 15px rgba(212, 161, 33, 0.5);
+  padding-bottom: 15px;
+  border-bottom: 3px solid #d4a121;
+}
+
+/* CARDS DOS DESTAQUES */
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.highlight-card {
+  background: linear-gradient(135deg, #1a3d1a 0%, #0d1b0d 100%);
+  border: 3px solid #d4a121;
+  border-radius: 20px;
+  padding: 25px 20px 25px 40px; /* Mais padding à esquerda para a faixa */
+  text-align: center;
+  transition: all 0.3s;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.highlight-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(212, 161, 33, 0.4);
+}
+
+/* FAIXA VERTICAL "1ª ETAPA" NO LADO ESQUERDO */
+.etapa-faixa {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 30px;
+  background: linear-gradient(180deg, #d4a121 0%, #f4c141 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  z-index: 1;
+}
+
+.etapa-faixa-text {
+  font-family: 'Anton';
+  font-size: 1.1em;
+  color: #102810;
+  letter-spacing: 3px;
   font-weight: bold;
-  margin-left: auto;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.highlight-title {
+  font-family: 'Anton';
+  font-size: 1.6em;
+  color: #d4a121;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #d4a121;
+  width: 100%;
+}
+
+.highlight-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-top: 5px;
+  width: 100%;
+  flex: 1;
+}
+
+/* ESPAÇO PARA FOTO - AUMENTADO EM 30% */
+.highlight-photo-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0 15px 0;
+  flex: 1;
+  min-height: 290px; /* Aumentado de 220px para 290px (30% a mais) */
+}
+
+/* FOTO AUMENTADA EM 30% - AGORA FICA GRANDE NO CARD */
+.highlight-photo {
+  width: 286px;  /* Aumentado de 220px para 286px (30% a mais) */
+  height: 286px; /* Aumentado de 220px para 286px (30% a mais) */
+  border-radius: 20px;
+  object-fit: cover;
+  border: 4px solid #d4a121;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  background: #102810;
+}
+
+/* CIRCULO PARA FOTO DA PESSOA QUE FEZ A MELHOR MÃO */
+.melhor-mao-person-foto {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #d4a121;
+  background: #102810;
+  overflow: hidden;
+  z-index: 3;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+}
+
+.melhor-mao-person-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.highlight-name {
+  font-family: 'Anton';
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #f4c141;
+  letter-spacing: 1.5px;
+  margin-top: 5px;
+}
+
+.highlight-detail {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.05em;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-top: 5px;
 }
 
 /* FOOTER */
@@ -496,14 +424,149 @@ body {
   margin-bottom: 10px;
 }
 
-.footer-icons {
-  font-size: 2em;
+/* BOTTOM MENU */
+.bottom-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #102810 0%, #0d1b0d 100%);
+  border-top: 2px solid #d4a121;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  z-index: 1000;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Menu principal (4 itens à esquerda) */
+.main-menu-items {
+  display: flex;
+  gap: 25px;
+  flex: 1;
+  justify-content: flex-start;
+}
+
+/* Menu hamburguer (à direita) */
+.hamburger-menu {
+  position: relative;
+}
+
+.hamburger-button {
+  background: #d4a121;
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.8em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  font-weight: bold;
+}
+
+.hamburger-button:hover {
+  background: #f4c141;
+  transform: scale(1.1);
+}
+
+.hamburger-dropdown {
+  position: absolute;
+  bottom: 55px;
+  right: 0;
+  background: linear-gradient(135deg, #1a3d1a 0%, #102810 100%);
+  border: 2px solid #d4a121;
+  border-radius: 15px;
+  padding: 20px;
+  min-width: 280px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 1001;
+}
+
+.hamburger-dropdown.active {
+  display: block;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hamburger-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 15px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: all 0.3s;
+}
+
+.hamburger-item:hover {
+  background: rgba(212, 161, 33, 0.2);
+  transform: translateX(5px);
+}
+
+.hamburger-item:last-child {
+  margin-bottom: 0;
+}
+
+.hamburger-text {
+  font-family: 'Anton';
+  font-size: 1em;
+  letter-spacing: 1px;
   color: #d4a121;
-  margin: 20px 0;
-  letter-spacing: 15px;
+}
+
+.bottom-menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #d4a121;
+  text-decoration: none;
+  font-size: 0.8em;
+  transition: all 0.3s;
+  padding: 5px 10px;
+  border-radius: 10px;
+  min-width: 70px;
+}
+
+.bottom-menu-item:hover {
+  background: rgba(212, 161, 33, 0.1);
+  transform: translateY(-5px);
+}
+
+.bottom-menu-text {
+  font-family: 'Anton';
+  letter-spacing: 1px;
+  font-size: 0.9em;
 }
 
 /* RESPONSIVE */
+@media (max-width: 1100px) {
+  .stage-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .highlight-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .logo-title {
     font-size: 2em;
@@ -513,80 +576,160 @@ body {
     font-size: 1.8em;
   }
   
-  .menu-grid {
+  .stage-top-badge {
+    font-size: 1.1em;
+    padding: 8px 15px;
+  }
+  
+  .next-stage-card .menu-title {
+    font-size: 2em;
+  }
+  
+  .stage-info {
     grid-template-columns: 1fr;
   }
   
-  .menu-icon {
-    font-size: 3em;
+  .highlight-grid {
+    grid-template-columns: 1fr;
   }
   
-  .king-section {
-    gap: 10px;
+  .highlight-card {
+    padding: 25px 20px 25px 35px;
   }
   
-  .king-photo {
-    width: 80px;
-    height: 80px;
+  .etapa-faixa {
+    width: 25px;
   }
   
-  .crown-icon {
-    font-size: 1.8em;
-    width: 35px;
-    height: 35px;
+  .etapa-faixa-text {
+    font-size: 1em;
+    letter-spacing: 2px;
   }
   
-  .event-info {
-    padding: 12px;
+  .highlight-photo {
+    width: 260px;  /* Ajustado para tablet */
+    height: 260px; /* Ajustado para tablet */
   }
   
-  .info-item {
-    font-size: 0.9em;
+  .highlight-photo-container {
+    min-height: 275px; /* Ajustado para tablet */
   }
   
-  .visit-counter {
-    bottom: 10px;
-    right: 10px;
+  .melhor-mao-person-foto {
+    width: 85px;
+    height: 85px;
+    top: 12px;
+    right: 12px;
+  }
+  
+  .inscricao-simples {
+    font-size: 1.2em;
+    padding: 12px 25px;
+  }
+  
+  .bottom-menu {
     padding: 10px 15px;
-    font-size: 0.85em;
   }
   
-  .admin-btn {
-    bottom: 70px;
-    right: 10px;
-    padding: 10px 15px;
-    font-size: 0.85em;
+  .main-menu-items {
+    gap: 15px;
   }
   
-  .inscricoes-badge {
-    min-width: 220px;
-    padding: 10px 20px;
-    bottom: 15px;
+  .bottom-menu-item {
+    min-width: 60px;
+    font-size: 0.75em;
+    padding: 4px 8px;
   }
   
-  .inscricoes-badge .badge-text {
-    font-size: 1.3em;
+  .bottom-menu-icon {
+    font-size: 1.9em; /* Ajustado para responsivo */
   }
   
-  .menu-card.has-badge {
-    padding-bottom: 60px;
+  .hamburger-button {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+  }
+  
+  .hamburger-dropdown {
+    min-width: 250px;
+    right: -10px;
+    padding: 15px;
   }
 }
 
 @media (max-width: 480px) {
-  .inscricoes-badge {
-    min-width: 200px;
-    padding: 8px 15px;
-    bottom: 12px;
+  .stage-top-badge {
+    font-size: 1em;
+    padding: 6px 12px;
   }
   
-  .inscricoes-badge .badge-text {
-    font-size: 1.1em;
+  .next-stage-card .menu-title {
+    font-size: 1.7em;
+  }
+  
+  .highlight-card {
+    padding: 20px 15px 20px 30px;
+  }
+  
+  .etapa-faixa {
+    width: 20px;
+  }
+  
+  .etapa-faixa-text {
+    font-size: 0.9em;
     letter-spacing: 1.5px;
   }
   
-  .menu-card.has-badge {
-    padding-bottom: 55px;
+  .highlight-photo {
+    width: 234px;  /* Ajustado para mobile */
+    height: 234px; /* Ajustado para mobile */
+  }
+  
+  .highlight-photo-container {
+    min-height: 245px; /* Ajustado para mobile */
+  }
+  
+  .melhor-mao-person-foto {
+    width: 70px;
+    height: 70px;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .bottom-menu {
+    padding: 8px 10px;
+  }
+  
+  .main-menu-items {
+    gap: 10px;
+  }
+  
+  .bottom-menu-item {
+    min-width: 50px;
+    font-size: 0.7em;
+    padding: 3px 6px;
+  }
+  
+  .bottom-menu-icon {
+    font-size: 1.7em; /* Ajustado para mobile */
+  }
+  
+  .hamburger-button {
+    width: 35px;
+    height: 35px;
+    font-size: 1.3em;
+  }
+  
+  .hamburger-dropdown {
+    min-width: 220px;
+    right: -15px;
+    padding: 12px;
+  }
+  
+  .hamburger-item {
+    padding: 10px;
+    font-size: 0.9em;
   }
 }
 </style>
@@ -601,147 +744,187 @@ body {
   <p class="logo-subtitle">Bem-vindo ao Site Oficial do Poker de Quinta.</p>
 </div>
 
-<!-- CONTAINER -->
-<div class="container">
+<!-- CONTAINER PRINCIPAL -->
+<div class="main-container">
   
-  <h2 class="section-title">MENU</h2>
-  
-  <!-- MENU GRID -->
-  <div class="menu-grid">
+  <!-- PRÓXIMA ETAPA -->
+  <div>
+    <h2 class="section-title">PRÓXIMA ETAPA</h2>
     
-    <!-- PRÓXIMA ETAPA - DESTAQUE COM REI DA MESA -->
-    <a href="https://pokerdequinta.github.io/confirma/" class="menu-card destaque">
-      <!-- BADGE DA ETAPA NO CANTO SUPERIOR DIREITO -->
-      <div class="badge-etapa">1ª ETAPA</div>
+    <div class="next-stage-card">
+      <!-- BADGE NO TOPO ESQUERDO -->
+      <div class="stage-top-badge">2ª ETAPA</div>
       
-      <span class="menu-icon">📅</span>
-      <h3 class="menu-title">PRÓXIMA ETAPA</h3>
-      
-      <!-- SEÇÃO DO REI DA MESA -->
-      <div class="king-section">
-        <div class="king-photo-container">
-          <img src="https://github.com/pokerdequinta/fotos/blob/main/Gaspar.png?raw=true" 
-               alt="Rei da Mesa - Gaspar" 
-               class="king-photo"
-               onerror="this.src='https://via.placeholder.com/90/FFD700/102810?text=G'">
-          <span class="crown-icon">👑</span>
-        </div>
-        <p class="king-title">REI DA MESA<br><span class="king-name">GASPAR</span></p>
-      </div>
+      <h3 class="menu-title">26/02</h3>
+      <p class="menu-description">Prepare-se para mais uma noite de resenha e Baralhada!</p>
       
       <!-- INFORMAÇÕES DA PRÓXIMA ETAPA -->
-      <div class="event-info">
+      <div class="stage-info">
         <div class="info-item">
           <span class="icon">📅</span>
-          <span class="info-label">Próxima etapa:</span>
-          <span class="info-value-container">
-            <span class="info-date">29/01</span>
-          </span>
+          <div class="info-content">
+            <div class="info-label">DATA</div>
+            <div class="info-value info-date">26 de Fevereiro</div>
+          </div>
         </div>
+        
         <div class="info-item">
           <span class="icon">⏰</span>
-          <span class="info-label">Horário:</span>
-          <span class="info-value-container">
-            <span class="info-time">20 horas</span>
-          </span>
+          <div class="info-content">
+            <div class="info-label">HORÁRIO</div>
+            <div class="info-value info-time">20 horas</div>
+          </div>
         </div>
+        
         <div class="info-item">
           <span class="icon">💰</span>
-          <span class="info-label">Valor:</span>
-          <span class="info-value-container">
-            <span class="info-value">R$ 100</span>
-          </span>
+          <div class="info-content">
+            <div class="info-label">BUY-IN</div>
+            <div class="info-value info-buyin">R$ 100,00</div>
+          </div>
         </div>
+        
         <div class="info-item">
-          <span class="icon">🎫</span>
-          <span class="info-label">Inscrições abrem:</span>
-          <span class="info-value-container">
-            <span class="info-registration">26/01 às 7h</span>
-          </span>
+          <span class="icon">🔄</span>
+          <div class="info-content">
+            <div class="info-label">REBUY SIMPLES</div>
+            <div class="info-value info-rebuy">R$ 30,00</div>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <span class="icon">🔄🔄</span>
+          <div class="info-content">
+            <div class="info-label">REBUY DUPLO</div>
+            <div class="info-value info-rebuy">R$ 60,00</div>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <span class="icon">➕</span>
+          <div class="info-content">
+            <div class="info-label">ADDON</div>
+            <div class="info-value info-addon">R$ 50,00</div>
+          </div>
         </div>
       </div>
       
-      <p class="menu-description" style="margin-top: 15px; font-weight: bold; color: #000;">Confirme sua presença!</p>
-    </a>
-    
-    <!-- CONFIRMAÇÃO DE PRESENÇA -->
-    <a href="https://pokerdequinta.github.io/confirma/" class="menu-card" id="confirmacao-card">
-      <!-- BADGE DE INSCRIÇÕES ABERTAS PISCANDO -->
-      <div class="inscricoes-badge" id="inscricoes-badge">
-        <div class="badge-text">INSCRIÇÕES ABERTAS</div>
+      <!-- BOTÃO DE INSCRIÇÃO SIMPLES -->
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="https://pokerdequinta.github.io/confirma/" class="inscricao-simples">
+          FAZER INSCRIÇÃO
+        </a>
       </div>
+    </div>
+    
+    <!-- DESTAQUES DA 1ª ETAPA -->
+    <div class="highlights-section">
+      <h2 class="highlights-title">PRINCIPAIS DESTAQUES DA 1ª ETAPA</h2>
       
-      <span class="badge badge-amarelo">🔥 NOVO</span>
-      <span class="menu-icon">✅</span>
-      <h3 class="menu-title">CONFIRMAÇÃO DE PRESENÇA</h3>
-      <p class="menu-description">Faça Aqui sua Inscrição para a próxima etapa!</p>
-    </a>
-    
-    <!-- ENQUETES -->
-    <a href="https://pokerdequinta.github.io/enquete/" class="menu-card">
-      <span class="menu-icon">📊</span>
-      <h3 class="menu-title">ENQUETES</h3>
-      <p class="menu-description">Participe das votações da janta e das mãos da etapa</p>
-    </a>
-    
-    <!-- CALENDÁRIO -->
-    <a href="https://pokerdequinta.github.io/calendario/" class="menu-card">
-      <span class="menu-icon">📆</span>
-      <h3 class="menu-title">CALENDÁRIO</h3>
-      <p class="menu-description">Veja aqui todas as datas do ano e adicione as datas ao seu calendário</p>
-    </a>
-    
-    <!-- REGULAMENTO -->
-    <a href="https://pokerdequinta.github.io/regulamento/" class="menu-card">
-      <span class="menu-icon">📋</span>
-      <h3 class="menu-title">REGULAMENTO</h3>
-      <p class="menu-description">Confira todas as regras oficiais do Poker de Quinta</p>
-    </a>
-    
-    <!-- NOVIDADES 2026 -->
-    <a href="https://pokerdequinta.github.io/novidades/" class="menu-card">
-      <span class="menu-icon">🎉</span>
-      <h3 class="menu-title">NOVIDADES TEMPORADA 2026</h3>
-      <p class="menu-description">Veja o que mudou na nova temporada de 2026</p>
-    </a>
-    
-    <!-- DEALER PID -->
-    <a href="https://pokerdequinta.github.io/dealer/" class="menu-card">
-      <span class="menu-icon">🎲</span>
-      <h3 class="menu-title">DEALER - PID</h3>
-      <p class="menu-description">Área do Dealer</p>
-    </a>
-    
-    <!-- CADASTRO PIX E FOTO -->
-    <a href="https://forms.gle/yG2MAeQvSco46DK49" class="menu-card">
-      <span class="menu-icon">📸</span>
-      <h3 class="menu-title">CADASTRO DE PIX E FOTO</h3>
-      <p class="menu-description">Atualize seus dados para pagamentos e premiações</p>
-    </a>
-    
-    <!-- RANKING -->
-    <a href="https://pokerdequinta.github.io/ranking/" class="menu-card">
-      <span class="menu-icon">🏆</span>
-      <h3 class="menu-title">RANKING</h3>
-      <p class="menu-description">Acompanhe a classificação geral dos jogadores</p>
-    </a>
-    
-    <!-- LOJA -->
-    <a href="https://pokerdequinta.github.io/loja/" class="menu-card">
-      <span class="menu-icon">🛒</span>
-      <h3 class="menu-title">LOJA</h3>
-      <p class="menu-description">Adquira aqui sua camiseta oficial do Poker de Quinta</p>
-    </a>
-
-      <!-- LOCALIZAÇÃO -->
-    <a href="https://pokerdequinta.github.io/endereco/" class="menu-card">
-      <span class="menu-icon">📍</span>
-      <h3 class="menu-title">LOCALIZAÇÃO</h3>
-      <p class="menu-description">Veja Aqui o Endereço onde se encontram os baralhões</p>
-    </a>
-    
+      <div class="highlight-grid">
+        <!-- CAMPEÃO DA 1ª ETAPA -->
+        <div class="highlight-card">
+          <!-- FAIXA VERTICAL "1ª ETAPA" -->
+          <div class="etapa-faixa">
+            <div class="etapa-faixa-text">1ª ETAPA</div>
+          </div>
+          
+          <h3 class="highlight-title">CAMPEÃO</h3>
+          <div class="highlight-content">
+            <span class="highlight-icon">👑</span>
+            <div class="highlight-photo-container">
+              <!-- FOTO ATUALIZADA PARA SERGIO -->
+              <img src="https://github.com/pokerdequinta/fotos/blob/main/Sergiocampeao1etapa.png?raw=true" 
+                   alt="Foto do Campeão Sergio" 
+                   class="highlight-photo"
+                   onerror="this.src='https://via.placeholder.com/286/FFD700/102810?text=SERGIO'">
+            </div>
+            <div class="highlight-name">Sergio</div>
+            <div class="highlight-detail">Vencedor da 1ª Etapa</div>
+            <div class="highlight-detail">31 Pontos</div>
+          </div>
+        </div>
+        
+        <!-- MELHOR MÃO DA ETAPA -->
+        <div class="highlight-card">
+          <!-- FAIXA VERTICAL "1ª ETAPA" -->
+          <div class="etapa-faixa">
+            <div class="etapa-faixa-text">1ª ETAPA</div>
+          </div>
+          
+          <h3 class="highlight-title">MELHOR MÃO</h3>
+          
+          <!-- CIRCULO COM FOTO DA PESSOA QUE FEZ A MELHOR MÃO -->
+          <div class="melhor-mao-person-foto">
+            <img src="https://github.com/pokerdequinta/fotos/blob/main/Van%20Van.png?raw=true" 
+                 alt="Foto de Van Van"
+                 onerror="this.src='https://via.placeholder.com/100/FFD700/102810?text=VAN+VAN'">
+          </div>
+          
+          <div class="highlight-content">
+            <span class="highlight-icon">🃏</span>
+            <div class="highlight-photo-container">
+              <!-- FOTO ATUALIZADA PARA QUADRA DE 7 -->
+              <img src="https://github.com/pokerdequinta/fotos/blob/main/melhormao1etapa.png?raw=true" 
+                   alt="Foto da Melhor Mão - Quadra de 7" 
+                   class="highlight-photo"
+                   onerror="this.src='https://via.placeholder.com/286/FFD700/102810?text=QUADRA+DE+7'">
+            </div>
+            <div class="highlight-name">Quadra de 7</div>
+            <div class="highlight-detail">Feito por: Van Van</div>
+            <div class="highlight-detail">GANHA: 1 ADDON na próxima Etapa</div>
+          </div>
+        </div>
+        
+        <!-- MATADOR DE KO -->
+        <div class="highlight-card">
+          <!-- FAIXA VERTICAL "1ª ETAPA" -->
+          <div class="etapa-faixa">
+            <div class="etapa-faixa-text">1ª ETAPA</div>
+          </div>
+          
+          <h3 class="highlight-title">MATADOR DE KO</h3>
+          <div class="highlight-content">
+            <span class="highlight-icon">💥</span>
+            <div class="highlight-photo-container">
+              <!-- FOTO ATUALIZADA PARA AMARILDO -->
+              <img src="https://github.com/pokerdequinta/fotos/blob/main/matadorko1etapa.jpg?raw=true" 
+                   alt="Foto do Matador de KO Amarildo" 
+                   class="highlight-photo"
+                   onerror="this.src='https://via.placeholder.com/286/FFD700/102810?text=AMARILDO'">
+            </div>
+            <div class="highlight-name">Amarildo</div>
+            <div class="highlight-detail">5 eliminações</div>
+            <div class="highlight-detail"></div>
+          </div>
+        </div>
+        
+        <!-- GANHADOR DA ROLETA -->
+        <div class="highlight-card">
+          <!-- FAIXA VERTICAL "1ª ETAPA" -->
+          <div class="etapa-faixa">
+            <div class="etapa-faixa-text">1ª ETAPA</div>
+          </div>
+          
+          <h3 class="highlight-title">ROLETA DA SORTE</h3>
+          <div class="highlight-content">
+            <span class="highlight-icon">🎡</span>
+            <div class="highlight-photo-container">
+              <!-- FOTO QUE ALTERNA ENTRE AS DUAS IMAGENS -->
+              <img src="https://github.com/pokerdequinta/fotos/blob/main/abracobruxo1.jpeg?raw=true" 
+                   alt="Foto do Ganhador da Roleta" 
+                   class="highlight-photo"
+                   id="roleta-photo"
+                   onerror="this.src='https://via.placeholder.com/286/FFD700/102810?text=CLEVERSON'">
+            </div>
+            <div class="highlight-name">Cleversson</div>
+            <div class="highlight-detail">Ganhou: 1 Abraço do Bruxo!</div>
+            <div class="highlight-detail"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  
 </div>
 
 <!-- FOOTER -->
@@ -751,108 +934,165 @@ body {
   <p class="footer-text" style="opacity: 0.6; font-size: 0.9em;">Desenvolvido pelo Presida.</p>
 </div>
 
-<!-- CONTADOR DE VISITAS - OCULTO -->
-<div class="visit-counter">
-  <span class="icon">👁️</span>
-  <span>Visitas:</span>
-  <span class="count" id="visitCount">...</span>
+<!-- BOTTOM MENU -->
+<div class="bottom-menu">
+  <!-- 4 ITENS À ESQUERDA -->
+  <div class="main-menu-items">
+    <a href="https://pokerdequinta.github.io/ranking/" class="bottom-menu-item">
+      <span class="bottom-menu-icon">🏆</span>
+      <span class="bottom-menu-text">RANKING</span>
+    </a>
+    
+    <a href="https://pokerdequinta.github.io/confirma/" class="bottom-menu-item">
+      <span class="bottom-menu-icon">✅</span>
+      <span class="bottom-menu-text">INSCRIÇÕES</span>
+    </a>
+    
+    <a href="https://pokerdequinta.github.io/enquete/" class="bottom-menu-item">
+      <span class="bottom-menu-icon">📊</span>
+      <span class="bottom-menu-text">ENQUETE</span>
+    </a>
+    
+    <a href="https://pokerdequinta.github.io/regulamento/" class="bottom-menu-item">
+      <span class="bottom-menu-icon">📋</span>
+      <span class="bottom-menu-text">REGULAMENTO</span>
+    </a>
+  </div>
+  
+  <!-- MENU HAMBURGUER À DIREITA -->
+  <div class="hamburger-menu">
+    <button class="hamburger-button" id="hamburgerButton">+</button>
+    <div class="hamburger-dropdown" id="hamburgerDropdown">
+      <!-- Todos os menus agora estão no hamburguer -->
+      <a href="https://pokerdequinta.github.io/ranking/" class="hamburger-item">
+        <span class="hamburger-icon">🏆</span>
+        <span class="hamburger-text">RANKING</span>
+      </a>
+      
+      <a href="https://pokerdequinta.github.io/confirma/" class="hamburger-item">
+        <span class="hamburger-icon">✅</span>
+        <span class="hamburger-text">INSCRIÇÕES</span>
+      </a>
+      
+      <a href="https://pokerdequinta.github.io/enquete/" class="hamburger-item">
+        <span class="hamburger-icon">📊</span>
+        <span class="hamburger-text">ENQUETES</span>
+      </a>
+      
+      <a href="https://pokerdequinta.github.io/regulamento/" class="hamburger-item">
+        <span class="hamburger-icon">📋</span>
+        <span class="hamburger-text">REGULAMENTO</span>
+      </a>
+      
+      <a href="https://pokerdequinta.github.io/calendario/" class="hamburger-item">
+        <span class="hamburger-icon">📆</span>
+        <span class="hamburger-text">CALENDÁRIO</span>
+      </a>
+      
+      <a href="https://pokerdequinta.github.io/novidades/" class="hamburger-item">
+        <span class="hamburger-icon">🎉</span>
+        <span class="hamburger-text">NOVIDADES 2026</span>
+      </a>
+      
+      <a href="https://pokerdequinta.github.io/dealer/" class="hamburger-item">
+        <span class="hamburger-icon">🎲</span>
+        <span class="hamburger-text">DEALER PID</span>
+      </a>
+      
+      <a href="https://forms.gle/yG2MAeQvSco46DK49" class="hamburger-item">
+        <span class="hamburger-icon">📸</span>
+        <span class="hamburger-text">CADASTRO PIX</span>
+      </a>
+      
+      <a href="https://pokerdequinta.github.io/loja/" class="hamburger-item">
+        <span class="hamburger-icon">🛒</span>
+        <span class="hamburger-text">LOJA</span>
+      </a>
+
+      <a href="https://pokerdequinta.github.io/endereco/" class="hamburger-item">
+        <span class="hamburger-icon">📍</span>
+        <span class="hamburger-text">LOCALIZAÇÃO</span>
+      </a>
+    </div>
+  </div>
 </div>
 
-<!-- BOTÃO ADMIN - OCULTO -->
-<a href="admin.html" class="admin-btn">
-  <span>🔐</span>
-  <span>Admin</span>
-</a>
-
 <script>
-// Sistema de rastreamento de visitas usando CountAPI
-// Usa o namespace 'pokerdequinta' para identificar seu site
+// Menu hamburguer
+const hamburgerButton = document.getElementById('hamburgerButton');
+const hamburgerDropdown = document.getElementById('hamburgerDropdown');
 
-async function trackVisit() {
-  try {
-    // Incrementar contador usando CountAPI
-    const response = await fetch('https://api.countapi.xyz/hit/pokerdequinta/visits');
-    const data = await response.json();
-    
-    // Salvar timestamp da visita no localStorage para analytics
-    const visits = JSON.parse(localStorage.getItem('poker_visits') || '[]');
-    visits.push({
-      timestamp: new Date().toISOString(),
-      page: 'home'
+if (hamburgerButton && hamburgerDropdown) {
+  hamburgerButton.addEventListener('click', function(e) {
+    e.stopPropagation();
+    hamburgerDropdown.classList.toggle('active');
+  });
+  
+  // Fechar menu ao clicar fora
+  document.addEventListener('click', function(e) {
+    if (!hamburgerDropdown.contains(e.target) && !hamburgerButton.contains(e.target)) {
+      hamburgerDropdown.classList.remove('active');
+    }
+  });
+  
+  // Fechar menu ao clicar em um item
+  const hamburgerItems = hamburgerDropdown.querySelectorAll('.hamburger-item');
+  hamburgerItems.forEach(item => {
+    item.addEventListener('click', function() {
+      hamburgerDropdown.classList.remove('active');
     });
-    
-    // Manter apenas últimas 1000 visitas
-    if (visits.length > 1000) {
-      visits.shift();
-    }
-    
-    localStorage.setItem('poker_visits', JSON.stringify(visits));
-    
-    // Atualizar display (embora esteja oculto)
-    if (document.getElementById('visitCount')) {
-      document.getElementById('visitCount').textContent = data.value.toLocaleString('pt-BR');
-    }
-    
-  } catch (error) {
-    console.log('Rastreamento executado');
-  }
+  });
 }
 
-// Função para verificar se deve mostrar o badge
-function verificarBadgeInscricoes() {
-  const badge = document.getElementById('inscricoes-badge');
-  const card = document.getElementById('confirmacao-card');
-  
-  if (!badge || !card) return;
-  
-  const agora = new Date();
-  const dataAlvo = new Date('2026-01-26T07:00:00'); // 26 de janeiro às 7h
-  
-  // Se já passou do horário alvo, mostrar o badge
-  if (agora >= dataAlvo) {
-    badge.style.display = 'block';
-    card.classList.add('has-badge');
-    
-    // Adicionar animação de entrada
-    badge.style.animation = 'badgeAppear 0.5s ease-out forwards';
-    
-  } else {
-    badge.style.display = 'none';
-    card.classList.remove('has-badge');
-    badge.style.animation = 'none';
-  }
-}
-
-// Executar ao carregar a página
-trackVisit();
-verificarBadgeInscricoes();
-
-// Verificar a cada minuto (caso a página fique aberta)
-setInterval(verificarBadgeInscricoes, 60000);
-
-// Adicionar evento para reaplicar animação ao badge quando ele for exibido
-const observer = new MutationObserver(function(mutations) {
-  mutations.forEach(function(mutation) {
-    if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
-      const badge = document.getElementById('inscricoes-badge');
-      const card = document.getElementById('confirmacao-card');
-      
-      if (badge && badge.style.display === 'block') {
-        badge.style.animation = 'badgeAppear 0.5s ease-out forwards';
-        card.classList.add('has-badge');
-      } else if (badge && badge.style.display === 'none' && card) {
-        card.classList.remove('has-badge');
-        badge.style.animation = 'none';
-      }
-    }
+// Adicionar interatividade aos cards de destaque
+document.querySelectorAll('.highlight-card').forEach(card => {
+  card.addEventListener('click', function() {
+    // Adicionar efeito visual ao clicar
+    this.style.transform = 'scale(0.98)';
+    setTimeout(() => {
+      this.style.transform = '';
+    }, 200);
   });
 });
 
-// Observar mudanças no estilo do badge
-const badgeElement = document.getElementById('inscricoes-badge');
-if (badgeElement) {
-  observer.observe(badgeElement, { attributes: true });
+// Adicionar interatividade ao botão de inscrição
+const inscricaoBtn = document.querySelector('.inscricao-simples');
+if (inscricaoBtn) {
+  inscricaoBtn.addEventListener('click', function() {
+    this.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      this.style.transform = '';
+    }, 200);
+  });
 }
+
+// Script para alternar as fotos da roleta da sorte a cada 2 segundos
+const roletaPhoto = document.getElementById('roleta-photo');
+const roletaImages = [
+  'https://github.com/pokerdequinta/fotos/blob/main/abracobruxo1.jpeg?raw=true',
+  'https://github.com/pokerdequinta/fotos/blob/main/abracobruxo2.jpg?raw=true'
+];
+
+if (roletaPhoto) {
+  let currentImageIndex = 0;
+  
+  // Função para alternar as imagens
+  function changeRoletaImage() {
+    currentImageIndex = (currentImageIndex + 1) % roletaImages.length;
+    roletaPhoto.src = roletaImages[currentImageIndex];
+  }
+  
+  // Iniciar o ciclo de troca de imagens a cada 2 segundos
+  setInterval(changeRoletaImage, 2000);
+}
+
+// Preload das imagens da roleta para evitar piscar durante a troca
+window.addEventListener('load', function() {
+  roletaImages.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+});
 </script>
 
 </body>
