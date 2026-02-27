@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Poker de Quinta - Menu Principal</title>
+<title>Poker de Quinta - Histórico de Etapas</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@300;400;700&display=swap');
@@ -19,37 +19,37 @@ body {
   background: #0d1b0d;
   color: #fff;
   min-height: 100vh;
-  padding-bottom: 80px; /* Espaço para o bottom menu */
+  padding-bottom: 80px;
 }
 
 /* Aumentar os ícones em 20% */
 .bottom-menu-icon {
-  font-size: 2.2em; /* Aumentado de 1.8em para 2.2em (22% maior) */
+  font-size: 2.2em;
   margin-bottom: 5px;
 }
 
 .hamburger-icon {
-  font-size: 1.8em; /* Aumentado de 1.5em para 1.8em (20% maior) */
+  font-size: 1.8em;
   color: #d4a121;
   min-width: 30px;
   text-align: center;
 }
 
 .info-item .icon {
-  font-size: 2.2em; /* Aumentado de 1.8em para 2.2em (22% maior) */
+  font-size: 2.2em;
   min-width: 40px;
   text-align: center;
   color: #102810;
 }
 
 .highlight-icon {
-  font-size: 2.4em; /* Aumentado de 2.0em para 2.4em (20% maior) */
+  font-size: 2.4em;
   margin-bottom: 5px;
   filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
 }
 
 .footer-icons {
-  font-size: 2.4em; /* Aumentado de 2.0em para 2.4em (20% maior) */
+  font-size: 2.4em;
   color: #d4a121;
   margin: 20px 0;
   letter-spacing: 15px;
@@ -116,6 +116,42 @@ body {
   text-shadow: 0 0 20px rgba(212, 161, 33, 0.5);
 }
 
+/* MENU DE ETAPAS */
+.stages-menu {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.stage-menu-btn {
+  background: linear-gradient(135deg, #1a3d1a 0%, #102810 100%);
+  border: 3px solid #d4a121;
+  color: #d4a121;
+  font-family: 'Anton';
+  font-size: 1.8em;
+  padding: 15px 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+  letter-spacing: 2px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.stage-menu-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(212, 161, 33, 0.4);
+  background: #d4a121;
+  color: #102810;
+}
+
+.stage-menu-btn.active {
+  background: #d4a121;
+  color: #102810;
+  transform: scale(1.05);
+}
+
 /* CARD DA PRÓXIMA ETAPA EM AMARELO */
 .next-stage-card {
   background: linear-gradient(135deg, #d4a121 0%, #f4c141 100%);
@@ -173,7 +209,7 @@ body {
   font-weight: 700;
 }
 
-/* INFORMAÇÕES DA ETAPA - ESTILO MODERNO */
+/* INFORMAÇÕES DA ETAPA */
 .stage-info {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -232,7 +268,7 @@ body {
   color: #8e44ad;
 }
 
-/* BOTÃO DE INSCRIÇÃO SIMPLES */
+/* BOTÃO DE INSCRIÇÃO */
 .inscricao-simples {
   display: inline-block;
   background: linear-gradient(135deg, #102810 0%, #1a3d1a 100%);
@@ -256,7 +292,7 @@ body {
   border-color: #f4c141;
 }
 
-/* SEÇÃO DE DESTAQUES DA 1ª ETAPA ABAIXO DO CARD AMARELO */
+/* SEÇÃO DE DESTAQUES DAS ETAPAS */
 .highlights-section {
   margin-top: 60px;
 }
@@ -285,7 +321,7 @@ body {
   background: linear-gradient(135deg, #1a3d1a 0%, #0d1b0d 100%);
   border: 3px solid #d4a121;
   border-radius: 20px;
-  padding: 25px 20px 25px 40px; /* Mais padding à esquerda para a faixa */
+  padding: 25px 20px 25px 40px;
   text-align: center;
   transition: all 0.3s;
   height: 100%;
@@ -301,7 +337,7 @@ body {
   box-shadow: 0 15px 40px rgba(212, 161, 33, 0.4);
 }
 
-/* FAIXA VERTICAL "1ª ETAPA" NO LADO ESQUERDO */
+/* FAIXA VERTICAL DA ETAPA */
 .etapa-faixa {
   position: absolute;
   top: 0;
@@ -349,7 +385,7 @@ body {
   flex: 1;
 }
 
-/* ESPAÇO PARA FOTO - AUMENTADO EM 30% */
+/* CONTAINER DE FOTO */
 .highlight-photo-container {
   width: 100%;
   display: flex;
@@ -357,13 +393,13 @@ body {
   align-items: center;
   margin: 5px 0 15px 0;
   flex: 1;
-  min-height: 290px; /* Aumentado de 220px para 290px (30% a mais) */
+  min-height: 290px;
 }
 
-/* FOTO AUMENTADA EM 30% - AGORA FICA GRANDE NO CARD */
+/* FOTO PRINCIPAL */
 .highlight-photo {
-  width: 286px;  /* Aumentado de 220px para 286px (30% a mais) */
-  height: 286px; /* Aumentado de 220px para 286px (30% a mais) */
+  width: 286px;
+  height: 286px;
   border-radius: 20px;
   object-fit: cover;
   border: 4px solid #d4a121;
@@ -371,7 +407,7 @@ body {
   background: #102810;
 }
 
-/* CIRCULO PARA FOTO DA PESSOA QUE FEZ A MELHOR MÃO */
+/* CIRCULO PARA FOTO DA PESSOA */
 .melhor-mao-person-foto {
   position: absolute;
   top: 15px;
@@ -440,7 +476,6 @@ body {
   box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Menu principal (4 itens à esquerda) */
 .main-menu-items {
   display: flex;
   gap: 25px;
@@ -448,7 +483,6 @@ body {
   justify-content: flex-start;
 }
 
-/* Menu hamburguer (à direita) */
 .hamburger-menu {
   position: relative;
 }
@@ -607,12 +641,12 @@ body {
   }
   
   .highlight-photo {
-    width: 260px;  /* Ajustado para tablet */
-    height: 260px; /* Ajustado para tablet */
+    width: 260px;
+    height: 260px;
   }
   
   .highlight-photo-container {
-    min-height: 275px; /* Ajustado para tablet */
+    min-height: 275px;
   }
   
   .melhor-mao-person-foto {
@@ -627,34 +661,9 @@ body {
     padding: 12px 25px;
   }
   
-  .bottom-menu {
-    padding: 10px 15px;
-  }
-  
-  .main-menu-items {
-    gap: 15px;
-  }
-  
-  .bottom-menu-item {
-    min-width: 60px;
-    font-size: 0.75em;
-    padding: 4px 8px;
-  }
-  
-  .bottom-menu-icon {
-    font-size: 1.9em; /* Ajustado para responsivo */
-  }
-  
-  .hamburger-button {
-    width: 40px;
-    height: 40px;
-    font-size: 1.5em;
-  }
-  
-  .hamburger-dropdown {
-    min-width: 250px;
-    right: -10px;
-    padding: 15px;
+  .stage-menu-btn {
+    font-size: 1.3em;
+    padding: 10px 25px;
   }
 }
 
@@ -668,68 +677,23 @@ body {
     font-size: 1.7em;
   }
   
-  .highlight-card {
-    padding: 20px 15px 20px 30px;
-  }
-  
-  .etapa-faixa {
-    width: 20px;
-  }
-  
-  .etapa-faixa-text {
-    font-size: 0.9em;
-    letter-spacing: 1.5px;
+  .stage-menu-btn {
+    font-size: 1.1em;
+    padding: 8px 20px;
   }
   
   .highlight-photo {
-    width: 234px;  /* Ajustado para mobile */
-    height: 234px; /* Ajustado para mobile */
+    width: 234px;
+    height: 234px;
   }
   
   .highlight-photo-container {
-    min-height: 245px; /* Ajustado para mobile */
+    min-height: 245px;
   }
   
   .melhor-mao-person-foto {
     width: 70px;
     height: 70px;
-    top: 10px;
-    right: 10px;
-  }
-  
-  .bottom-menu {
-    padding: 8px 10px;
-  }
-  
-  .main-menu-items {
-    gap: 10px;
-  }
-  
-  .bottom-menu-item {
-    min-width: 50px;
-    font-size: 0.7em;
-    padding: 3px 6px;
-  }
-  
-  .bottom-menu-icon {
-    font-size: 1.7em; /* Ajustado para mobile */
-  }
-  
-  .hamburger-button {
-    width: 35px;
-    height: 35px;
-    font-size: 1.3em;
-  }
-  
-  .hamburger-dropdown {
-    min-width: 220px;
-    right: -15px;
-    padding: 12px;
-  }
-  
-  .hamburger-item {
-    padding: 10px;
-    font-size: 0.9em;
   }
 }
 </style>
@@ -741,30 +705,28 @@ body {
 <div class="logo-section">
   <img src="logo pdq.png" class="logo-img" onerror="this.style.display='none'" alt="Logo Poker de Quinta">
   <h1 class="logo-title">POKER DE QUINTA</h1>
-  <p class="logo-subtitle">Bem-vindo ao Site Oficial do Poker de Quinta.</p>
+  <p class="logo-subtitle">Histórico Completo das Etapas</p>
 </div>
 
 <!-- CONTAINER PRINCIPAL -->
 <div class="main-container">
   
-  <!-- PRÓXIMA ETAPA -->
+  <!-- PRÓXIMA ETAPA (Fixa) -->
   <div>
     <h2 class="section-title">PRÓXIMA ETAPA</h2>
     
     <div class="next-stage-card">
-      <!-- BADGE NO TOPO ESQUERDO -->
-      <div class="stage-top-badge">2ª ETAPA</div>
+      <div class="stage-top-badge">3ª ETAPA</div>
       
-      <h3 class="menu-title">26/02</h3>
+      <h3 class="menu-title">26/03</h3>
       <p class="menu-description">Prepare-se para mais uma noite de resenha e Baralhada!</p>
       
-      <!-- INFORMAÇÕES DA PRÓXIMA ETAPA -->
       <div class="stage-info">
         <div class="info-item">
           <span class="icon">📅</span>
           <div class="info-content">
             <div class="info-label">DATA</div>
-            <div class="info-value info-date">26 de Fevereiro</div>
+            <div class="info-value info-date">26 de Março</div>
           </div>
         </div>
         
@@ -809,22 +771,30 @@ body {
         </div>
       </div>
       
-      <!-- BOTÃO DE INSCRIÇÃO SIMPLES -->
       <div style="text-align: center; margin-top: 30px;">
         <a href="https://pokerdequinta.github.io/confirma/" class="inscricao-simples">
           FAZER INSCRIÇÃO
         </a>
       </div>
     </div>
+  </div>
+  
+  <!-- MENU DE ETAPAS (Histórico) -->
+  <div>
+    <h2 class="section-title">HISTÓRICO DE ETAPAS</h2>
+    
+    <div class="stages-menu">
+      <button class="stage-menu-btn" onclick="showStage(1)">1ª ETAPA</button>
+      <button class="stage-menu-btn active" onclick="showStage(2)">2ª ETAPA</button>
+    </div>
     
     <!-- DESTAQUES DA 1ª ETAPA -->
-    <div class="highlights-section">
+    <div id="stage1" class="highlights-section" style="display: none;">
       <h2 class="highlights-title">PRINCIPAIS DESTAQUES DA 1ª ETAPA</h2>
       
       <div class="highlight-grid">
         <!-- CAMPEÃO DA 1ª ETAPA -->
         <div class="highlight-card">
-          <!-- FAIXA VERTICAL "1ª ETAPA" -->
           <div class="etapa-faixa">
             <div class="etapa-faixa-text">1ª ETAPA</div>
           </div>
@@ -833,7 +803,6 @@ body {
           <div class="highlight-content">
             <span class="highlight-icon">👑</span>
             <div class="highlight-photo-container">
-              <!-- FOTO ATUALIZADA PARA SERGIO -->
               <img src="https://github.com/pokerdequinta/fotos/blob/main/Sergiocampeao1etapa.png?raw=true" 
                    alt="Foto do Campeão Sergio" 
                    class="highlight-photo"
@@ -845,16 +814,14 @@ body {
           </div>
         </div>
         
-        <!-- MELHOR MÃO DA ETAPA -->
+        <!-- MELHOR MÃO DA 1ª ETAPA -->
         <div class="highlight-card">
-          <!-- FAIXA VERTICAL "1ª ETAPA" -->
           <div class="etapa-faixa">
             <div class="etapa-faixa-text">1ª ETAPA</div>
           </div>
           
           <h3 class="highlight-title">MELHOR MÃO</h3>
           
-          <!-- CIRCULO COM FOTO DA PESSOA QUE FEZ A MELHOR MÃO -->
           <div class="melhor-mao-person-foto">
             <img src="https://github.com/pokerdequinta/fotos/blob/main/Van%20Van.png?raw=true" 
                  alt="Foto de Van Van"
@@ -864,7 +831,6 @@ body {
           <div class="highlight-content">
             <span class="highlight-icon">🃏</span>
             <div class="highlight-photo-container">
-              <!-- FOTO ATUALIZADA PARA QUADRA DE 7 -->
               <img src="https://github.com/pokerdequinta/fotos/blob/main/melhormao1etapa.png?raw=true" 
                    alt="Foto da Melhor Mão - Quadra de 7" 
                    class="highlight-photo"
@@ -876,9 +842,8 @@ body {
           </div>
         </div>
         
-        <!-- MATADOR DE KO -->
+        <!-- MATADOR DE KO DA 1ª ETAPA -->
         <div class="highlight-card">
-          <!-- FAIXA VERTICAL "1ª ETAPA" -->
           <div class="etapa-faixa">
             <div class="etapa-faixa-text">1ª ETAPA</div>
           </div>
@@ -887,7 +852,6 @@ body {
           <div class="highlight-content">
             <span class="highlight-icon">💥</span>
             <div class="highlight-photo-container">
-              <!-- FOTO ATUALIZADA PARA AMARILDO -->
               <img src="https://github.com/pokerdequinta/fotos/blob/main/matadorko1etapa.jpg?raw=true" 
                    alt="Foto do Matador de KO Amarildo" 
                    class="highlight-photo"
@@ -895,13 +859,11 @@ body {
             </div>
             <div class="highlight-name">Amarildo</div>
             <div class="highlight-detail">5 eliminações</div>
-            <div class="highlight-detail"></div>
           </div>
         </div>
         
-        <!-- GANHADOR DA ROLETA -->
+        <!-- ROLETA DA SORTE DA 1ª ETAPA -->
         <div class="highlight-card">
-          <!-- FAIXA VERTICAL "1ª ETAPA" -->
           <div class="etapa-faixa">
             <div class="etapa-faixa-text">1ª ETAPA</div>
           </div>
@@ -910,16 +872,110 @@ body {
           <div class="highlight-content">
             <span class="highlight-icon">🎡</span>
             <div class="highlight-photo-container">
-              <!-- FOTO QUE ALTERNA ENTRE AS DUAS IMAGENS -->
               <img src="https://github.com/pokerdequinta/fotos/blob/main/abracobruxo1.jpeg?raw=true" 
                    alt="Foto do Ganhador da Roleta" 
                    class="highlight-photo"
-                   id="roleta-photo"
+                   id="roleta-photo-1"
                    onerror="this.src='https://via.placeholder.com/286/FFD700/102810?text=CLEVERSON'">
             </div>
             <div class="highlight-name">Cleversson</div>
             <div class="highlight-detail">Ganhou: 1 Abraço do Bruxo!</div>
-            <div class="highlight-detail"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- DESTAQUES DA 2ª ETAPA (MOSTRADA POR PADRÃO) -->
+    <div id="stage2" class="highlights-section">
+      <h2 class="highlights-title">PRINCIPAIS DESTAQUES DA 2ª ETAPA</h2>
+      
+      <div class="highlight-grid">
+        <!-- CAMPEÃO DA 2ª ETAPA -->
+        <div class="highlight-card">
+          <div class="etapa-faixa">
+            <div class="etapa-faixa-text">2ª ETAPA</div>
+          </div>
+          
+          <h3 class="highlight-title">CAMPEÃO</h3>
+          <div class="highlight-content">
+            <span class="highlight-icon">👑</span>
+            <div class="highlight-photo-container">
+              <img src="https://github.com/pokerdequinta/fotos/blob/main/campeao2etapaloreto.jpg?raw=true" 
+                   alt="Foto do Campeão Loreto" 
+                   class="highlight-photo"
+                   onerror="this.src='https://via.placeholder.com/286/FFD700/102810?text=LORETO'">
+            </div>
+            <div class="highlight-name">Loreto</div>
+            <div class="highlight-detail">Vencedor da 2ª Etapa</div>
+            <div class="highlight-detail">33 Pontos</div>
+          </div>
+        </div>
+        
+        <!-- MELHOR MÃO DA 2ª ETAPA -->
+        <div class="highlight-card">
+          <div class="etapa-faixa">
+            <div class="etapa-faixa-text">2ª ETAPA</div>
+          </div>
+          
+          <h3 class="highlight-title">MELHOR MÃO</h3>
+          
+          <div class="melhor-mao-person-foto">
+            <img src="https://github.com/pokerdequinta/fotos/blob/main/Loreto.png?raw=true" 
+                 alt="Foto de Loreto"
+                 onerror="this.src='https://via.placeholder.com/100/FFD700/102810?text=LORETO'">
+          </div>
+          
+          <div class="highlight-content">
+            <span class="highlight-icon">🃏</span>
+            <div class="highlight-photo-container">
+              <img src="https://github.com/pokerdequinta/fotos/blob/main/melhormao2etapa.jpg?raw=true" 
+                   alt="Foto da Melhor Mão - Full House de A com 8" 
+                   class="highlight-photo"
+                   onerror="this.src='https://via.placeholder.com/286/FFD700/102810?text=FULL+HOUSE+A+8'">
+            </div>
+            <div class="highlight-name">Full House de A com 8</div>
+            <div class="highlight-detail">Feito por: Loreto</div>
+            <div class="highlight-detail">GANHA: 1 ADDON na próxima Etapa</div>
+          </div>
+        </div>
+        
+        <!-- MATADOR DE KO DA 2ª ETAPA -->
+        <div class="highlight-card">
+          <div class="etapa-faixa">
+            <div class="etapa-faixa-text">2ª ETAPA</div>
+          </div>
+          
+          <h3 class="highlight-title">MATADOR DE KO</h3>
+          <div class="highlight-content">
+            <span class="highlight-icon">💥</span>
+            <div class="highlight-photo-container">
+              <img src="https://github.com/pokerdequinta/fotos/blob/main/loretoko.jpg?raw=true" 
+                   alt="Foto do Matador de KO Loreto" 
+                   class="highlight-photo"
+                   onerror="this.src='https://via.placeholder.com/286/FFD700/102810?text=LORETO'">
+            </div>
+            <div class="highlight-name">Loreto</div>
+            <div class="highlight-detail">6 eliminações</div>
+          </div>
+        </div>
+        
+        <!-- ROLETA DA SORTE DA 2ª ETAPA -->
+        <div class="highlight-card">
+          <div class="etapa-faixa">
+            <div class="etapa-faixa-text">2ª ETAPA</div>
+          </div>
+          
+          <h3 class="highlight-title">ROLETA DA SORTE</h3>
+          <div class="highlight-content">
+            <span class="highlight-icon">🎡</span>
+            <div class="highlight-photo-container">
+              <img src="https://github.com/pokerdequinta/fotos/blob/main/roleta2etapa.jpg?raw=true" 
+                   alt="Foto dos Ganhadores da Roleta - Gaspar e Maykon" 
+                   class="highlight-photo"
+                   onerror="this.src='https://via.placeholder.com/286/FFD700/102810?text=GASPAR+E+MAYKON'">
+            </div>
+            <div class="highlight-name">Gaspar e Maykon</div>
+            <div class="highlight-detail">Ganhadores da Roleta da Sorte</div>
           </div>
         </div>
       </div>
@@ -936,7 +992,6 @@ body {
 
 <!-- BOTTOM MENU -->
 <div class="bottom-menu">
-  <!-- 4 ITENS À ESQUERDA -->
   <div class="main-menu-items">
     <a href="https://pokerdequinta.github.io/ranking/" class="bottom-menu-item">
       <span class="bottom-menu-icon">🏆</span>
@@ -958,18 +1013,15 @@ body {
       <span class="bottom-menu-text">REGULAMENTO</span>
     </a>
     
-    <!-- ÍCONE DE BOT ADICIONADO AO LADO DO REGULAMENTO -->
     <a href="http://pokerdequinta.github.io/bot" class="bottom-menu-item">
       <span class="bottom-menu-icon">🤖</span>
       <span class="bottom-menu-text">BOT</span>
     </a>
   </div>
   
-  <!-- MENU HAMBURGUER À DIREITA -->
   <div class="hamburger-menu">
     <button class="hamburger-button" id="hamburgerButton">+</button>
     <div class="hamburger-dropdown" id="hamburgerDropdown">
-      <!-- Todos os menus agora estão no hamburguer -->
       <a href="https://pokerdequinta.github.io/ranking/" class="hamburger-item">
         <span class="hamburger-icon">🏆</span>
         <span class="hamburger-text">RANKING</span>
@@ -990,7 +1042,6 @@ body {
         <span class="hamburger-text">REGULAMENTO</span>
       </a>
       
-      <!-- ITEM DO BOT ADICIONADO AO MENU HAMBURGUER -->
       <a href="http://pokerdequinta.github.io/bot" class="hamburger-item">
         <span class="hamburger-icon">🤖</span>
         <span class="hamburger-text">BOT</span>
@@ -1040,14 +1091,12 @@ if (hamburgerButton && hamburgerDropdown) {
     hamburgerDropdown.classList.toggle('active');
   });
   
-  // Fechar menu ao clicar fora
   document.addEventListener('click', function(e) {
     if (!hamburgerDropdown.contains(e.target) && !hamburgerButton.contains(e.target)) {
       hamburgerDropdown.classList.remove('active');
     }
   });
   
-  // Fechar menu ao clicar em um item
   const hamburgerItems = hamburgerDropdown.querySelectorAll('.hamburger-item');
   hamburgerItems.forEach(item => {
     item.addEventListener('click', function() {
@@ -1056,10 +1105,32 @@ if (hamburgerButton && hamburgerDropdown) {
   });
 }
 
-// Adicionar interatividade aos cards de destaque
+// Função para alternar entre as etapas
+function showStage(stageNumber) {
+  // Esconder ambas as etapas
+  document.getElementById('stage1').style.display = 'none';
+  document.getElementById('stage2').style.display = 'none';
+  
+  // Mostrar a etapa selecionada
+  document.getElementById('stage' + stageNumber).style.display = 'block';
+  
+  // Atualizar botões ativos
+  const buttons = document.querySelectorAll('.stage-menu-btn');
+  buttons.forEach((btn, index) => {
+    if (index + 1 === stageNumber) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+}
+
+// Por padrão, a 2ª etapa já está sendo mostrada (style="display: block" no HTML)
+// Mas garantimos que o botão ativo seja o da 2ª etapa
+
+// Adicionar interatividade aos cards
 document.querySelectorAll('.highlight-card').forEach(card => {
   card.addEventListener('click', function() {
-    // Adicionar efeito visual ao clicar
     this.style.transform = 'scale(0.98)';
     setTimeout(() => {
       this.style.transform = '';
@@ -1067,7 +1138,7 @@ document.querySelectorAll('.highlight-card').forEach(card => {
   });
 });
 
-// Adicionar interatividade ao botão de inscrição
+// Interatividade no botão de inscrição
 const inscricaoBtn = document.querySelector('.inscricao-simples');
 if (inscricaoBtn) {
   inscricaoBtn.addEventListener('click', function() {
@@ -1078,29 +1149,24 @@ if (inscricaoBtn) {
   });
 }
 
-// Script para alternar as fotos da roleta da sorte a cada 2 segundos
-const roletaPhoto = document.getElementById('roleta-photo');
-const roletaImages = [
+// Alternar imagens da roleta da 1ª etapa
+const roletaImages1 = [
   'https://github.com/pokerdequinta/fotos/blob/main/abracobruxo1.jpeg?raw=true',
   'https://github.com/pokerdequinta/fotos/blob/main/abracobruxo2.jpg?raw=true'
 ];
 
-if (roletaPhoto) {
-  let currentImageIndex = 0;
-  
-  // Função para alternar as imagens
-  function changeRoletaImage() {
-    currentImageIndex = (currentImageIndex + 1) % roletaImages.length;
-    roletaPhoto.src = roletaImages[currentImageIndex];
-  }
-  
-  // Iniciar o ciclo de troca de imagens a cada 2 segundos
-  setInterval(changeRoletaImage, 2000);
+const roletaPhoto1 = document.getElementById('roleta-photo-1');
+if (roletaPhoto1) {
+  let currentIndex = 0;
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % roletaImages1.length;
+    roletaPhoto1.src = roletaImages1[currentIndex];
+  }, 2000);
 }
 
-// Preload das imagens da roleta para evitar piscar durante a troca
+// Preload das imagens
 window.addEventListener('load', function() {
-  roletaImages.forEach(src => {
+  [...roletaImages1].forEach(src => {
     const img = new Image();
     img.src = src;
   });
