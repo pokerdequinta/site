@@ -428,6 +428,36 @@ body {
   object-fit: cover;
 }
 
+/* Container para fotos lado a lado (MATADORES KO) */
+.killers-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.killer-item {
+  text-align: center;
+}
+
+.killer-photo {
+  width: 130px;
+  height: 130px;
+  border-radius: 20px;
+  object-fit: cover;
+  border: 3px solid #d4a121;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  background: #102810;
+}
+
+.killer-name {
+  font-family: 'Anton';
+  font-size: 1.1em;
+  color: #f4c141;
+  margin-top: 8px;
+}
+
 .highlight-name {
   font-family: 'Anton';
   font-size: 1.5em;
@@ -461,7 +491,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease;
 }
 
 /* FOOTER */
@@ -675,6 +705,11 @@ body {
     right: 10px;
   }
   
+  .killer-photo {
+    width: 100px;
+    height: 100px;
+  }
+  
   .inscricao-simples {
     font-size: 1.2em;
     padding: 12px 25px;
@@ -743,6 +778,11 @@ body {
     height: 60px;
   }
   
+  .killer-photo {
+    width: 80px;
+    height: 80px;
+  }
+  
   .highlight-name {
     font-size: 1.3em;
   }
@@ -794,14 +834,14 @@ body {
 <!-- CONTAINER PRINCIPAL -->
 <div class="main-container">
   
-  <!-- PRÓXIMA ETAPA (30/04) -->
+  <!-- PRÓXIMA ETAPA (28/05) -->
   <div>
     <h2 class="section-title">PRÓXIMA ETAPA</h2>
     
     <div class="next-stage-card">
-      <div class="stage-top-badge">4ª ETAPA</div>
+      <div class="stage-top-badge">5ª ETAPA</div>
       
-      <h3 class="menu-title">30/04</h3>
+      <h3 class="menu-title">28/05</h3>
       <p class="menu-description">Prepare-se para mais uma noite de resenha e Baralhada!</p>
       
       <div class="stage-info">
@@ -809,7 +849,7 @@ body {
           <span class="icon">📅</span>
           <div class="info-content">
             <div class="info-label">DATA</div>
-            <div class="info-value info-date">30 de Abril</div>
+            <div class="info-value info-date">28 de Maio</div>
           </div>
         </div>
         
@@ -869,7 +909,8 @@ body {
     <div class="stages-menu">
       <button class="stage-menu-btn" onclick="showStage(1)">1ª ETAPA</button>
       <button class="stage-menu-btn" onclick="showStage(2)">2ª ETAPA</button>
-      <button class="stage-menu-btn active" onclick="showStage(3)">3ª ETAPA</button>
+      <button class="stage-menu-btn" onclick="showStage(3)">3ª ETAPA</button>
+      <button class="stage-menu-btn active" onclick="showStage(4)">4ª ETAPA</button>
     </div>
     
     <!-- DESTAQUES DA 1ª ETAPA -->
@@ -895,86 +936,106 @@ body {
       </div>
     </div>
     
-    <!-- DESTAQUES DA 3ª ETAPA (NOVOS CARDS) -->
-    <div id="stage3" class="highlights-section">
+    <!-- DESTAQUES DA 3ª ETAPA -->
+    <div id="stage3" class="highlights-section" style="display: none;">
       <h2 class="highlights-title">PRINCIPAIS DESTAQUES DA 3ª ETAPA</h2>
       
       <div class="highlight-grid">
-        <!-- CAMPEÃO DA 3ª ETAPA: Neto com 31 Pontos -->
+        <div class="highlight-card"><div class="etapa-faixa"><div class="etapa-faixa-text">3ª ETAPA</div></div><h3 class="highlight-title">CAMPEÃO</h3><div class="highlight-content"><span class="highlight-icon">👑</span><div class="highlight-photo-container"><img src="https://github.com/pokerdequinta/fotos/blob/main/campeao3etapaneto.jpeg?raw=true" class="highlight-photo"></div><div class="highlight-name">Neto</div><div class="highlight-detail">Vencedor da 3ª Etapa</div><div class="highlight-detail">31 Pontos</div></div></div>
+        <div class="highlight-card"><div class="etapa-faixa"><div class="etapa-faixa-text">3ª ETAPA</div></div><h3 class="highlight-title">MELHOR MÃO</h3><div class="melhor-mao-person-foto"><img src="https://github.com/pokerdequinta/fotos/blob/main/Gaspar.png?raw=true"></div><div class="highlight-content"><span class="highlight-icon">🃏</span><div class="highlight-photo-container"><img src="https://github.com/pokerdequinta/fotos/blob/main/melhormao3etapa.jpeg?raw=true" class="highlight-photo"></div><div class="highlight-name">Quadra de 9</div><div class="highlight-detail">Feito por: Gaspar</div><div class="highlight-detail">GANHA: 1 ADDON na próxima Etapa</div></div></div>
+        <div class="highlight-card"><div class="etapa-faixa"><div class="etapa-faixa-text">3ª ETAPA</div></div><h3 class="highlight-title">MATADOR DE KO</h3><div class="highlight-content"><span class="highlight-icon">💥</span><div class="highlight-photo-container"><img src="https://github.com/pokerdequinta/fotos/blob/main/robsonmatadorko.jpeg?raw=true" class="highlight-photo"></div><div class="highlight-name">Robson</div><div class="highlight-detail">6 eliminações</div></div></div>
+        <div class="highlight-card"><div class="etapa-faixa"><div class="etapa-faixa-text">3ª ETAPA</div></div><h3 class="highlight-title">ROLETA DA SORTE</h3><div class="highlight-content"><span class="highlight-icon">🎡</span><div class="highlight-photo-container"><div class="roleta-slider-container" id="roleta-slider-3"><img class="roleta-slider-img" id="roleta-img-3" src="https://github.com/pokerdequinta/fotos/blob/main/roletamatoso.jpeg?raw=true"></div></div><div class="highlight-name">Ricardo Matoso e Jean</div><div class="highlight-detail">Matoso: 1 Cerveja | Jean: 1 Abraço do Sr Milton</div></div></div>
+      </div>
+    </div>
+    
+    <!-- DESTAQUES DA 4ª ETAPA (ATUALIZADO) -->
+    <div id="stage4" class="highlights-section">
+      <h2 class="highlights-title">PRINCIPAIS DESTAQUES DA 4ª ETAPA</h2>
+      
+      <div class="highlight-grid">
+        <!-- CAMPEÃO DA 4ª ETAPA: Sergio com 31 Pontos -->
         <div class="highlight-card">
           <div class="etapa-faixa">
-            <div class="etapa-faixa-text">3ª ETAPA</div>
+            <div class="etapa-faixa-text">4ª ETAPA</div>
           </div>
           <h3 class="highlight-title">CAMPEÃO</h3>
           <div class="highlight-content">
             <span class="highlight-icon">👑</span>
             <div class="highlight-photo-container">
-              <img src="https://github.com/pokerdequinta/fotos/blob/main/campeao3etapaneto.jpeg?raw=true" 
-                   alt="Foto do Campeão Neto" 
+              <img src="https://github.com/pokerdequinta/fotos/blob/main/sergiocampeao4etapa.jpg?raw=true" 
+                   alt="Foto do Campeão Sergio" 
                    class="highlight-photo">
             </div>
-            <div class="highlight-name">Neto</div>
-            <div class="highlight-detail">Vencedor da 3ª Etapa</div>
+            <div class="highlight-name">Sergio</div>
+            <div class="highlight-detail">Vencedor da 4ª Etapa</div>
             <div class="highlight-detail">31 Pontos</div>
           </div>
         </div>
         
-        <!-- MELHOR MÃO DA 3ª ETAPA: Quadra de 9 por Gaspar -->
+        <!-- MELHOR MÃO DA 4ª ETAPA: Full de A com Q por Izidio -->
         <div class="highlight-card">
           <div class="etapa-faixa">
-            <div class="etapa-faixa-text">3ª ETAPA</div>
+            <div class="etapa-faixa-text">4ª ETAPA</div>
           </div>
           <h3 class="highlight-title">MELHOR MÃO</h3>
           <div class="melhor-mao-person-foto">
-            <img src="https://github.com/pokerdequinta/fotos/blob/main/Gaspar.png?raw=true" 
-                 alt="Foto de Gaspar">
+            <img src="https://github.com/pokerdequinta/fotos/blob/main/Izidio.png?raw=true" 
+                 alt="Foto de Izidio">
           </div>
           <div class="highlight-content">
             <span class="highlight-icon">🃏</span>
             <div class="highlight-photo-container">
-              <img src="https://github.com/pokerdequinta/fotos/blob/main/melhormao3etapa.jpeg?raw=true" 
-                   alt="Foto da Melhor Mão - Quadra de 9" 
+              <img src="https://github.com/pokerdequinta/fotos/blob/main/melhormao4etapa.jpg?raw=true" 
+                   alt="Foto da Melhor Mão - Full de A com Q" 
                    class="highlight-photo">
             </div>
-            <div class="highlight-name">Quadra de 9</div>
-            <div class="highlight-detail">Feito por: Gaspar</div>
+            <div class="highlight-name">Full de A com Q</div>
+            <div class="highlight-detail">Feito por: Izidio</div>
             <div class="highlight-detail">GANHA: 1 ADDON na próxima Etapa</div>
           </div>
         </div>
         
-        <!-- MATADOR DE KO DA 3ª ETAPA: Robson com 6 eliminacoes -->
+        <!-- MATADORES DE KO DA 4ª ETAPA: Sergio e Guti com 4 eliminacoes cada -->
         <div class="highlight-card">
           <div class="etapa-faixa">
-            <div class="etapa-faixa-text">3ª ETAPA</div>
+            <div class="etapa-faixa-text">4ª ETAPA</div>
           </div>
-          <h3 class="highlight-title">MATADOR DE KO</h3>
+          <h3 class="highlight-title">MATADORES DE KO</h3>
           <div class="highlight-content">
             <span class="highlight-icon">💥</span>
-            <div class="highlight-photo-container">
-              <img src="https://github.com/pokerdequinta/fotos/blob/main/robsonmatadorko.jpeg?raw=true" 
-                   alt="Foto do Matador de KO Robson" 
-                   class="highlight-photo">
+            <div class="killers-container">
+              <div class="killer-item">
+                <img src="https://github.com/pokerdequinta/fotos/blob/main/sergioko4etapa.jpg?raw=true" 
+                     alt="Foto do Sergio" 
+                     class="killer-photo">
+                <div class="killer-name">Sergio</div>
+              </div>
+              <div class="killer-item">
+                <img src="https://github.com/pokerdequinta/fotos/blob/main/gutiko4etapa.jpg?raw=true" 
+                     alt="Foto do Guti" 
+                     class="killer-photo">
+                <div class="killer-name">Guti</div>
+              </div>
             </div>
-            <div class="highlight-name">Robson</div>
-            <div class="highlight-detail">6 eliminações</div>
+            <div class="highlight-detail">Ambos com 4 eliminações cada!</div>
           </div>
         </div>
         
-        <!-- ROLETA DA SORTE DA 3ª ETAPA: Ricardo Matoso (cerveja) e Jean (abraço do Sr Milton) - com transição de 3 fotos -->
+        <!-- ROLETA DA SORTE DA 4ª ETAPA: Jean, Jean Rebuy, Gaspar com transição de 4 fotos -->
         <div class="highlight-card">
           <div class="etapa-faixa">
-            <div class="etapa-faixa-text">3ª ETAPA</div>
+            <div class="etapa-faixa-text">4ª ETAPA</div>
           </div>
           <h3 class="highlight-title">ROLETA DA SORTE</h3>
           <div class="highlight-content">
             <span class="highlight-icon">🎡</span>
             <div class="highlight-photo-container">
-              <div class="roleta-slider-container" id="roleta-slider-3">
-                <img class="roleta-slider-img" id="roleta-img-3" src="https://github.com/pokerdequinta/fotos/blob/main/roletamatoso.jpeg?raw=true">
+              <div class="roleta-slider-container" id="roleta-slider-4">
+                <img class="roleta-slider-img" id="roleta-img-4" src="https://github.com/pokerdequinta/fotos/blob/main/jeanabrecodealer1.jpg?raw=true">
               </div>
             </div>
-            <div class="highlight-name">Ricardo Matoso e Jean</div>
-            <div class="highlight-detail">Matoso: 1 Cerveja | Jean: 1 Abraço do Sr Milton</div>
+            <div class="highlight-name">Jean, Jean Rebuy e Gaspar</div>
+            <div class="highlight-detail">Jean: 1 Abraço do Dealer | Jean Rebuy: 2K em Fichas | Gaspar: 10K em fichas</div>
           </div>
         </div>
       </div>
@@ -1037,6 +1098,7 @@ function showStage(stageNumber) {
   document.getElementById('stage1').style.display = 'none';
   document.getElementById('stage2').style.display = 'none';
   document.getElementById('stage3').style.display = 'none';
+  document.getElementById('stage4').style.display = 'none';
   document.getElementById('stage' + stageNumber).style.display = 'block';
   const buttons = document.querySelectorAll('.stage-menu-btn');
   buttons.forEach((btn, index) => {
@@ -1045,8 +1107,8 @@ function showStage(stageNumber) {
   });
 }
 
-// Iniciar com a 3ª etapa visível
-showStage(3);
+// Iniciar com a 4ª etapa visível
+showStage(4);
 
 // SLIDER PARA ROLETA DA SORTE DA 3ª ETAPA (transição de 3 fotos com intervalo de 1.5s)
 const roletaImages3 = [
@@ -1066,6 +1128,27 @@ if (roletaImg3) {
       roletaImg3.style.opacity = '1';
     }, 150);
   }, 1500);
+}
+
+// SLIDER PARA A ROLETA DA 4ª ETAPA (transição de 4 fotos)
+const roletaImages4 = [
+  'https://github.com/pokerdequinta/fotos/blob/main/jeanabrecodealer1.jpg?raw=true',
+  'https://github.com/pokerdequinta/fotos/blob/main/jeanabrecodealer2.jpg?raw=true',
+  'https://github.com/pokerdequinta/fotos/blob/main/jeanrebuyroleta.jpg?raw=true',
+  'https://github.com/pokerdequinta/fotos/blob/main/gasparroleta4etapa.jpg?raw=true'
+];
+
+const roletaImg4 = document.getElementById('roleta-img-4');
+if (roletaImg4) {
+  let currentIndex4 = 0;
+  setInterval(() => {
+    currentIndex4 = (currentIndex4 + 1) % roletaImages4.length;
+    roletaImg4.style.opacity = '0.5';
+    setTimeout(() => {
+      roletaImg4.src = roletaImages4[currentIndex4];
+      roletaImg4.style.opacity = '1';
+    }, 150);
+  }, 2000);
 }
 
 // SLIDER PARA A ROLETA DA 1ª ETAPA (mantendo transição original das 2 imagens)
@@ -1088,7 +1171,7 @@ if (roletaImg1) {
 
 // Preload das imagens para melhor performance
 window.addEventListener('load', function() {
-  [...roletaImages3, ...roletaImages1].forEach(src => {
+  [...roletaImages3, ...roletaImages4, ...roletaImages1].forEach(src => {
     const img = new Image();
     img.src = src;
   });
