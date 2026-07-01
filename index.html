@@ -834,14 +834,14 @@ body {
 <!-- CONTAINER PRINCIPAL -->
 <div class="main-container">
   
-  <!-- PRÓXIMA ETAPA (25/06 - 6ª ETAPA) -->
+  <!-- PRÓXIMA ETAPA (30/07 - 7ª ETAPA) -->
   <div>
     <h2 class="section-title">PRÓXIMA ETAPA</h2>
     
     <div class="next-stage-card">
-      <div class="stage-top-badge">6ª ETAPA</div>
+      <div class="stage-top-badge">7ª ETAPA</div>
       
-      <h3 class="menu-title">25/06</h3>
+      <h3 class="menu-title">30/07</h3>
       <p class="menu-description">Prepare-se para mais uma noite de resenha e Baralhada!</p>
       
       <div class="stage-info">
@@ -849,7 +849,7 @@ body {
           <span class="icon">📅</span>
           <div class="info-content">
             <div class="info-label">DATA</div>
-            <div class="info-value info-date">25 de Junho</div>
+            <div class="info-value info-date">30 de Julho</div>
           </div>
         </div>
         
@@ -911,7 +911,8 @@ body {
       <button class="stage-menu-btn" onclick="showStage(2)">2ª ETAPA</button>
       <button class="stage-menu-btn" onclick="showStage(3)">3ª ETAPA</button>
       <button class="stage-menu-btn" onclick="showStage(4)">4ª ETAPA</button>
-      <button class="stage-menu-btn active" onclick="showStage(5)">5ª ETAPA</button>
+      <button class="stage-menu-btn" onclick="showStage(5)">5ª ETAPA</button>
+      <button class="stage-menu-btn active" onclick="showStage(6)">6ª ETAPA</button>
     </div>
     
     <!-- DESTAQUES DA 1ª ETAPA -->
@@ -961,8 +962,8 @@ body {
       </div>
     </div>
     
-    <!-- DESTAQUES DA 5ª ETAPA (ATUALIZADO COM OS NOVOS DADOS) -->
-    <div id="stage5" class="highlights-section">
+    <!-- DESTAQUES DA 5ª ETAPA -->
+    <div id="stage5" class="highlights-section" style="display: none;">
       <h2 class="highlights-title">PRINCIPAIS DESTAQUES DA 5ª ETAPA</h2>
       
       <div class="highlight-grid">
@@ -1045,6 +1046,91 @@ body {
         </div>
       </div>
     </div>
+
+    <!-- DESTAQUES DA 6ª ETAPA (ATUALIZADO) -->
+    <div id="stage6" class="highlights-section">
+      <h2 class="highlights-title">PRINCIPAIS DESTAQUES DA 6ª ETAPA</h2>
+      
+      <div class="highlight-grid">
+        <!-- CAMPEÃO DA 6ª ETAPA: Gaspar com 32 Pontos -->
+        <div class="highlight-card">
+          <div class="etapa-faixa">
+            <div class="etapa-faixa-text">6ª ETAPA</div>
+          </div>
+          <h3 class="highlight-title">CAMPEÃO</h3>
+          <div class="highlight-content">
+            <span class="highlight-icon">👑</span>
+            <div class="highlight-photo-container">
+              <img src="https://github.com/pokerdequinta/fotos/blob/main/gasparcampeao6etapa.jpg?raw=true" 
+                   alt="Foto do Campeão Gaspar" 
+                   class="highlight-photo">
+            </div>
+            <div class="highlight-name">Gaspar</div>
+            <div class="highlight-detail">Vencedor da 6ª Etapa</div>
+            <div class="highlight-detail">32 Pontos</div>
+          </div>
+        </div>
+        
+        <!-- MELHOR MÃO DA 6ª ETAPA: Buiu Quadra de 6 -->
+        <div class="highlight-card">
+          <div class="etapa-faixa">
+            <div class="etapa-faixa-text">6ª ETAPA</div>
+          </div>
+          <h3 class="highlight-title">MELHOR MÃO</h3>
+          <div class="melhor-mao-person-foto">
+            <img src="https://github.com/pokerdequinta/fotos/blob/main/buiu.png?raw=true" 
+                 alt="Foto de Buiu">
+          </div>
+          <div class="highlight-content">
+            <span class="highlight-icon">🃏</span>
+            <div class="highlight-photo-container">
+              <img src="https://github.com/pokerdequinta/fotos/blob/main/melhor%20mao%206etapa.jpg?raw=true" 
+                   alt="Foto da Melhor Mão - Quadra de 6" 
+                   class="highlight-photo">
+            </div>
+            <div class="highlight-name">Quadra de 6</div>
+            <div class="highlight-detail">Feito por: Buiu</div>
+            <div class="highlight-detail">GANHA: 1 ADDON na próxima Etapa</div>
+          </div>
+        </div>
+        
+        <!-- MATADOR DE KO DA 6ª ETAPA: Gaspar com 5 eliminações -->
+        <div class="highlight-card">
+          <div class="etapa-faixa">
+            <div class="etapa-faixa-text">6ª ETAPA</div>
+          </div>
+          <h3 class="highlight-title">MATADOR DE KO</h3>
+          <div class="highlight-content">
+            <span class="highlight-icon">💥</span>
+            <div class="highlight-photo-container">
+              <img src="https://github.com/pokerdequinta/fotos/blob/main/gasparcampeao6etapa.jpg?raw=true" 
+                   alt="Foto do Gaspar - Matador de KO" 
+                   class="highlight-photo">
+            </div>
+            <div class="highlight-name">Gaspar</div>
+            <div class="highlight-detail">5 eliminações</div>
+          </div>
+        </div>
+        
+        <!-- ROLETA DA SORTE DA 6ª ETAPA -->
+        <div class="highlight-card">
+          <div class="etapa-faixa">
+            <div class="etapa-faixa-text">6ª ETAPA</div>
+          </div>
+          <h3 class="highlight-title">ROLETA DA SORTE</h3>
+          <div class="highlight-content">
+            <span class="highlight-icon">🎡</span>
+            <div class="highlight-photo-container">
+              <div class="roleta-slider-container" id="roleta-slider-6">
+                <img class="roleta-slider-img" id="roleta-img-6" src="https://github.com/pokerdequinta/fotos/blob/main/matehusroleta6etapa.jpg?raw=true">
+              </div>
+            </div>
+            <div class="highlight-name">Matheus, Izidio, Gaspar, Gera e Cleversson</div>
+            <div class="highlight-detail">Matheus: 50K | Izidio: 1 Abraço do Bruxo | Gaspar: 1 Ficha de KO | Gera: 25K | Cleversson: 2K</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1105,6 +1191,7 @@ function showStage(stageNumber) {
   document.getElementById('stage3').style.display = 'none';
   document.getElementById('stage4').style.display = 'none';
   document.getElementById('stage5').style.display = 'none';
+  document.getElementById('stage6').style.display = 'none';
   document.getElementById('stage' + stageNumber).style.display = 'block';
   const buttons = document.querySelectorAll('.stage-menu-btn');
   buttons.forEach((btn, index) => {
@@ -1113,8 +1200,8 @@ function showStage(stageNumber) {
   });
 }
 
-// Iniciar com a 5ª etapa visível (última etapa realizada)
-showStage(5);
+// Iniciar com a 6ª etapa visível (última etapa realizada)
+showStage(6);
 
 // SLIDER PARA ROLETA DA SORTE DA 3ª ETAPA (transição de 3 fotos)
 const roletaImages3 = [
@@ -1194,9 +1281,32 @@ if (roletaImg1) {
   }, 2000);
 }
 
+// SLIDER PARA A ROLETA DA 6ª ETAPA (transição das 6 imagens)
+const roletaImages6 = [
+  'https://github.com/pokerdequinta/fotos/blob/main/matehusroleta6etapa.jpg?raw=true',
+  'https://github.com/pokerdequinta/fotos/blob/main/izidioabracobruxo1.jpg?raw=true',
+  'https://github.com/pokerdequinta/fotos/blob/main/izidioabracobruxo2.jpg?raw=true',
+  'https://github.com/pokerdequinta/fotos/blob/main/gasparroleta4etapa.jpg?raw=true',
+  'https://github.com/pokerdequinta/fotos/blob/main/geraroleta6etapa.jpg?raw=true',
+  'https://github.com/pokerdequinta/fotos/blob/main/cleversonroleta6etapa.jpg?raw=true'
+];
+
+const roletaImg6 = document.getElementById('roleta-img-6');
+if (roletaImg6) {
+  let currentIndex6 = 0;
+  setInterval(() => {
+    currentIndex6 = (currentIndex6 + 1) % roletaImages6.length;
+    roletaImg6.style.opacity = '0.5';
+    setTimeout(() => {
+      roletaImg6.src = roletaImages6[currentIndex6];
+      roletaImg6.style.opacity = '1';
+    }, 150);
+  }, 2000);
+}
+
 // Preload das imagens para melhor performance
 window.addEventListener('load', function() {
-  [...roletaImages3, ...roletaImages4, ...roletaImages5, ...roletaImages1].forEach(src => {
+  [...roletaImages3, ...roletaImages4, ...roletaImages5, ...roletaImages1, ...roletaImages6].forEach(src => {
     const img = new Image();
     img.src = src;
   });
