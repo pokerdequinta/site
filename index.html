@@ -834,14 +834,14 @@ body {
 <!-- CONTAINER PRINCIPAL -->
 <div class="main-container">
   
-  <!-- PRÓXIMA ETAPA (30/07 - 7ª ETAPA) -->
+  <!-- PRÓXIMA ETAPA (27/08 - 8ª ETAPA) -->
   <div>
     <h2 class="section-title">PRÓXIMA ETAPA</h2>
     
     <div class="next-stage-card">
-      <div class="stage-top-badge">7ª ETAPA</div>
+      <div class="stage-top-badge">8ª ETAPA</div>
       
-      <h3 class="menu-title">30/07</h3>
+      <h3 class="menu-title">27/08</h3>
       <p class="menu-description">Prepare-se para mais uma noite de resenha e Baralhada!</p>
       
       <div class="stage-info">
@@ -849,7 +849,7 @@ body {
           <span class="icon">📅</span>
           <div class="info-content">
             <div class="info-label">DATA</div>
-            <div class="info-value info-date">30 de Julho</div>
+            <div class="info-value info-date">27 de Agosto</div>
           </div>
         </div>
         
@@ -912,7 +912,8 @@ body {
       <button class="stage-menu-btn" onclick="showStage(3)">3ª ETAPA</button>
       <button class="stage-menu-btn" onclick="showStage(4)">4ª ETAPA</button>
       <button class="stage-menu-btn" onclick="showStage(5)">5ª ETAPA</button>
-      <button class="stage-menu-btn active" onclick="showStage(6)">6ª ETAPA</button>
+      <button class="stage-menu-btn" onclick="showStage(6)">6ª ETAPA</button>
+      <button class="stage-menu-btn" onclick="showStage(7)">7ª ETAPA</button>
     </div>
     
     <!-- DESTAQUES DA 1ª ETAPA -->
@@ -1047,8 +1048,8 @@ body {
       </div>
     </div>
 
-    <!-- DESTAQUES DA 6ª ETAPA (ATUALIZADO) -->
-    <div id="stage6" class="highlights-section">
+    <!-- DESTAQUES DA 6ª ETAPA -->
+    <div id="stage6" class="highlights-section" style="display: none;">
       <h2 class="highlights-title">PRINCIPAIS DESTAQUES DA 6ª ETAPA</h2>
       
       <div class="highlight-grid">
@@ -1131,6 +1132,91 @@ body {
         </div>
       </div>
     </div>
+
+    <!-- DESTAQUES DA 7ª ETAPA -->
+    <div id="stage7" class="highlights-section" style="display: none;">
+      <h2 class="highlights-title">PRINCIPAIS DESTAQUES DA 7ª ETAPA</h2>
+      
+      <div class="highlight-grid">
+        <!-- CAMPEÃO DA 7ª ETAPA: Sergio com 37 Pontos -->
+        <div class="highlight-card">
+          <div class="etapa-faixa">
+            <div class="etapa-faixa-text">7ª ETAPA</div>
+          </div>
+          <h3 class="highlight-title">CAMPEÃO</h3>
+          <div class="highlight-content">
+            <span class="highlight-icon">👑</span>
+            <div class="highlight-photo-container">
+              <img src="https://github.com/pokerdequinta/fotos/blob/main/sergiocampeao4etapa.jpg?raw=true" 
+                   alt="Foto do Campeão Sergio" 
+                   class="highlight-photo">
+            </div>
+            <div class="highlight-name">Sergio</div>
+            <div class="highlight-detail">Vencedor da 7ª Etapa</div>
+            <div class="highlight-detail">37 Pontos</div>
+          </div>
+        </div>
+        
+        <!-- MELHOR MÃO DA 7ª ETAPA: Robson Quadra de K -->
+        <div class="highlight-card">
+          <div class="etapa-faixa">
+            <div class="etapa-faixa-text">7ª ETAPA</div>
+          </div>
+          <h3 class="highlight-title">MELHOR MÃO</h3>
+          <div class="melhor-mao-person-foto">
+            <img src="https://github.com/pokerdequinta/fotos/blob/main/Robson.png?raw=true" 
+                 alt="Foto de Robson">
+          </div>
+          <div class="highlight-content">
+            <span class="highlight-icon">🃏</span>
+            <div class="highlight-photo-container">
+              <img src="https://github.com/pokerdequinta/fotos/blob/main/melhormao7etapa.jpeg?raw=true" 
+                   alt="Foto da Melhor Mão - Quadra de K" 
+                   class="highlight-photo">
+            </div>
+            <div class="highlight-name">Quadra de K</div>
+            <div class="highlight-detail">Feito por: Robson</div>
+            <div class="highlight-detail">GANHA: 1 ADDON na próxima Etapa</div>
+          </div>
+        </div>
+        
+        <!-- MATADOR DE KO DA 7ª ETAPA: Sergio com 7 eliminações -->
+        <div class="highlight-card">
+          <div class="etapa-faixa">
+            <div class="etapa-faixa-text">7ª ETAPA</div>
+          </div>
+          <h3 class="highlight-title">MATADOR DE KO</h3>
+          <div class="highlight-content">
+            <span class="highlight-icon">💥</span>
+            <div class="highlight-photo-container">
+              <img src="https://github.com/pokerdequinta/fotos/blob/main/sergioko4etapa.jpg?raw=true" 
+                   alt="Foto do Sergio - Matador de KO" 
+                   class="highlight-photo">
+            </div>
+            <div class="highlight-name">Sergio</div>
+            <div class="highlight-detail">7 eliminações</div>
+          </div>
+        </div>
+        
+        <!-- ROLETA DA SORTE DA 7ª ETAPA -->
+        <div class="highlight-card">
+          <div class="etapa-faixa">
+            <div class="etapa-faixa-text">7ª ETAPA</div>
+          </div>
+          <h3 class="highlight-title">ROLETA DA SORTE</h3>
+          <div class="highlight-content">
+            <span class="highlight-icon">🎡</span>
+            <div class="highlight-photo-container">
+              <div class="roleta-slider-container" id="roleta-slider-7">
+                <img class="roleta-slider-img" id="roleta-img-7" src="https://github.com/pokerdequinta/fotos/blob/main/roletacleversson7etapa.jpeg?raw=true">
+              </div>
+            </div>
+            <div class="highlight-name">Guti, Loreto, Cleversson e Jean</div>
+            <div class="highlight-detail">Guti: 50K | Loreto: 1 Amendoim | Cleversson: 25K | Jean: 2K</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1186,13 +1272,14 @@ if (hamburgerButton && hamburgerDropdown) {
 
 // Função para alternar entre as etapas
 function showStage(stageNumber) {
-  document.getElementById('stage1').style.display = 'none';
-  document.getElementById('stage2').style.display = 'none';
-  document.getElementById('stage3').style.display = 'none';
-  document.getElementById('stage4').style.display = 'none';
-  document.getElementById('stage5').style.display = 'none';
-  document.getElementById('stage6').style.display = 'none';
-  document.getElementById('stage' + stageNumber).style.display = 'block';
+  // Esconde todas as etapas
+  for (let i = 1; i <= 7; i++) {
+    const el = document.getElementById('stage' + i);
+    if (el) el.style.display = 'none';
+  }
+  const target = document.getElementById('stage' + stageNumber);
+  if (target) target.style.display = 'block';
+  
   const buttons = document.querySelectorAll('.stage-menu-btn');
   buttons.forEach((btn, index) => {
     if (index + 1 === stageNumber) btn.classList.add('active');
@@ -1200,70 +1287,10 @@ function showStage(stageNumber) {
   });
 }
 
-// Iniciar com a 6ª etapa visível (última etapa realizada)
-showStage(6);
+// Iniciar com a 7ª etapa visível (última etapa realizada)
+showStage(7);
 
-// SLIDER PARA ROLETA DA SORTE DA 3ª ETAPA (transição de 3 fotos)
-const roletaImages3 = [
-  'https://github.com/pokerdequinta/fotos/blob/main/roletamatoso.jpeg?raw=true',
-  'https://github.com/pokerdequinta/fotos/blob/main/abracomilton1.jpeg?raw=true',
-  'https://github.com/pokerdequinta/fotos/blob/main/abracomilton2.jpeg?raw=true'
-];
-
-const roletaImg3 = document.getElementById('roleta-img-3');
-if (roletaImg3) {
-  let currentIndex3 = 0;
-  setInterval(() => {
-    currentIndex3 = (currentIndex3 + 1) % roletaImages3.length;
-    roletaImg3.style.opacity = '0.5';
-    setTimeout(() => {
-      roletaImg3.src = roletaImages3[currentIndex3];
-      roletaImg3.style.opacity = '1';
-    }, 150);
-  }, 1500);
-}
-
-// SLIDER PARA A ROLETA DA 4ª ETAPA (transição de 4 fotos)
-const roletaImages4 = [
-  'https://github.com/pokerdequinta/fotos/blob/main/jeanabrecodealer1.jpg?raw=true',
-  'https://github.com/pokerdequinta/fotos/blob/main/jeanabrecodealer2.jpg?raw=true',
-  'https://github.com/pokerdequinta/fotos/blob/main/jeanrebuyroleta.jpg?raw=true',
-  'https://github.com/pokerdequinta/fotos/blob/main/gasparroleta4etapa.jpg?raw=true'
-];
-
-const roletaImg4 = document.getElementById('roleta-img-4');
-if (roletaImg4) {
-  let currentIndex4 = 0;
-  setInterval(() => {
-    currentIndex4 = (currentIndex4 + 1) % roletaImages4.length;
-    roletaImg4.style.opacity = '0.5';
-    setTimeout(() => {
-      roletaImg4.src = roletaImages4[currentIndex4];
-      roletaImg4.style.opacity = '1';
-    }, 150);
-  }, 2000);
-}
-
-// SLIDER PARA A ROLETA DA 5ª ETAPA (transição entre foto do Maykon e do Izidio)
-const roletaImages5 = [
-  'https://github.com/pokerdequinta/fotos/blob/main/roleta5etapamaykon.jpeg?raw=true',
-  'https://github.com/pokerdequinta/fotos/blob/main/roleta5etapaizidio.jpeg?raw=true'
-];
-
-const roletaImg5 = document.getElementById('roleta-img-5');
-if (roletaImg5) {
-  let currentIndex5 = 0;
-  setInterval(() => {
-    currentIndex5 = (currentIndex5 + 1) % roletaImages5.length;
-    roletaImg5.style.opacity = '0.5';
-    setTimeout(() => {
-      roletaImg5.src = roletaImages5[currentIndex5];
-      roletaImg5.style.opacity = '1';
-    }, 150);
-  }, 2000);
-}
-
-// SLIDER PARA A ROLETA DA 1ª ETAPA (transição das 2 imagens)
+// SLIDER PARA ROLETA DA SORTE DA 1ª ETAPA
 const roletaImages1 = [
   'https://github.com/pokerdequinta/fotos/blob/main/abracobruxo1.jpeg?raw=true',
   'https://github.com/pokerdequinta/fotos/blob/main/abracobruxo2.jpg?raw=true'
@@ -1281,7 +1308,64 @@ if (roletaImg1) {
   }, 2000);
 }
 
-// SLIDER PARA A ROLETA DA 6ª ETAPA (transição das 6 imagens)
+// SLIDER PARA ROLETA DA SORTE DA 3ª ETAPA
+const roletaImages3 = [
+  'https://github.com/pokerdequinta/fotos/blob/main/roletamatoso.jpeg?raw=true',
+  'https://github.com/pokerdequinta/fotos/blob/main/abracomilton1.jpeg?raw=true',
+  'https://github.com/pokerdequinta/fotos/blob/main/abracomilton2.jpeg?raw=true'
+];
+const roletaImg3 = document.getElementById('roleta-img-3');
+if (roletaImg3) {
+  let currentIndex3 = 0;
+  setInterval(() => {
+    currentIndex3 = (currentIndex3 + 1) % roletaImages3.length;
+    roletaImg3.style.opacity = '0.5';
+    setTimeout(() => {
+      roletaImg3.src = roletaImages3[currentIndex3];
+      roletaImg3.style.opacity = '1';
+    }, 150);
+  }, 1500);
+}
+
+// SLIDER PARA ROLETA DA SORTE DA 4ª ETAPA
+const roletaImages4 = [
+  'https://github.com/pokerdequinta/fotos/blob/main/jeanabrecodealer1.jpg?raw=true',
+  'https://github.com/pokerdequinta/fotos/blob/main/jeanabrecodealer2.jpg?raw=true',
+  'https://github.com/pokerdequinta/fotos/blob/main/jeanrebuyroleta.jpg?raw=true',
+  'https://github.com/pokerdequinta/fotos/blob/main/gasparroleta4etapa.jpg?raw=true'
+];
+const roletaImg4 = document.getElementById('roleta-img-4');
+if (roletaImg4) {
+  let currentIndex4 = 0;
+  setInterval(() => {
+    currentIndex4 = (currentIndex4 + 1) % roletaImages4.length;
+    roletaImg4.style.opacity = '0.5';
+    setTimeout(() => {
+      roletaImg4.src = roletaImages4[currentIndex4];
+      roletaImg4.style.opacity = '1';
+    }, 150);
+  }, 2000);
+}
+
+// SLIDER PARA ROLETA DA SORTE DA 5ª ETAPA
+const roletaImages5 = [
+  'https://github.com/pokerdequinta/fotos/blob/main/roleta5etapamaykon.jpeg?raw=true',
+  'https://github.com/pokerdequinta/fotos/blob/main/roleta5etapaizidio.jpeg?raw=true'
+];
+const roletaImg5 = document.getElementById('roleta-img-5');
+if (roletaImg5) {
+  let currentIndex5 = 0;
+  setInterval(() => {
+    currentIndex5 = (currentIndex5 + 1) % roletaImages5.length;
+    roletaImg5.style.opacity = '0.5';
+    setTimeout(() => {
+      roletaImg5.src = roletaImages5[currentIndex5];
+      roletaImg5.style.opacity = '1';
+    }, 150);
+  }, 2000);
+}
+
+// SLIDER PARA ROLETA DA SORTE DA 6ª ETAPA
 const roletaImages6 = [
   'https://github.com/pokerdequinta/fotos/blob/main/matehusroleta6etapa.jpg?raw=true',
   'https://github.com/pokerdequinta/fotos/blob/main/izidioabracobruxo1.jpg?raw=true',
@@ -1290,7 +1374,6 @@ const roletaImages6 = [
   'https://github.com/pokerdequinta/fotos/blob/main/geraroleta6etapa.jpg?raw=true',
   'https://github.com/pokerdequinta/fotos/blob/main/cleversonroleta6etapa.jpg?raw=true'
 ];
-
 const roletaImg6 = document.getElementById('roleta-img-6');
 if (roletaImg6) {
   let currentIndex6 = 0;
@@ -1304,9 +1387,30 @@ if (roletaImg6) {
   }, 2000);
 }
 
-// Preload das imagens para melhor performance
+// SLIDER PARA ROLETA DA SORTE DA 7ª ETAPA
+const roletaImages7 = [
+  'https://github.com/pokerdequinta/fotos/blob/main/roletacleversson7etapa.jpeg?raw=true',
+  'https://github.com/pokerdequinta/fotos/blob/main/roletaguti7etapa.jpeg?raw=true',
+  'https://github.com/pokerdequinta/fotos/blob/main/roletajean7etapa.jpeg?raw=true',
+  'https://github.com/pokerdequinta/fotos/blob/main/roletaloreto7etapa.jpeg?raw=true'
+];
+const roletaImg7 = document.getElementById('roleta-img-7');
+if (roletaImg7) {
+  let currentIndex7 = 0;
+  setInterval(() => {
+    currentIndex7 = (currentIndex7 + 1) % roletaImages7.length;
+    roletaImg7.style.opacity = '0.5';
+    setTimeout(() => {
+      roletaImg7.src = roletaImages7[currentIndex7];
+      roletaImg7.style.opacity = '1';
+    }, 150);
+  }, 2500);
+}
+
+// Preload das imagens
 window.addEventListener('load', function() {
-  [...roletaImages3, ...roletaImages4, ...roletaImages5, ...roletaImages1, ...roletaImages6].forEach(src => {
+  const allImages = [...roletaImages1, ...roletaImages3, ...roletaImages4, ...roletaImages5, ...roletaImages6, ...roletaImages7];
+  allImages.forEach(src => {
     const img = new Image();
     img.src = src;
   });
