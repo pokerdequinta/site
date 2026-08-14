@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Poker de Quinta</title>
 
+<!-- ===== PASSO 4: PWA Meta Tags ===== -->
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-192x192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Poker de Quinta">
+<meta name="theme-color" content="#d4a121">
+<meta name="mobile-web-app-capable" content="yes">
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@300;400;700&display=swap');
 
@@ -1415,6 +1424,204 @@ window.addEventListener('load', function() {
     img.src = src;
   });
 });
+
+// ===== PASSO 3: PWA INSTALL PROMPT =====
+let deferredPrompt;
+const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+// Função para mostrar instruções de instalação
+function showInstallInstructions() {
+  const existingBanner = document.getElementById('pwa-install-banner');
+  if (existingBanner) return;
+
+  let instructions = '';
+
+  if (isIOS) {
+    instructions = `
+      <div style="margin-bottom: 10px;">
+        <strong>📱 Para instalar no iPhone/iPad:</strong>
+      </div>
+      <div style="text-align: left; padding-left: 20px; line-height: 2;">
+        1. Toque no ícone de compartilhar <span style="font-size: 1.2em;">⬆️</span><br>
+        2. Role para baixo e toque em "Adicionar à Tela de Início"<br>
+        3. Toque em "Adicionar" no canto superior direito
+      </div>
+    `;
+  } else if (window.matchMedia('(display-mode: standalone)').matches) {
+    // Já está instalado como PWA
+    return;
+  } else if (window.navigator && window.navigator.userAgent.toLowerCase().includes('android')) {
+    instructions = `
+      <div style="margin-bottom: 10px;">
+        <strong>📱 Para instalar no Android:</strong>
+      </div>
+      <div style="text-align: left; padding-left: 20px; line-height: 2;">
+        1. Toque no menu do navegador (3 pontos) <span style="font-size: 1.2em;">⋮</span><br>
+        2. Selecione "Adicionar à tela inicial"<br>
+        3. Toque em "Adicionar" para confirmar
+      </div>
+    `;
+  } else {
+    instructions = `
+      <div style="margin-bottom: 10px;">
+        <strong>💻 Para instalar no computador:</strong>
+      </div>
+      <div style="text-align: left; padding-left: 20px; line-height: 2;">
+        1. Clique no ícone de instalação na barra de endereço <span style="font-size: 1.2em;">⬇️</span><br>
+        2. Ou clique em "Instalar" no menu do navegador<br>
+        3. Siga as instruções para adicionar à tela inicial
+      </div>
+    `;
+  }
+
+  const banner = document.createElement('div');
+  banner.id = 'pwa-install-banner';
+  banner.style.cssText = `
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #1a3d1a 0%, #0d1b0d 100%);
+    border: 2px solid #d4a121;
+    border-radius: 15px;
+    padding: 20px 25px;
+    max-width: 400px;
+    width: 90%;
+    z-index: 10000;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+    animation: slideUpBanner 0.5s ease-out;
+  `;
+
+  banner.innerHTML = `
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 1.5em;">🎯</span>
+        <span style="font-family: 'Anton'; font-size: 1.3em; color: #d4a121;">Instalar App</span>
+      </div>
+      <button onclick="this.parentElement.parentElement.remove()" style="
+        background: none;
+        border: none;
+        color: #d4a121;
+        font-size: 1.5em;
+        cursor: pointer;
+        padding: 0 5px;
+      ">✕</button>
+    </div>
+    <div style="color: #fff; font-size: 0.95em; line-height: 1.6;">
+      ${instructions}
+    </div>
+    ${!isIOS && !window.matchMedia('(display-mode: standalone)').matches ? `
+    <button onclick="installPWA()" style="
+      background: #d4a121;
+      color: #102810;
+      border: none;
+      border-radius: 50px;
+      padding: 12px 30px;
+      font-family: 'Anton';
+      font-size: 1.1em;
+      margin-top: 15px;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.3s;
+      font-weight: bold;
+      letter-spacing: 1px;
+    " onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+      📲 INSTALAR AGORA
+    </button>
+    ` : ''}
+    <div style="text-align: center; margin-top: 10px; font-size: 0.75em; color: #888;">
+      ${isIOS ? 'A instalação é rápida e gratuita!' : 'Leva apenas alguns segundos!'}
+    </div>
+  `;
+
+  document.body.appendChild(banner);
+
+  // Adiciona keyframe animation
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes slideUpBanner {
+      from { opacity: 0; transform: translateX(-50%) translateY(50px); }
+      to { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+  `;
+  document.head.appendChild(style);
+}
+
+// Função para instalar o PWA (apenas para Android/Desktop)
+function installPWA() {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('Usuário aceitou a instalação');
+        const banner = document.getElementById('pwa-install-banner');
+        if (banner) banner.remove();
+      } else {
+        console.log('Usuário recusou a instalação');
+      }
+      deferredPrompt = null;
+    });
+  } else if (!isIOS) {
+    // Fallback para mostrar instruções novamente
+    alert('Para instalar, clique no ícone de instalação na barra de endereço do navegador ou acesse o menu do navegador e selecione "Instalar aplicativo".');
+  }
+}
+
+// Evento para capturar o prompt de instalação
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  
+  // Mostra o banner após 3 segundos para não ser intrusivo
+  setTimeout(() => {
+    // Verifica se o banner já existe
+    if (!document.getElementById('pwa-install-banner')) {
+      showInstallInstructions();
+    }
+  }, 3000);
+});
+
+// Detecta se já está instalado como PWA
+if (window.matchMedia('(display-mode: standalone)').matches) {
+  console.log('App já está instalado como PWA');
+} else {
+  // Verifica se é a primeira visita
+  const hasSeenInstallBanner = localStorage.getItem('pwa_banner_seen');
+  
+  // Para iOS ou quando o beforeinstallprompt não é suportado
+  if ((isIOS || !('serviceWorker' in navigator)) && !hasSeenInstallBanner) {
+    setTimeout(() => {
+      if (!document.getElementById('pwa-install-banner')) {
+        showInstallInstructions();
+        localStorage.setItem('pwa_banner_seen', 'true');
+      }
+    }, 5000);
+  }
+}
+
+// Verifica se é iOS e mostra o banner se não estiver instalado
+if (isIOS && !window.matchMedia('(display-mode: standalone)').matches) {
+  const hasSeenIOSBanner = localStorage.getItem('pwa_ios_banner_seen');
+  if (!hasSeenIOSBanner) {
+    setTimeout(() => {
+      if (!document.getElementById('pwa-install-banner')) {
+        showInstallInstructions();
+        localStorage.setItem('pwa_ios_banner_seen', 'true');
+      }
+    }, 4000);
+  }
+}
+
+// Registra o Service Worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
+    .then(registration => {
+      console.log('Service Worker registrado com sucesso:', registration.scope);
+    })
+    .catch(error => {
+      console.log('Falha ao registrar Service Worker:', error);
+    });
+}
 </script>
 
 </body>
