@@ -1,10 +1,10 @@
 const CACHE_NAME = 'poker-de-quinta-v2';
 
-// APENAS arquivos que realmente existem
+// Arquivos para cache - com caminhos relativos à pasta /site/
 const urlsToCache = [
-  './',
-  './index.html',
-  './logo pdq.png'
+  '/site/',
+  '/site/index.html',
+  '/site/logo pdq.png'
 ];
 
 self.addEventListener('install', event => {
@@ -53,7 +53,7 @@ self.addEventListener('fetch', event => {
           .then(cached => {
             if (cached) return cached;
             if (event.request.mode === 'navigate') {
-              return caches.match('./index.html');
+              return caches.match('/site/index.html');
             }
             return new Response('Offline', { status: 404 });
           });
