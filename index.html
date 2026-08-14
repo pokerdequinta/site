@@ -6,8 +6,9 @@
 <title>Poker de Quinta</title>
 
 <!-- ===== PWA Meta Tags ===== -->
-<link rel="manifest" href="manifest.json">
-<link rel="apple-touch-icon" href="icons/icon-192x192.png">
+<!-- ALTERADO: caminho correto para o manifest -->
+<link rel="manifest" href="/site/manifest.json">
+<link rel="apple-touch-icon" href="/site/icons/icon-192x192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Poker de Quinta">
@@ -1442,10 +1443,7 @@ const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
 // Função para mostrar instruções de instalação
 function showInstallInstructions() {
-  // SÓ MOSTRA SE NÃO ESTIVER INSTALADO
-  if (isPWAInstalled()) {
-    return;
-  }
+  if (isPWAInstalled()) return;
   
   const existingBanner = document.getElementById('pwa-install-banner');
   if (existingBanner) return;
@@ -1616,11 +1614,11 @@ if (isIOS && !isPWAInstalled()) {
   }
 }
 
-// ===== REGISTRA O SERVICE WORKER SEMPRE =====
+// ===== REGISTRA O SERVICE WORKER - CORRIGIDO PARA /site/ =====
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js', { scope: './' })
+  navigator.serviceWorker.register('/site/sw.js', { scope: '/site/' })
     .then(registration => {
-      console.log('Service Worker registrado com sucesso');
+      console.log('Service Worker registrado com sucesso para /site/');
     })
     .catch(error => {
       console.log('Erro ao registrar Service Worker:', error);
