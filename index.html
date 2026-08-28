@@ -844,14 +844,14 @@ body {
 <!-- CONTAINER PRINCIPAL -->
 <div class="main-container">
   
-  <!-- PRÓXIMA ETAPA (27/08 - 8ª ETAPA) -->
+  <!-- PRÓXIMA ETAPA (24/09 - 9ª ETAPA) -->
   <div>
     <h2 class="section-title">PRÓXIMA ETAPA</h2>
     
     <div class="next-stage-card">
-      <div class="stage-top-badge">8ª ETAPA</div>
+      <div class="stage-top-badge">9ª ETAPA</div>
       
-      <h3 class="menu-title">27/08</h3>
+      <h3 class="menu-title">24/09</h3>
       <p class="menu-description">Prepare-se para mais uma noite de resenha e Baralhada!</p>
       
       <div class="stage-info">
@@ -859,7 +859,7 @@ body {
           <span class="icon">📅</span>
           <div class="info-content">
             <div class="info-label">DATA</div>
-            <div class="info-value info-date">27 de Agosto</div>
+            <div class="info-value info-date">24 de Setembro</div>
           </div>
         </div>
         
@@ -924,6 +924,7 @@ body {
       <button class="stage-menu-btn" onclick="showStage(5)">5ª ETAPA</button>
       <button class="stage-menu-btn" onclick="showStage(6)">6ª ETAPA</button>
       <button class="stage-menu-btn" onclick="showStage(7)">7ª ETAPA</button>
+      <button class="stage-menu-btn" onclick="showStage(8)">8ª ETAPA</button>
     </div>
     
     <!-- DESTAQUES DA 1ª ETAPA -->
@@ -1227,6 +1228,91 @@ body {
         </div>
       </div>
     </div>
+
+    <!-- DESTAQUES DA 8ª ETAPA -->
+    <div id="stage8" class="highlights-section" style="display: none;">
+      <h2 class="highlights-title">PRINCIPAIS DESTAQUES DA 8ª ETAPA</h2>
+      
+      <div class="highlight-grid">
+        <!-- CAMPEÃO DA 8ª ETAPA: Jean com 32 Pontos -->
+        <div class="highlight-card">
+          <div class="etapa-faixa">
+            <div class="etapa-faixa-text">8ª ETAPA</div>
+          </div>
+          <h3 class="highlight-title">CAMPEÃO</h3>
+          <div class="highlight-content">
+            <span class="highlight-icon">👑</span>
+            <div class="highlight-photo-container">
+              <img src="https://github.com/pokerdequinta/fotos/blob/main/jeancampeao8etapa.jpg?raw=true" 
+                   alt="Foto do Campeão Jean" 
+                   class="highlight-photo">
+            </div>
+            <div class="highlight-name">Jean</div>
+            <div class="highlight-detail">Vencedor da 8ª Etapa</div>
+            <div class="highlight-detail">32 Pontos</div>
+          </div>
+        </div>
+        
+        <!-- MELHOR MÃO DA 8ª ETAPA: Jean Straight Flush -->
+        <div class="highlight-card">
+          <div class="etapa-faixa">
+            <div class="etapa-faixa-text">8ª ETAPA</div>
+          </div>
+          <h3 class="highlight-title">MELHOR MÃO</h3>
+          <div class="melhor-mao-person-foto">
+            <img src="https://github.com/pokerdequinta/fotos/blob/main/Jean.png?raw=true" 
+                 alt="Foto de Jean">
+          </div>
+          <div class="highlight-content">
+            <span class="highlight-icon">🃏</span>
+            <div class="highlight-photo-container">
+              <img src="https://github.com/pokerdequinta/fotos/blob/main/melhormao8etapa.jpg?raw=true" 
+                   alt="Foto da Melhor Mão - Straight Flush" 
+                   class="highlight-photo">
+            </div>
+            <div class="highlight-name">Straight Flush</div>
+            <div class="highlight-detail">Feito por: Jean</div>
+            <div class="highlight-detail">GANHA: 1 ADDON na próxima Etapa</div>
+          </div>
+        </div>
+        
+        <!-- MATADOR DE KO DA 8ª ETAPA: Buiu com 6 eliminações -->
+        <div class="highlight-card">
+          <div class="etapa-faixa">
+            <div class="etapa-faixa-text">8ª ETAPA</div>
+          </div>
+          <h3 class="highlight-title">MATADOR DE KO</h3>
+          <div class="highlight-content">
+            <span class="highlight-icon">💥</span>
+            <div class="highlight-photo-container">
+              <img src="https://github.com/pokerdequinta/fotos/blob/main/matadorko8etapa.jpg?raw=true" 
+                   alt="Foto do Buiu - Matador de KO" 
+                   class="highlight-photo">
+            </div>
+            <div class="highlight-name">Buiu</div>
+            <div class="highlight-detail">6 eliminações</div>
+          </div>
+        </div>
+        
+        <!-- ROLETA DA SORTE DA 8ª ETAPA -->
+        <div class="highlight-card">
+          <div class="etapa-faixa">
+            <div class="etapa-faixa-text">8ª ETAPA</div>
+          </div>
+          <h3 class="highlight-title">ROLETA DA SORTE</h3>
+          <div class="highlight-content">
+            <span class="highlight-icon">🎡</span>
+            <div class="highlight-photo-container">
+              <div class="roleta-slider-container" id="roleta-slider-8">
+                <img class="roleta-slider-img" id="roleta-img-8" src="https://github.com/pokerdequinta/fotos/blob/main/roleta8etapajeanrebuy.jpg?raw=true">
+              </div>
+            </div>
+            <div class="highlight-name">Jean Rebuy e Neto</div>
+            <div class="highlight-detail">Jean Rebuy: 10K em Fichas | Neto: 1 Abraço do Dealer</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1282,7 +1368,7 @@ if (hamburgerButton && hamburgerDropdown) {
 
 // Função para alternar entre as etapas
 function showStage(stageNumber) {
-  for (let i = 1; i <= 7; i++) {
+  for (let i = 1; i <= 8; i++) {
     const el = document.getElementById('stage' + i);
     if (el) el.style.display = 'none';
   }
@@ -1296,8 +1382,8 @@ function showStage(stageNumber) {
   });
 }
 
-// Iniciar com a 7ª etapa visível
-showStage(7);
+// Iniciar com a 8ª etapa visível
+showStage(8);
 
 // SLIDER PARA ROLETA DA SORTE DA 1ª ETAPA
 const roletaImages1 = [
@@ -1416,9 +1502,28 @@ if (roletaImg7) {
   }, 2500);
 }
 
+// SLIDER PARA ROLETA DA SORTE DA 8ª ETAPA
+const roletaImages8 = [
+  'https://github.com/pokerdequinta/fotos/blob/main/roleta8etapajeanrebuy.jpg?raw=true',
+  'https://github.com/pokerdequinta/fotos/blob/main/abracodealer8etapaneto1.jpg?raw=true',
+  'https://github.com/pokerdequinta/fotos/blob/main/abracodealer8etapaneto2.jpg?raw=true'
+];
+const roletaImg8 = document.getElementById('roleta-img-8');
+if (roletaImg8) {
+  let currentIndex8 = 0;
+  setInterval(() => {
+    currentIndex8 = (currentIndex8 + 1) % roletaImages8.length;
+    roletaImg8.style.opacity = '0.5';
+    setTimeout(() => {
+      roletaImg8.src = roletaImages8[currentIndex8];
+      roletaImg8.style.opacity = '1';
+    }, 150);
+  }, 2000);
+}
+
 // Preload das imagens
 window.addEventListener('load', function() {
-  const allImages = [...roletaImages1, ...roletaImages3, ...roletaImages4, ...roletaImages5, ...roletaImages6, ...roletaImages7];
+  const allImages = [...roletaImages1, ...roletaImages3, ...roletaImages4, ...roletaImages5, ...roletaImages6, ...roletaImages7, ...roletaImages8];
   allImages.forEach(src => {
     const img = new Image();
     img.src = src;
