@@ -6,7 +6,6 @@
 <title>Poker de Quinta</title>
 
 <!-- ===== PWA Meta Tags ===== -->
-<!-- ALTERADO: caminho correto para o manifest -->
 <link rel="manifest" href="/site/manifest.json">
 <link rel="apple-touch-icon" href="/site/icons/icon-192x192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -32,7 +31,6 @@ body {
   padding-bottom: 80px;
 }
 
-/* ÍCONES DO BOTTOM MENU - TAMANHO IDEAL */
 .bottom-menu-icon {
   font-size: 1.9em;
   margin-bottom: 4px;
@@ -65,7 +63,6 @@ body {
   letter-spacing: 15px;
 }
 
-/* LOGO SECTION */
 .logo-section {
   text-align: center;
   padding: 40px 20px 30px;
@@ -105,7 +102,6 @@ body {
   z-index: 1;
 }
 
-/* CONTAINER PRINCIPAL */
 .main-container {
   max-width: 1300px;
   margin: 0 auto;
@@ -115,7 +111,6 @@ body {
   gap: 40px;
 }
 
-/* SECTION TITLE */
 .section-title {
   font-family: 'Anton';
   font-size: 2.5em;
@@ -126,7 +121,6 @@ body {
   text-shadow: 0 0 20px rgba(212, 161, 33, 0.5);
 }
 
-/* MENU DE ETAPAS */
 .stages-menu {
   display: flex;
   justify-content: center;
@@ -162,7 +156,6 @@ body {
   transform: scale(1.05);
 }
 
-/* CARD DA PRÓXIMA ETAPA EM AMARELO */
 .next-stage-card {
   background: linear-gradient(135deg, #d4a121 0%, #f4c141 100%);
   border: 2px solid #fff;
@@ -182,7 +175,6 @@ body {
   }
 }
 
-/* BADGE NO TOPO ESQUERDO */
 .stage-top-badge {
   position: absolute;
   top: 15px;
@@ -219,7 +211,6 @@ body {
   font-weight: 700;
 }
 
-/* INFORMAÇÕES DA ETAPA */
 .stage-info {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -278,7 +269,6 @@ body {
   color: #8e44ad;
 }
 
-/* BOTÃO DE INSCRIÇÃO */
 .inscricao-simples {
   display: inline-block;
   background: linear-gradient(135deg, #102810 0%, #1a3d1a 100%);
@@ -302,7 +292,6 @@ body {
   border-color: #f4c141;
 }
 
-/* SEÇÃO DE DESTAQUES DAS ETAPAS */
 .highlights-section {
   margin-top: 60px;
 }
@@ -319,7 +308,6 @@ body {
   border-bottom: 3px solid #d4a121;
 }
 
-/* CARDS DOS DESTAQUES */
 .highlight-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -347,7 +335,6 @@ body {
   box-shadow: 0 15px 40px rgba(212, 161, 33, 0.4);
 }
 
-/* FAIXA VERTICAL DA ETAPA */
 .etapa-faixa {
   position: absolute;
   top: 0;
@@ -395,7 +382,6 @@ body {
   flex: 1;
 }
 
-/* CONTAINER DE FOTO */
 .highlight-photo-container {
   width: 100%;
   display: flex;
@@ -406,7 +392,6 @@ body {
   min-height: 290px;
 }
 
-/* FOTO PRINCIPAL */
 .highlight-photo {
   width: 286px;
   height: 286px;
@@ -417,7 +402,6 @@ body {
   background: #102810;
 }
 
-/* CIRCULO PARA FOTO DA PESSOA */
 .melhor-mao-person-foto {
   position: absolute;
   top: 15px;
@@ -438,7 +422,6 @@ body {
   object-fit: cover;
 }
 
-/* Container para fotos lado a lado (MATADORES KO) */
 .killers-container {
   display: flex;
   justify-content: center;
@@ -486,7 +469,6 @@ body {
   margin-top: 5px;
 }
 
-/* SLIDER DA ROLETA DA SORTE */
 .roleta-slider-container {
   width: 286px;
   height: 286px;
@@ -495,16 +477,20 @@ body {
   overflow: hidden;
   border: 4px solid #d4a121;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  background: #102810;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .roleta-slider-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: opacity 0.5s ease;
+  background: #102810;
 }
 
-/* FOOTER */
 .footer {
   text-align: center;
   padding: 40px 20px;
@@ -518,7 +504,6 @@ body {
   margin-bottom: 10px;
 }
 
-/* BOTTOM MENU - TAMANHO IDEAL */
 .bottom-menu {
   position: fixed;
   bottom: 0;
@@ -649,7 +634,6 @@ body {
   font-size: 0.85em;
 }
 
-/* RESPONSIVE */
 @media (max-width: 1100px) {
   .stage-info {
     grid-template-columns: repeat(2, 1fr);
@@ -834,17 +818,14 @@ body {
 
 <body>
 
-<!-- LOGO SECTION -->
 <div class="logo-section">
   <img src="logo pdq.png" class="logo-img" onerror="this.style.display='none'" alt="Logo Poker de Quinta">
   <h1 class="logo-title">POKER DE QUINTA</h1>
   <p class="logo-subtitle">A Melhor Resenha do Poker</p>
 </div>
 
-<!-- CONTAINER PRINCIPAL -->
 <div class="main-container">
   
-  <!-- PRÓXIMA ETAPA (24/09 - 9ª ETAPA) -->
   <div>
     <h2 class="section-title">PRÓXIMA ETAPA</h2>
     
@@ -912,7 +893,6 @@ body {
     </div>
   </div>
   
-  <!-- MENU DE ETAPAS (Histórico) -->
   <div>
     <h2 class="section-title">HISTÓRICO DE ETAPAS</h2>
     
@@ -927,7 +907,6 @@ body {
       <button class="stage-menu-btn" onclick="showStage(8)">8ª ETAPA</button>
     </div>
     
-    <!-- DESTAQUES DA 1ª ETAPA -->
     <div id="stage1" class="highlights-section" style="display: none;">
       <h2 class="highlights-title">PRINCIPAIS DESTAQUES DA 1ª ETAPA</h2>
       
@@ -939,7 +918,6 @@ body {
       </div>
     </div>
     
-    <!-- DESTAQUES DA 2ª ETAPA -->
     <div id="stage2" class="highlights-section" style="display: none;">
       <h2 class="highlights-title">PRINCIPAIS DESTAQUES DA 2ª ETAPA</h2>
       <div class="highlight-grid">
@@ -950,7 +928,6 @@ body {
       </div>
     </div>
     
-    <!-- DESTAQUES DA 3ª ETAPA -->
     <div id="stage3" class="highlights-section" style="display: none;">
       <h2 class="highlights-title">PRINCIPAIS DESTAQUES DA 3ª ETAPA</h2>
       
@@ -962,7 +939,6 @@ body {
       </div>
     </div>
     
-    <!-- DESTAQUES DA 4ª ETAPA -->
     <div id="stage4" class="highlights-section" style="display: none;">
       <h2 class="highlights-title">PRINCIPAIS DESTAQUES DA 4ª ETAPA</h2>
       
@@ -974,12 +950,10 @@ body {
       </div>
     </div>
     
-    <!-- DESTAQUES DA 5ª ETAPA -->
     <div id="stage5" class="highlights-section" style="display: none;">
       <h2 class="highlights-title">PRINCIPAIS DESTAQUES DA 5ª ETAPA</h2>
       
       <div class="highlight-grid">
-        <!-- CAMPEÃO DA 5ª ETAPA: Rafael com 33 Pontos -->
         <div class="highlight-card">
           <div class="etapa-faixa">
             <div class="etapa-faixa-text">5ª ETAPA</div>
@@ -998,7 +972,6 @@ body {
           </div>
         </div>
         
-        <!-- MELHOR MÃO DA 5ª ETAPA: Maykon Quadra de K -->
         <div class="highlight-card">
           <div class="etapa-faixa">
             <div class="etapa-faixa-text">5ª ETAPA</div>
@@ -1021,7 +994,6 @@ body {
           </div>
         </div>
         
-        <!-- MATADOR DE KO DA 5ª ETAPA: Rafael com 6 eliminações -->
         <div class="highlight-card">
           <div class="etapa-faixa">
             <div class="etapa-faixa-text">5ª ETAPA</div>
@@ -1039,7 +1011,6 @@ body {
           </div>
         </div>
         
-        <!-- ROLETA DA SORTE DA 5ª ETAPA: Maykon (Se Fodeu) e Izidio (Camiseta) com transição de 2 fotos -->
         <div class="highlight-card">
           <div class="etapa-faixa">
             <div class="etapa-faixa-text">5ª ETAPA</div>
@@ -1059,12 +1030,10 @@ body {
       </div>
     </div>
 
-    <!-- DESTAQUES DA 6ª ETAPA -->
     <div id="stage6" class="highlights-section" style="display: none;">
       <h2 class="highlights-title">PRINCIPAIS DESTAQUES DA 6ª ETAPA</h2>
       
       <div class="highlight-grid">
-        <!-- CAMPEÃO DA 6ª ETAPA: Gaspar com 32 Pontos -->
         <div class="highlight-card">
           <div class="etapa-faixa">
             <div class="etapa-faixa-text">6ª ETAPA</div>
@@ -1083,7 +1052,6 @@ body {
           </div>
         </div>
         
-        <!-- MELHOR MÃO DA 6ª ETAPA: Buiu Quadra de 6 -->
         <div class="highlight-card">
           <div class="etapa-faixa">
             <div class="etapa-faixa-text">6ª ETAPA</div>
@@ -1106,7 +1074,6 @@ body {
           </div>
         </div>
         
-        <!-- MATADOR DE KO DA 6ª ETAPA: Gaspar com 5 eliminações -->
         <div class="highlight-card">
           <div class="etapa-faixa">
             <div class="etapa-faixa-text">6ª ETAPA</div>
@@ -1124,7 +1091,6 @@ body {
           </div>
         </div>
         
-        <!-- ROLETA DA SORTE DA 6ª ETAPA -->
         <div class="highlight-card">
           <div class="etapa-faixa">
             <div class="etapa-faixa-text">6ª ETAPA</div>
@@ -1144,12 +1110,10 @@ body {
       </div>
     </div>
 
-    <!-- DESTAQUES DA 7ª ETAPA -->
     <div id="stage7" class="highlights-section" style="display: none;">
       <h2 class="highlights-title">PRINCIPAIS DESTAQUES DA 7ª ETAPA</h2>
       
       <div class="highlight-grid">
-        <!-- CAMPEÃO DA 7ª ETAPA: Sergio com 34 Pontos -->
         <div class="highlight-card">
           <div class="etapa-faixa">
             <div class="etapa-faixa-text">7ª ETAPA</div>
@@ -1168,7 +1132,6 @@ body {
           </div>
         </div>
         
-        <!-- MELHOR MÃO DA 7ª ETAPA: Robson Quadra de K -->
         <div class="highlight-card">
           <div class="etapa-faixa">
             <div class="etapa-faixa-text">7ª ETAPA</div>
@@ -1191,7 +1154,6 @@ body {
           </div>
         </div>
         
-        <!-- MATADOR DE KO DA 7ª ETAPA: Sergio com 7 eliminações -->
         <div class="highlight-card">
           <div class="etapa-faixa">
             <div class="etapa-faixa-text">7ª ETAPA</div>
@@ -1209,7 +1171,6 @@ body {
           </div>
         </div>
         
-        <!-- ROLETA DA SORTE DA 7ª ETAPA -->
         <div class="highlight-card">
           <div class="etapa-faixa">
             <div class="etapa-faixa-text">7ª ETAPA</div>
@@ -1229,12 +1190,10 @@ body {
       </div>
     </div>
 
-    <!-- DESTAQUES DA 8ª ETAPA -->
     <div id="stage8" class="highlights-section" style="display: none;">
       <h2 class="highlights-title">PRINCIPAIS DESTAQUES DA 8ª ETAPA</h2>
       
       <div class="highlight-grid">
-        <!-- CAMPEÃO DA 8ª ETAPA: Jean com 32 Pontos -->
         <div class="highlight-card">
           <div class="etapa-faixa">
             <div class="etapa-faixa-text">8ª ETAPA</div>
@@ -1253,7 +1212,6 @@ body {
           </div>
         </div>
         
-        <!-- MELHOR MÃO DA 8ª ETAPA: Jean Straight Flush -->
         <div class="highlight-card">
           <div class="etapa-faixa">
             <div class="etapa-faixa-text">8ª ETAPA</div>
@@ -1276,7 +1234,6 @@ body {
           </div>
         </div>
         
-        <!-- MATADOR DE KO DA 8ª ETAPA: Buiu com 6 eliminações -->
         <div class="highlight-card">
           <div class="etapa-faixa">
             <div class="etapa-faixa-text">8ª ETAPA</div>
@@ -1294,7 +1251,6 @@ body {
           </div>
         </div>
         
-        <!-- ROLETA DA SORTE DA 8ª ETAPA -->
         <div class="highlight-card">
           <div class="etapa-faixa">
             <div class="etapa-faixa-text">8ª ETAPA</div>
@@ -1316,14 +1272,12 @@ body {
   </div>
 </div>
 
-<!-- FOOTER -->
 <div class="footer">
   <p class="footer-text">© 2026 Poker de Quinta - Todos os direitos reservados</p>
   <div class="footer-icons">♠ ♥ ♦ ♣</div>
   <p class="footer-text" style="opacity: 0.6; font-size: 0.9em;">Desenvolvido pelo Presida.</p>
 </div>
 
-<!-- BOTTOM MENU -->
 <div class="bottom-menu">
   <div class="main-menu-items">
     <a href="https://pokerdequinta.github.io/ranking/" class="bottom-menu-item"><span class="bottom-menu-icon">🏆</span><span class="bottom-menu-text">RANKING</span></a>
@@ -1351,7 +1305,6 @@ body {
 </div>
 
 <script>
-// Menu hamburguer
 const hamburgerButton = document.getElementById('hamburgerButton');
 const hamburgerDropdown = document.getElementById('hamburgerDropdown');
 if (hamburgerButton && hamburgerDropdown) {
@@ -1366,7 +1319,6 @@ if (hamburgerButton && hamburgerDropdown) {
   });
 }
 
-// Função para alternar entre as etapas
 function showStage(stageNumber) {
   for (let i = 1; i <= 8; i++) {
     const el = document.getElementById('stage' + i);
@@ -1382,10 +1334,8 @@ function showStage(stageNumber) {
   });
 }
 
-// Iniciar com a 8ª etapa visível
 showStage(8);
 
-// SLIDER PARA ROLETA DA SORTE DA 1ª ETAPA
 const roletaImages1 = [
   'https://github.com/pokerdequinta/fotos/blob/main/abracobruxo1.jpeg?raw=true',
   'https://github.com/pokerdequinta/fotos/blob/main/abracobruxo2.jpg?raw=true'
@@ -1403,7 +1353,6 @@ if (roletaImg1) {
   }, 2000);
 }
 
-// SLIDER PARA ROLETA DA SORTE DA 3ª ETAPA
 const roletaImages3 = [
   'https://github.com/pokerdequinta/fotos/blob/main/roletamatoso.jpeg?raw=true',
   'https://github.com/pokerdequinta/fotos/blob/main/abracomilton1.jpeg?raw=true',
@@ -1422,7 +1371,6 @@ if (roletaImg3) {
   }, 1500);
 }
 
-// SLIDER PARA ROLETA DA SORTE DA 4ª ETAPA
 const roletaImages4 = [
   'https://github.com/pokerdequinta/fotos/blob/main/jeanabrecodealer1.jpg?raw=true',
   'https://github.com/pokerdequinta/fotos/blob/main/jeanabrecodealer2.jpg?raw=true',
@@ -1442,7 +1390,6 @@ if (roletaImg4) {
   }, 2000);
 }
 
-// SLIDER PARA ROLETA DA SORTE DA 5ª ETAPA
 const roletaImages5 = [
   'https://github.com/pokerdequinta/fotos/blob/main/roleta5etapamaykon.jpeg?raw=true',
   'https://github.com/pokerdequinta/fotos/blob/main/roleta5etapaizidio.jpeg?raw=true'
@@ -1460,7 +1407,6 @@ if (roletaImg5) {
   }, 2000);
 }
 
-// SLIDER PARA ROLETA DA SORTE DA 6ª ETAPA
 const roletaImages6 = [
   'https://github.com/pokerdequinta/fotos/blob/main/matehusroleta6etapa.jpg?raw=true',
   'https://github.com/pokerdequinta/fotos/blob/main/izidioabracobruxo1.jpg?raw=true',
@@ -1482,7 +1428,6 @@ if (roletaImg6) {
   }, 2000);
 }
 
-// SLIDER PARA ROLETA DA SORTE DA 7ª ETAPA
 const roletaImages7 = [
   'https://github.com/pokerdequinta/fotos/blob/main/roletacleversson7etapa.jpeg?raw=true',
   'https://github.com/pokerdequinta/fotos/blob/main/roletaguti7etapa.jpeg?raw=true',
@@ -1502,7 +1447,6 @@ if (roletaImg7) {
   }, 2500);
 }
 
-// SLIDER PARA ROLETA DA SORTE DA 8ª ETAPA
 const roletaImages8 = [
   'https://github.com/pokerdequinta/fotos/blob/main/roleta8etapajeanrebuy.jpg?raw=true',
   'https://github.com/pokerdequinta/fotos/blob/main/abracodealer8etapaneto1.jpg?raw=true',
@@ -1521,7 +1465,6 @@ if (roletaImg8) {
   }, 2000);
 }
 
-// Preload das imagens
 window.addEventListener('load', function() {
   const allImages = [...roletaImages1, ...roletaImages3, ...roletaImages4, ...roletaImages5, ...roletaImages6, ...roletaImages7, ...roletaImages8];
   allImages.forEach(src => {
@@ -1530,11 +1473,6 @@ window.addEventListener('load', function() {
   });
 });
 
-// =============================================
-// ===== PWA - INSTALAÇÃO E BANNER =====
-// =============================================
-
-// Verifica se o app já está instalado
 function isPWAInstalled() {
   if (window.matchMedia('(display-mode: standalone)').matches) return true;
   if (window.matchMedia('(display-mode: fullscreen)').matches) return true;
@@ -1546,7 +1484,6 @@ function isPWAInstalled() {
 let deferredPrompt;
 const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
-// Função para mostrar instruções de instalação
 function showInstallInstructions() {
   if (isPWAInstalled()) return;
   
@@ -1662,7 +1599,6 @@ function showInstallInstructions() {
   document.head.appendChild(style);
 }
 
-// Função para instalar o PWA
 function installPWA() {
   if (deferredPrompt) {
     deferredPrompt.prompt();
@@ -1681,7 +1617,6 @@ function installPWA() {
   }
 }
 
-// Evento para capturar o prompt de instalação (Android/Chrome)
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredPrompt = e;
@@ -1693,7 +1628,6 @@ window.addEventListener('beforeinstallprompt', (e) => {
   }, 3000);
 });
 
-// Para iOS ou navegadores que não suportam beforeinstallprompt
 if ((isIOS || !('serviceWorker' in navigator))) {
   const hasSeenInstallBanner = localStorage.getItem('pwa_banner_seen');
   if (!hasSeenInstallBanner && !isPWAInstalled()) {
@@ -1706,7 +1640,6 @@ if ((isIOS || !('serviceWorker' in navigator))) {
   }
 }
 
-// Verifica se é iOS e mostra o banner
 if (isIOS && !isPWAInstalled()) {
   const hasSeenIOSBanner = localStorage.getItem('pwa_ios_banner_seen');
   if (!hasSeenIOSBanner) {
@@ -1719,7 +1652,6 @@ if (isIOS && !isPWAInstalled()) {
   }
 }
 
-// ===== REGISTRA O SERVICE WORKER - CORRIGIDO PARA /site/ =====
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/site/sw.js', { scope: '/site/' })
     .then(registration => {
