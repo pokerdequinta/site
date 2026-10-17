@@ -830,9 +830,9 @@ body {
     <h2 class="section-title">PRÓXIMA ETAPA</h2>
     
     <div class="next-stage-card">
-      <div class="stage-top-badge">10ª ETAPA</div>
+      <div class="stage-top-badge">11ª ETAPA</div>
       
-      <h3 class="menu-title">15/10</h3>
+      <h3 class="menu-title">29/10</h3>
       <p class="menu-description">Prepare-se para mais uma noite de resenha e Baralhada!</p>
       
       <div class="stage-info">
@@ -840,7 +840,7 @@ body {
           <span class="icon">📅</span>
           <div class="info-content">
             <div class="info-label">DATA</div>
-            <div class="info-value info-date">15 de Outubro</div>
+            <div class="info-value info-date">29 de Outubro</div>
           </div>
         </div>
         
@@ -906,6 +906,7 @@ body {
       <button class="stage-menu-btn" onclick="showStage(7)">7ª ETAPA</button>
       <button class="stage-menu-btn" onclick="showStage(8)">8ª ETAPA</button>
       <button class="stage-menu-btn" onclick="showStage(9)">9ª ETAPA</button>
+      <button class="stage-menu-btn" onclick="showStage(10)">10ª ETAPA</button>
     </div>
     
     <div id="stage1" class="highlights-section" style="display: none;">
@@ -1358,6 +1359,86 @@ body {
         </div>
       </div>
     </div>
+
+    <div id="stage10" class="highlights-section" style="display: none;">
+      <h2 class="highlights-title">PRINCIPAIS DESTAQUES DA 10ª ETAPA</h2>
+      
+      <div class="highlight-grid">
+        <div class="highlight-card">
+          <div class="etapa-faixa">
+            <div class="etapa-faixa-text">10ª ETAPA</div>
+          </div>
+          <h3 class="highlight-title">CAMPEÃO</h3>
+          <div class="highlight-content">
+            <span class="highlight-icon">👑</span>
+            <div class="highlight-photo-container">
+              <img src="https://github.com/pokerdequinta/fotos/blob/main/gasparcampeao10etapa.jpeg?raw=true" 
+                   alt="Foto do Campeão Gaspar" 
+                   class="highlight-photo">
+            </div>
+            <div class="highlight-name">Gaspar</div>
+            <div class="highlight-detail">Vencedor da 10ª Etapa</div>
+            <div class="highlight-detail">38 Pontos</div>
+          </div>
+        </div>
+        
+        <div class="highlight-card">
+          <div class="etapa-faixa">
+            <div class="etapa-faixa-text">10ª ETAPA</div>
+          </div>
+          <h3 class="highlight-title">MELHOR MÃO</h3>
+          <div class="melhor-mao-person-foto">
+            <img src="https://github.com/pokerdequinta/fotos/blob/main/Matheus.png?raw=true" 
+                 alt="Foto de Matheus">
+          </div>
+          <div class="highlight-content">
+            <span class="highlight-icon">🃏</span>
+            <div class="highlight-photo-container">
+              <img src="https://github.com/pokerdequinta/fotos/blob/main/melhormao10etapa.jpg?raw=true" 
+                   alt="Foto da Melhor Mão - Straight Flush" 
+                   class="highlight-photo">
+            </div>
+            <div class="highlight-name">Straight Flush</div>
+            <div class="highlight-detail">Feito por: Matheus</div>
+            <div class="highlight-detail">GANHA: 1 ADDON na próxima Etapa</div>
+          </div>
+        </div>
+        
+        <div class="highlight-card">
+          <div class="etapa-faixa">
+            <div class="etapa-faixa-text">10ª ETAPA</div>
+          </div>
+          <h3 class="highlight-title">MATADOR DE KO</h3>
+          <div class="highlight-content">
+            <span class="highlight-icon">💥</span>
+            <div class="highlight-photo-container">
+              <img src="https://github.com/pokerdequinta/fotos/blob/main/gasparcampeao10etapa.jpeg?raw=true" 
+                   alt="Foto do Gaspar - Matador de KO" 
+                   class="highlight-photo">
+            </div>
+            <div class="highlight-name">Gaspar</div>
+            <div class="highlight-detail">11 eliminações</div>
+          </div>
+        </div>
+        
+        <div class="highlight-card">
+          <div class="etapa-faixa">
+            <div class="etapa-faixa-text">10ª ETAPA</div>
+          </div>
+          <h3 class="highlight-title">ROLETA DA SORTE</h3>
+          <div class="highlight-content">
+            <span class="highlight-icon">🎡</span>
+            <div class="highlight-photo-container">
+              <div class="roleta-slider-container" id="roleta-slider-10">
+                <img class="roleta-slider-img" id="roleta-img-10" src="https://github.com/pokerdequinta/fotos/blob/main/vanvanroleta.jpeg?raw=true">
+              </div>
+            </div>
+            <div class="highlight-name">Michel, Van Van, Jean e Junior</div>
+            <div class="highlight-detail">Michel: 1 Cerveja | Van Van: 1 SE-FODEU | Jean: 4K em Fichas | Junior: 5K em Fichas</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1409,7 +1490,7 @@ if (hamburgerButton && hamburgerDropdown) {
 }
 
 function showStage(stageNumber) {
-  for (let i = 1; i <= 9; i++) {
+  for (let i = 1; i <= 10; i++) {
     const el = document.getElementById('stage' + i);
     if (el) el.style.display = 'none';
   }
@@ -1423,7 +1504,7 @@ function showStage(stageNumber) {
   });
 }
 
-showStage(9);
+showStage(10);
 
 // Roleta slider 1
 const roletaImages1 = [
@@ -1561,7 +1642,7 @@ if (roletaImg8) {
   }, 2000);
 }
 
-// Roleta slider 9 (nova)
+// Roleta slider 9
 const roletaImages9 = [
   'https://github.com/pokerdequinta/fotos/blob/main/roleta9etaparosa.jpg?raw=true',
   'https://github.com/pokerdequinta/fotos/blob/main/roleta9etaparoberto.jpg?raw=true',
@@ -1582,12 +1663,32 @@ if (roletaImg9) {
   }, 2000);
 }
 
+// Roleta slider 10 (nova)
+const roletaImages10 = [
+  'https://github.com/pokerdequinta/fotos/blob/main/vanvanroleta.jpeg?raw=true',
+  'https://github.com/pokerdequinta/fotos/blob/main/juniorroleta.jpeg?raw=true',
+  'https://github.com/pokerdequinta/fotos/blob/main/michelroleta.jpeg?raw=true',
+  'https://github.com/pokerdequinta/fotos/blob/main/jeanabrecodealer1.jpg?raw=true'
+];
+const roletaImg10 = document.getElementById('roleta-img-10');
+if (roletaImg10) {
+  let currentIndex10 = 0;
+  setInterval(() => {
+    currentIndex10 = (currentIndex10 + 1) % roletaImages10.length;
+    roletaImg10.style.opacity = '0.5';
+    setTimeout(() => {
+      roletaImg10.src = roletaImages10[currentIndex10];
+      roletaImg10.style.opacity = '1';
+    }, 150);
+  }, 2000);
+}
+
 // Preload all images
 window.addEventListener('load', function() {
   const allImages = [
     ...roletaImages1, ...roletaImages3, ...roletaImages4, 
     ...roletaImages5, ...roletaImages6, ...roletaImages7, 
-    ...roletaImages8, ...roletaImages9
+    ...roletaImages8, ...roletaImages9, ...roletaImages10
   ];
   allImages.forEach(src => {
     const img = new Image();
